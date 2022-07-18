@@ -55,9 +55,20 @@
 // Sum(3)
 
 
-function logAtLeast5 (n){
-    for (let i=1; i<= Math.max(5, n);i++){
+//  O(n)
+
+// function logAtLeast5 (n){
+//     for (let i=1; i<= Math.max(5, n);i++){
+//         console.log(i)
+//     }
+// }
+// logAtLeast5(3)
+
+// O(1)
+
+function logAtMost5 (n){
+    for (let i=1; i<= Math.min(5, n);i++){
         console.log(i)
     }
 }
-logAtLeast5(3)
+logAtMost5(3)
