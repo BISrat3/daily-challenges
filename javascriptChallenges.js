@@ -44,12 +44,20 @@
 // twoSum(nums, target)
 
 // Suppose we want to write a function that calculates the sum of all numbers from 1 up to (and including) some number n
-function Sum(n){
-    let sum=0;
-    for (let i=1; i<=n;i++){
-        sum += i
-        console.log(sum)
+// function Sum(n){
+//     let sum=0;
+//     for (let i=1; i<=n;i++){
+//         sum += i
+//         console.log(sum)
+//     }
+//     return sum;
+// }
+// Sum(3)
+
+
+function logAtLeast5 (n){
+    for (let i=1; i<= Math.max(5, n);i++){
+        console.log(i)
     }
-    return sum;
 }
-Sum(3)
+logAtLeast5(3)
