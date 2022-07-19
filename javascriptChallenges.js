@@ -96,24 +96,99 @@
 // console.log(instructor.hasOwnProperty('lastName'))
 // console.log(instructor.hasOwnProperty('firstName'))
 
-function charCount(str){
-    // make object to return at end
-    let letter={};
-    // loop over string, for each character
-    for (let i=0; i<str.length; i++){
-        let char= str[i].toLowerCase()
-        // if the char is a number/ letter AND is a key object add one to count 
-        if(letter[char]>0){
-            // if the char is a number/ letter AND not in an object add it to object and set value to 1
-            letter[char]++;
-        }
-        else{
-            // if chracter is something else (space, period, etc) don't do anything
-            letter[char]=1;
-        }
-    }
-    // return object at end
-    console.log(letter)
-    return letter
+// function charCount(str){
+//     // make object to return at end
+//     let letter={};
+//     // loop over string, for each character
+//     for (let i=0; i<str.length; i++){
+//         let char= str[i].toLowerCase()
+//         // if the char is a number/ letter AND is a key object add one to count 
+//         if(letter[char]>0){
+//             // if the char is a number/ letter AND not in an object add it to object and set value to 1
+//             letter[char]++;
+//         }
+//         else{
+//             // if chracter is something else (space, period, etc) don't do anything
+//             letter[char]=1;
+//         }
+//     }
+//     // return object at end
+//     console.log(letter)
+//     return letter
+// }
+// charCount('hello')
+
+// function charCount (str){
+//     let obj={}
+//     for (let i=0; i<str.length; i++){
+//         let char = str[i].toLowerCase()
+//         if(/[a-z0-9]/.test(char)){
+//             if(obj[char]>0){
+//                 obj[char]++
+//             }
+//             else {
+//                 obj[char]=1;
+//             }
+//         }
+//     }
+//     console.log(obj)
+//     return obj;
+// }
+
+// charCount('HEllo')
+
+
+// or using for of
+// function charCount (str){
+//     let obj={}
+//     for(let char of str){
+//         char = char.toLowerCase()
+//         if(/[a-z0-9]/.test(char)){
+//             if(obj[char]>0){
+//                 obj[char]++
+//           without utilizing else stattement we can do obj[char] = ++obj[char]|| 1;
+//             }
+//             else {
+//                 obj[char]=1;
+//             }
+//         }
+//     }
+//     console.log(obj)
+//     return obj;
+// }
+
+// charCount('HEllo')
+
+
+// function isAlphaNumeric(str){
+//     let code;
+//     for (let i=0, len= str.length; i< len; i++){
+//         code= str.charCodeAt(i)
+//         if(!(code>47&& code<58)&&!(code>64 && code< 91) && !(code>96 && code <123)){
+//             return false
+//         }
+//      }
+//      return true
+//     }
+//     isAlphaNumeric(text)
+
+// Q?
+// Write a function called same, which accepts two arrays. The function  should return true if every cvalue in the Array has it's corresponding value squared in the second array. The frequency of values must be the same. 
+
+function same(arr1, arr2){ 
+// array first equal to square of the second squared array return true
+// else return false
+if (arr1.length !== arr2.length){
+    return false
 }
-charCount('hello')
+for (let i=0; i< arr1.length; i++){
+    let correctIndex = arr2.indexOf(arr1[i]**2)
+    if(correctIndex=== -1){
+        return false;
+    }
+    console.log(arr2)
+    arr2.splice(correctIndex,1)
+}
+return true
+}
+same([1,3,2], [4,9,1])
