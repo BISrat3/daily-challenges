@@ -66,9 +66,32 @@
 
 // O(1)
 
-function logAtMost5 (n){
-    for (let i=1; i<= Math.min(5, n);i++){
-        console.log(i)
-    }
-}
-logAtMost5(3)
+// function logAtMost5 (n){
+//     for (let i=1; i<= Math.min(5, n);i++){
+//         console.log(i)
+//     }
+// }
+// logAtMost5(3)
+
+// double the array values
+
+// function DoubleArray(array){
+//     let newArray= [];
+//     for (let i=0; i< array.length;i++){
+//         newArray.push( 2 * array[i])
+//     }
+//     console.log(newArray)
+//     return newArray;
+// }
+
+// DoubleArray([1,2,3])
+
+// let instructor ={
+//     firstName:'Solomon',
+//     isInstructor:true,
+//     favoriteNumbers:[1,2,3]
+// }
+
+// console.log(Object.entries(instructor))
+// console.log(instructor.hasOwnProperty('lastName'))
+// console.log(instructor.hasOwnProperty('firstName'))
