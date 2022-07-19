@@ -1,5 +1,7 @@
 // Challenge 1
 
+const { Query } = require("mongoose")
+
 // Given an integer n, return a string array answer (1-indexed) where:
 
 // answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
@@ -172,23 +174,81 @@
 //     }
 //     isAlphaNumeric(text)
 
-// Q?
-// Write a function called same, which accepts two arrays. The function  should return true if every cvalue in the Array has it's corresponding value squared in the second array. The frequency of values must be the same. 
+// // Q?
+// // Write a function called same, which accepts two arrays. The function  should return true if every cvalue in the Array has it's corresponding value squared in the second array. The frequency of values must be the same. 
 
-function same(arr1, arr2){ 
-// array first equal to square of the second squared array return true
-// else return false
-if (arr1.length !== arr2.length){
-    return false
-}
-for (let i=0; i< arr1.length; i++){
-    let correctIndex = arr2.indexOf(arr1[i]**2)
-    if(correctIndex=== -1){
-        return false;
+// // function same(arr1, arr2){ 
+// // // array first equal to square of the second squared array return true
+// // // else return false
+// // if (arr1.length !== arr2.length){
+// //     return false
+// // }
+// // for (let i=0; i< arr1.length; i++){
+// //     let correctIndex = arr2.indexOf(arr1[i]**2)
+// //     if(correctIndex=== -1){
+// //         return false;
+// //     }
+// //     console.log(arr2)
+// //     arr2.splice(correctIndex,1)
+// // }
+// // return true
+// // }
+// // same([1,3,2], [4,9,1])
+
+
+// function same(arr1, arr2){ 
+//     // array first equal to square of the second squared array return true
+//     // else return false
+//     if (arr1.length !== arr2.length){
+//         return false
+//     }
+//     let frequencyCounter1= {}
+//     let frequencyCounter2 = {}
+//     for (let val of arr1){
+//         frequencyCounter1[val] = (frequencyCounter1[val] || 0) +1 
+//     }
+//     for (let val of arr2){
+//         frequencyCounter2[val] = (frequencyCounter2[val] || 0) +1 
+//     }
+//     console.log(frequencyCounter1)
+//     console.log(frequencyCounter2)
+//     for (let key in frequencyCounter1){
+//         if (! (key ** 2 in frequencyCounter2)){
+//             return false 
+//         }
+//         if (frequencyCounter2 [key ** 2] !== frequencyCounter1[key]){
+//             return false
+//         }
+//     }
+//     return true
+// }
+// same([1,3,5,2], [4,9,25,3])
+
+// Q?
+// Given two strings, write a function to determine if the second string is an anagram of the first, /
+// An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema formed from iceman
+
+function anagram(first, second){
+    if(first.length !== second.length){
+        return false
     }
-    console.log(arr2)
-    arr2.splice(correctIndex,1)
+    const lookup ={}
+    for (let i=0; i<=first.length; i++){
+        let letter =first[i]
+        //  if letter exists, increment, otherwise set to 1
+        lookup[letter] ? lookup[letter] +=1 : lookup[letter] =1;
+    }
+    console.log(lookup)
+    for (let i=0; i<second.length;i++){
+        let letter = second[i];
+        //  can't find letter or letter is zero then it's not an anagram
+        if(!lookup[letter]){
+            return false 
+        }
+        else {
+            lookup[letter] -=1
+        }
+    }
+    return true
 }
-return true
-}
-same([1,3,2], [4,9,1])
+anagram('cat', 'act')
