@@ -95,3 +95,25 @@
 // console.log(Object.entries(instructor))
 // console.log(instructor.hasOwnProperty('lastName'))
 // console.log(instructor.hasOwnProperty('firstName'))
+
+function charCount(str){
+    // make object to return at end
+    let letter={};
+    // loop over string, for each character
+    for (let i=0; i<str.length; i++){
+        let char= str[i].toLowerCase()
+        // if the char is a number/ letter AND is a key object add one to count 
+        if(letter[char]>0){
+            // if the char is a number/ letter AND not in an object add it to object and set value to 1
+            letter[char]++;
+        }
+        else{
+            // if chracter is something else (space, period, etc) don't do anything
+            letter[char]=1;
+        }
+    }
+    // return object at end
+    console.log(letter)
+    return letter
+}
+charCount('hello')
