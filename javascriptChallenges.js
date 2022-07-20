@@ -293,15 +293,37 @@ const { Query } = require("mongoose")
 // countUnique Values 
 // implement a function called countUniqueValues which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted
 
-function countUniqueValue(arr){
-    let i =0;
-        for(let j=1; j<arr.length;j++){
-            if(arr[i]!==arr[j]){
-                i++;
-                arr[i] = arr[j]
-            }
+// function countUniqueValue(arr){
+//     let i =0;
+//         for(let j=1; j<arr.length;j++){
+//             if(arr[i]!==arr[j]){
+//                 i++;
+//                 arr[i] = arr[j]
+//             }
+//         }
+//         console.log(i)
+//         return i +1
+// }
+// countUniqueValue([1,1,1,1,2,1])
+
+// Write a function called maxSubarraySum which accepts an array of integers and a numer called n. The function should calculate the maximum sum of n consecutive elements in the array. 
+
+function maxSubarraySum(arr, num){
+    if (num > arr.length){
+        return null
+    }
+    let max = -Infinity
+    for (let j = 0; j<arr.length - num +1; j++){
+        let temp=0;
+        for (let k= 0; k <num; k++){
+            temp += arr[j+k]
         }
-        console.log(i)
-        return i +1
+        if (temp > max){
+            max = temp
+        }
+        console.log(max)
+    }
+    return max
 }
-countUniqueValue([1,1,1,1,2,1])
+
+maxSubarraySum([2,3,5,6], 2)
