@@ -228,27 +228,80 @@ const { Query } = require("mongoose")
 // Given two strings, write a function to determine if the second string is an anagram of the first, /
 // An anagram is a word, phrase or name formed by rearranging the letters of another, such as cinema formed from iceman
 
-function anagram(first, second){
-    if(first.length !== second.length){
-        return false
-    }
-    const lookup ={}
-    for (let i=0; i<=first.length; i++){
-        let letter =first[i]
-        //  if letter exists, increment, otherwise set to 1
-        lookup[letter] ? lookup[letter] +=1 : lookup[letter] =1;
-    }
-    console.log(lookup)
-    for (let i=0; i<second.length;i++){
-        let letter = second[i];
-        //  can't find letter or letter is zero then it's not an anagram
-        if(!lookup[letter]){
-            return false 
+// function anagram(first, second){
+//     if(first.length !== second.length){
+//         return false
+//     }
+//     const lookup ={}
+//     for (let i=0; i<=first.length; i++){
+//         let letter =first[i]
+//         //  if letter exists, increment, otherwise set to 1
+//         lookup[letter] ? lookup[letter] +=1 : lookup[letter] =1;
+//     }
+// //     console.log(lookup)
+// //     for (let i=0; i<second.length;i++){
+// //         let letter = second[i];
+// //         //  can't find letter or letter is zero then it's not an anagram
+// //         if(!lookup[letter]){
+// //             return false 
+// //         }
+// //         else {
+// //             lookup[letter] -=1
+// //         }
+// //     }
+// //     return true
+// // }
+// // anagram('cat', 'act')
+
+// // Q?
+// // Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair doesnot exist.
+// // eg sumZero ([-3,-2,-1], 0,1,2,3)
+// function sumZero(arr){
+//     for(let i=0; i< arr.length;i++){
+//         for(let j =i+1;j< arr.length;j++){
+//             if(arr[i] + arr[j] === 0){
+//                 console.log(arr[i,arr[j]])
+//                 return (arr[i], arr[j])
+//             }
+//         }
+//     }
+// }
+
+// sumZero([-2,-1,0,1,3])
+
+// function sumZero(arr){
+//     let left =0;
+//     let right = arr.length-1;
+//     while(left <right){
+//         let sum = arr[left]+arr[right]
+//         if (sum=== 0){
+//             console.log(arr[left], arr[right])
+//             return arr[left], arr[right]
+//         }
+//         else if(sum >0){
+//             console.log(right--)
+//             right--
+//         }
+//         else{
+//             left++
+//         }
+//     }
+// }
+
+// sumZero([-4,-3,-2,-1,0,1,2,3])
+
+// countUnique Values 
+// implement a function called countUniqueValues which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted
+
+function countUniqueValue(arr){
+    let i =0;
+        for(let j=1; j<arr.length;j++){
+            if(arr[i]!==arr[j]){
+                i++;
+                arr[i] = arr[j]
+            }
         }
-        else {
-            lookup[letter] -=1
-        }
-    }
-    return true
+        console.log(i)
+        return i +1
 }
-anagram('cat', 'act')
+countUniqueValue([1,1,1,1,2,1])
