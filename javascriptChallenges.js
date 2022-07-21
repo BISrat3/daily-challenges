@@ -390,3 +390,26 @@ const { Query } = require("mongoose")
 // }
 // // TIme comlexity - Log(N)- Binary Search
 // search([1,2,3,4,5], 3)
+
+// Recursion 
+function takeShower(){
+    return "Showering!"
+}
+
+function eatBreeakfast(){
+    let meal =cookFood()
+    return `Eating ${meal}`
+}
+
+function cookFood(){
+    let items = ["Oatmeal", "Eggs", "Protein Shake"]
+    return items[Math.floor(Math.random()* items.length)]
+}
+
+function wakeUp(){
+    takeShower()
+    eatBreeakfast()
+    console.log("Ok, ready to go to work")
+}
+
+wakeUp()
