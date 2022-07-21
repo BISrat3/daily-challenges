@@ -308,22 +308,85 @@ const { Query } = require("mongoose")
 
 // Write a function called maxSubarraySum which accepts an array of integers and a numer called n. The function should calculate the maximum sum of n consecutive elements in the array. 
 
-function maxSubarraySum(arr, num){
-    if (num > arr.length){
-        return null
-    }
-    let max = -Infinity
-    for (let j = 0; j<arr.length - num +1; j++){
-        let temp=0;
-        for (let k= 0; k <num; k++){
-            temp += arr[j+k]
-        }
-        if (temp > max){
-            max = temp
-        }
-        console.log(max)
-    }
-    return max
-}
+// function maxSubarraySum(arr, num){
+//     if (num > arr.length){
+//         return null
+//     }
+//     let max = -Infinity
+//     for (let j = 0; j<arr.length - num +1; j++){
+//         let temp=0;
+//         for (let k= 0; k <num; k++){
+//             temp += arr[j+k]
+//         }
+//         if (temp > max){
+//             max = temp
+//         }
+//         console.log(max)
+//     }
+//     return max
+// }
 
-maxSubarraySum([2,3,5,6], 2)
+// maxSubarraySum([2,3,5,6], 2)
+
+// // SlideWindow
+// function maxSubarraySum(arr, num){
+//     let maxSum = 0;
+//     let tempSum =0;
+//     if (arr.length < num)
+//     return null;
+//     for (let i=0; i<num; i++){
+//         maxSum += arr[i]
+//     }
+//     tempSum =maxSum;
+//     for (let i=num; i< arr.length; i++){
+//         tempSum = tempSum - arr[i-num]+ arr[i];
+//         maxSum = Math.max(maxSum, tempSum);
+//     }
+//     console.log(maxSum)
+//     return maxSum
+// }
+
+// maxSubarraySum([3,2,1,5],2)
+
+// Given a sorted array of integers, write a function called search, that accepts a value and returns the index where the value passed to the function is located. if the value is not found, return -1.
+
+// Native solution
+// function search(arr, value){
+//     for ( let i=0; i< arr.length;i++){
+//         if (arr[i] === value){
+//             console.log(i)
+//             return i
+//         }
+//     }
+//     console.log(-1)
+//     return -1;
+// }
+
+// linear search Time Complexity O(N)
+// search([1,2,3,4],3)
+
+
+// Binary Search
+
+// function search(arr, value){
+//     let min = 0;
+//     let max = arr.length -1;
+
+//     while(min <= max){
+//         let middle =Math.floor(min + max)/2;
+//         let currentElement = arr[middle];
+//         if(arr[middle] < value){
+//             min = middle +1;
+//         }
+//         else if (arr[middle]> value){
+//             max = middle -1;
+//         }
+//         else{
+//             console.log(middle)
+//             return middle;
+//         }
+//     }
+//     return -1;
+// }
+// // TIme comlexity - Log(N)- Binary Search
+// search([1,2,3,4,5], 3)
