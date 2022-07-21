@@ -392,24 +392,37 @@ const { Query } = require("mongoose")
 // search([1,2,3,4,5], 3)
 
 // Recursion 
-function takeShower(){
-    return "Showering!"
+// function takeShower(){
+//     return "Showering!"
+// }
+
+// function eatBreeakfast(){
+//     let meal =cookFood()
+//     return `Eating ${meal}`
+// }
+
+// function cookFood(){
+//     let items = ["Oatmeal", "Eggs", "Protein Shake"]
+//     return items[Math.floor(Math.random()* items.length)]
+// }
+
+// function wakeUp(){
+//     takeShower()
+//     eatBreeakfast()
+//     console.log("Ok, ready to go to work")
+// }
+
+// wakeUp()
+
+// Base case
+function countDown(num){
+    if (num <=0){
+        console.log("All is done")
+        return
+    }
+    console.log(num) 
+    num--;
+    countDown(num)
 }
 
-function eatBreeakfast(){
-    let meal =cookFood()
-    return `Eating ${meal}`
-}
-
-function cookFood(){
-    let items = ["Oatmeal", "Eggs", "Protein Shake"]
-    return items[Math.floor(Math.random()* items.length)]
-}
-
-function wakeUp(){
-    takeShower()
-    eatBreeakfast()
-    console.log("Ok, ready to go to work")
-}
-
-wakeUp()
+countDown(5)
