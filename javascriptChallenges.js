@@ -494,15 +494,37 @@ const { Query } = require("mongoose")
 
 
 // linear search 
-function checkArray(arr, val){
+// function checkArray(arr, val){
 
-    for(let i=0; i<arr.length;i++){
-        if (arr[i]=== val){
-            console.log(i)
-            return i
-        }
-    }
-        return -1;
+//     for(let i=0; i<arr.length;i++){
+//         if (arr[i]=== val){
+//             console.log(i)
+//             return i
+//         }
+//     }
+//         return -1;
     
+// }
+// checkArray([1,2,3,4], 3)
+
+// binary search
+function binarySearch(arr, val){
+    let start =0;
+    let end = arr.length -1;
+    let middle= Math.floor((start + end)/2);
+    if (arr[middle] !== val){
+        console.log(start, middle, end);
+        if(val< arr[middle]){
+            end = middle -1;
+        }
+        else{
+            start = middle +1;
+        }
+        middle = Math.floor((start+ end)/2)
+    }
+    console.log (start, middle, end);
+    console.log(middle)
+    return middle;
+     
 }
-checkArray([1,2,3,4], 3)
+binarySearch([2,3,5,6,8,6], 8)
