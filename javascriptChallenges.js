@@ -414,15 +414,25 @@ const { Query } = require("mongoose")
 
 // wakeUp()
 
-// Base case
-function countDown(num){
-    if (num <=0){
-        console.log("All is done")
-        return
-    }
-    console.log(num) 
-    num--;
-    countDown(num)
+// // Base case
+// function countDown(num){
+//     if (num <=0){
+//         console.log("All is done")
+//         return
+//     }
+//     console.log(num) 
+//     num--;
+//     countDown(num)
+// }
+
+// countDown(5)
+
+// second recursive
+function sumRange(num){
+    if (num === 1)
+    return 1;
+    console.log( num + sumRange(num -1))
+    return num + sumRange(num -1)
 }
 
-countDown(5)
+sumRange(3)
