@@ -428,11 +428,24 @@ const { Query } = require("mongoose")
 // countDown(5)
 
 // second recursive
-function sumRange(num){
-    if (num === 1)
-    return 1;
-    console.log( num + sumRange(num -1))
-    return num + sumRange(num -1)
+// function sumRange(num){
+//     if (num === 1)
+//     return 1;
+//     console.log( num + sumRange(num -1))
+//     return num + sumRange(num -1)
+// }
+
+// sumRange(3)
+
+
+// 
+function factorial (num){
+    let total =1;
+    for (let i= num; i>0;i--){
+        total *=i
+    }
+    console.log(total)
+    return total
 }
 
-sumRange(3)
+factorial(6)
