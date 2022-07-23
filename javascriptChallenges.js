@@ -458,20 +458,51 @@ const { Query } = require("mongoose")
 
 
 // Helper method recursion 
-function collectOddValues(arr){
-    let result = [];
-    function helper(helperInput){
-        if (helperInput.length===0){
-            return;
-        }
-        if (helperInput[0]% 2 !==0){
-            result.push(helperInput[0])
-        }
-        helper(helperInput.slice(1))
-    }
-    helper(arr)
-    console.log(result)
-    return result;
-}
+// function collectOddValues(arr){
+//     let result = [];
+//     function helper(helperInput){
+//         if (helperInput.length===0){
+//             return;
+//         }
+//         if (helperInput[0]% 2 !==0){
+//             result.push(helperInput[0])
+//         }
+//         helper(helperInput.slice(1))
+//     }
+//     helper(arr)
+//     console.log(result)
+//     return result;
+// }
 
-collectOddValues([1,2,3,4,5,6,7,8,9])
+// collectOddValues([1,2,3,4,5,6,7,8,9])
+
+// // pure recursion 
+// function collectOddValues(arr){
+//     let newArr = []
+//     if (arr.length === 0){
+//         return newArr
+//     }
+//     if(newArr[0] % 2 !== 0){
+//      return newArr.push(arr[0])
+//     }
+//     newArr = newArr.concat(collectOddValues(arr.slice(1)))
+//     return newArr
+//     console.log(newArr)
+// }
+
+// collectOddValues([1,2,3,4,5])
+
+
+// linear search 
+function checkArray(arr, val){
+
+    for(let i=0; i<arr.length;i++){
+        if (arr[i]=== val){
+            console.log(i)
+            return i
+        }
+    }
+        return -1;
+    
+}
+checkArray([1,2,3,4], 3)
