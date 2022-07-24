@@ -556,3 +556,10 @@ function numberCompare(num1, num2){
 }
 
 [7,9,3,5].sort(numberCompare)
+
+
+function compareByLength(str1, str2){
+    return str2.length -str1.length
+}
+
+["Colt", "Sort", "Data Structures", "Algorithms"].sort(compareByLength)
