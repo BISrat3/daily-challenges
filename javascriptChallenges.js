@@ -508,23 +508,44 @@ const { Query } = require("mongoose")
 // checkArray([1,2,3,4], 3)
 
 // binary search
-function binarySearch(arr, val){
-    let start =0;
-    let end = arr.length -1;
-    let middle= Math.floor((start + end)/2);
-    if (arr[middle] !== val){
-        console.log(start, middle, end);
-        if(val< arr[middle]){
-            end = middle -1;
-        }
-        else{
-            start = middle +1;
-        }
-        middle = Math.floor((start+ end)/2)
-    }
-    console.log (start, middle, end);
-    console.log(middle)
-    return middle;
+// function binarySearch(arr, val){
+//     let start =0;
+//     let end = arr.length -1;
+//     let middle= Math.floor((start + end)/2);
+//     if (arr[middle] !== val && start <= end){
+//         console.log(start, middle, end);
+//         if(val< arr[middle]){
+//             end = middle -1;
+//         }
+//         else{
+//             start = middle +1;
+//         }
+//         middle = Math.floor((start+ end)/2)
+//     }
+//     console.log (start, middle, end);
+//     console.log(middle)
+//     return middle;
      
+// }
+// binarySearch([2,3,5,6,8,6], 8)
+
+
+// loop over the longer string
+function naiveSearch (long, short){
+    let count =0; 
+    for( let i= 0; i<long.length; i++){
+        for (let j= 0; j<short.length;j++){
+            console.log(long[i] ,short[j])
+            if(short[j] !== long[i+j]){
+                console.log("Break")
+                break;
+            }
+            if (j === short.length -1){
+                console.log('Found Me')
+                count ++;
+            }
+        }
+    }
 }
-binarySearch([2,3,5,6,8,6], 8)
+
+naiveSearch("lorie loled", "lol")
