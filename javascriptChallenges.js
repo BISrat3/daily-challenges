@@ -566,21 +566,41 @@ const { Query } = require("mongoose")
 
 
 // Bubble Sorting
-function bubbleSort(arr1){
-// looping variable
-    for (let i=0;i<arr1.length; i++){
-        for (let j=0;j<arr1.length;j++){
-            console.log(arr1, arr1[j], arr1[j+1]);
-            if(arr1[j] > arr1[j+1]){
-                // swap
-                let temp = arr1[j];
-                arr1[j] =arr1[j+1];
-                arr1[j+1] =temp
-            }
-        }
-    }
-    console.log(arr1)
-    return arr1;
-}
+// function bubbleSort(arr1){
+// // looping variable
+//     for (let i=0;i<arr1.length; i++){
+//         for (let j=0;j<arr1.length;j++){
+//             console.log(arr1, arr1[j], arr1[j+1]);
+//             if(arr1[j] > arr1[j+1]){
+//                 // swap
+//                 let temp = arr1[j];
+//                 arr1[j] =arr1[j+1];
+//                 arr1[j+1] =temp
+//             }
+//         }
+//     }
+//     console.log(arr1)
+//     return arr1;
+// }
 
-bubbleSort([32,45,23,31,41])
+// bubbleSort([32,45,23,31,41])
+
+function bubbleSort(arr){
+    let noSwaps;
+    for (let i=arr.length; i>0; i--){
+        noSwaps = true;
+        for (let j=0; j< i-1;j++){
+            if(arr[j]> arr[j+1]){
+                let temp = arr[j]
+                arr[j]= arr[j+1] 
+                arr[j+1] = temp
+                noSwaps =false
+            }
+        } 
+        if(noSwaps)
+        break;
+    }
+    console.log(arr)
+    return arr
+}
+bubbleSort([7,1,2,3,4,5,6])
