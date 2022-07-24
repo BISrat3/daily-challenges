@@ -551,15 +551,36 @@ const { Query } = require("mongoose")
 // naiveSearch("lorie loled", "lol")
 
 // comparator buit-in sorting 
-function numberCompare(num1, num2){
-    return num1 - num2
+// function numberCompare(num1, num2){
+//     return num1 - num2
+// }
+
+// [7,9,3,5].sort(numberCompare)
+
+
+// function compareByLength(str1, str2){
+//     return str2.length -str1.length
+// }
+
+// ["Colt", "Sort", "Data Structures", "Algorithms"].sort(compareByLength)
+
+
+// Bubble Sorting
+function bubbleSort(arr1){
+// looping variable
+    for (let i=0;i<arr1.length; i++){
+        for (let j=0;j<arr1.length;j++){
+            console.log(arr1, arr1[j], arr1[j+1]);
+            if(arr1[j] > arr1[j+1]){
+                // swap
+                let temp = arr1[j];
+                arr1[j] =arr1[j+1];
+                arr1[j+1] =temp
+            }
+        }
+    }
+    console.log(arr1)
+    return arr1;
 }
 
-[7,9,3,5].sort(numberCompare)
-
-
-function compareByLength(str1, str2){
-    return str2.length -str1.length
-}
-
-["Colt", "Sort", "Data Structures", "Algorithms"].sort(compareByLength)
+bubbleSort([32,45,23,31,41])
