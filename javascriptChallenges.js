@@ -585,22 +585,43 @@ const { Query } = require("mongoose")
 
 // bubbleSort([32,45,23,31,41])
 
-function bubbleSort(arr){
-    let noSwaps;
-    for (let i=arr.length; i>0; i--){
-        noSwaps = true;
-        for (let j=0; j< i-1;j++){
-            if(arr[j]> arr[j+1]){
-                let temp = arr[j]
-                arr[j]= arr[j+1] 
-                arr[j+1] = temp
-                noSwaps =false
+// function bubbleSort(arr){
+//     let noSwaps;
+//     for (let i=arr.length; i>0; i--){
+//         noSwaps = true;
+//         for (let j=0; j< i-1;j++){
+//             if(arr[j]> arr[j+1]){
+//                 let temp = arr[j]
+//                 arr[j]= arr[j+1] 
+//                 arr[j+1] = temp
+//                 noSwaps =false
+//             }
+//         } 
+//         if(noSwaps)
+//         break;
+//     }
+//     console.log(arr)
+//     return arr
+// }
+// bubbleSort([7,1,2,3,4,5,6])
+
+// time complexity of bubble sort is O(n)
+
+// Selection Sort
+ function selectionSort(arr){
+    for (i =0 ; i< arr.length; i++){
+        let lowest =i;
+        for (let j=i+1; j<arr.length; j++){
+            if(arr[j]< arr[lowest]){
+                lowest =j;
             }
-        } 
-        if(noSwaps)
-        break;
+        }
+        let temp= arr[i];
+        arr[i] =arr[lowest] 
+        arr[lowest]= temp
     }
     console.log(arr)
-    return arr
-}
-bubbleSort([7,1,2,3,4,5,6])
+    return arr;
+ }
+
+ selectionSort([5,4,2,1,3])
