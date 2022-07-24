@@ -531,21 +531,28 @@ const { Query } = require("mongoose")
 
 
 // loop over the longer string
-function naiveSearch (long, short){
-    let count =0; 
-    for( let i= 0; i<long.length; i++){
-        for (let j= 0; j<short.length;j++){
-            console.log(long[i] ,short[j])
-            if(short[j] !== long[i+j]){
-                console.log("Break")
-                break;
-            }
-            if (j === short.length -1){
-                console.log('Found Me')
-                count ++;
-            }
-        }
-    }
+// function naiveSearch (long, short){
+//     let count =0; 
+//     for( let i= 0; i<long.length; i++){
+//         for (let j= 0; j<short.length;j++){
+//             console.log(long[i] ,short[j])
+//             if(short[j] !== long[i+j]){
+//                 console.log("Break")
+//                 break;
+//             }
+//             if (j === short.length -1){
+//                 console.log('Found Me')
+//                 count ++;
+//             }
+//         }
+//     }
+// }
+
+// naiveSearch("lorie loled", "lol")
+
+// comparator buit-in sorting 
+function numberCompare(num1, num2){
+    return num1 - num2
 }
 
-naiveSearch("lorie loled", "lol")
+[7,9,3,5].sort(numberCompare)
