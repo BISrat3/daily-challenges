@@ -608,20 +608,51 @@ const { Query } = require("mongoose")
 // time complexity of bubble sort is O(n)
 
 // Selection Sort
- function selectionSort(arr){
-    for (i =0 ; i< arr.length; i++){
-        let lowest =i;
-        for (let j=i+1; j<arr.length; j++){
-            if(arr[j]< arr[lowest]){
-                lowest =j;
-            }
-        }
-        let temp= arr[i];
-        arr[i] =arr[lowest] 
-        arr[lowest]= temp
-    }
-    console.log(arr)
-    return arr;
- }
+//  function selectionSort(arr){
+//     for (i =0 ; i< arr.length; i++){
+//         let lowest =i;
+//         for (let j=i+1; j<arr.length; j++){
+//             if(arr[j]< arr[lowest]){
+//                 lowest =j;
+//             }
+//         }
+//         let temp= arr[i];
+//         arr[i] =arr[lowest] 
+//         arr[lowest]= temp
+//     }
+//     console.log(arr)
+//     return arr;
+//  }
 
- selectionSort([5,4,2,1,3])
+//  selectionSort([5,4,2,1,3])
+
+// // insertion Sort
+// function insertionSort(arr){
+//     for (let i=1; i< arr.length; i++){
+//         let currVal = arr[i]
+//         for (let j= i-1; j>=0 && arr[j] > currVal; j--){
+//             arr[j+1] = arr[j]
+//             // console.log(arr)
+//         }
+//         arr[j+1] = currVal
+//         console.log(arr[j])
+//         }
+//         console.log(arr)
+//         return arr;
+// }
+
+// insertionSort([2,1,9,76,3])
+
+const nums =[3,2,4]
+const target = 6
+var twoSum = function(nums, target) {
+    for (let i=0; i< nums.length; i++){
+        for(let j = i+1;j< nums.length; j++ ){
+            if(nums[i] + nums [j] === target ){
+            console.log([i, j])
+             }
+        }
+    }
+};
+
+twoSum(nums, target)
