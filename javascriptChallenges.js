@@ -657,24 +657,39 @@ const { Query } = require("mongoose")
 
 // twoSum(nums, target)
 
-function lengthOfLongestSubstring (s) {
-    let result =0;
-    let set = new Set()
-    let i = 0;
-    let j =0;
-    while(i<s.length && j < s.length){
-        if(!set.has(s[j])){
-            set.add(s[j])
-            j++;
-            if(j-i > result)
-            result = j-i;
-        }
-        else{
-            set.delete(s[i])
-            i++
-        }
-    }
-    return result
-};
+// function lengthOfLongestSubstring (s) {
+//     let result =0;
+//     let set = new Set()
+//     let i = 0;
+//     let j =0;
+//     while(i<s.length && j < s.length){
+//         if(!set.has(s[j])){
+//             set.add(s[j])
+//             j++;
+//             if(j-i > result)
+//             result = j-i;
+//         }
+//         else{
+//             set.delete(s[i])
+//             i++
+//         }
+//     }
+//     return result
+// };
 
-console.log(lengthOfLongestSubstring("abcabcbb"))
+// console.log(lengthOfLongestSubstring("abcabcbb"))
+
+
+function isPalindrom(num){
+    if(num % 10 == 0){
+        return num ==0
+    }
+    let res =0;
+    while( res < num){
+        res = res * 10 + num % 10
+        num /=10
+    }
+    console.log(res == num || res/10 == num)
+    return res == num || res/10 == num
+}
+isPalindrom(123)
