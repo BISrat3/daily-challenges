@@ -643,16 +643,38 @@ const { Query } = require("mongoose")
 
 // insertionSort([2,1,9,76,3])
 
-const nums =[3,2,4]
-const target = 6
-var twoSum = function(nums, target) {
-    for (let i=0; i< nums.length; i++){
-        for(let j = i+1;j< nums.length; j++ ){
-            if(nums[i] + nums [j] === target ){
-            console.log([i, j])
-             }
+// const nums =[3,2,4]
+// const target = 6
+// var twoSum = function(nums, target) {
+//     for (let i=0; i< nums.length; i++){
+//         for(let j = i+1;j< nums.length; j++ ){
+//             if(nums[i] + nums [j] === target ){
+//             console.log([i, j])
+//              }
+//         }
+//     }
+// };
+
+// twoSum(nums, target)
+
+function lengthOfLongestSubstring (s) {
+    let result =0;
+    let set = new Set()
+    let i = 0;
+    let j =0;
+    while(i<s.length && j < s.length){
+        if(!set.has(s[j])){
+            set.add(s[j])
+            j++;
+            if(j-i > result)
+            result = j-i;
+        }
+        else{
+            set.delete(s[i])
+            i++
         }
     }
+    return result
 };
 
-twoSum(nums, target)
+console.log(lengthOfLongestSubstring("abcabcbb"))
