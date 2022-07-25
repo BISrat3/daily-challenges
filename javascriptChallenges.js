@@ -680,16 +680,38 @@ const { Query } = require("mongoose")
 // console.log(lengthOfLongestSubstring("abcabcbb"))
 
 
-function isPalindrom(num){
-    if(num % 10 == 0){
-        return num ==0
+// function isPalindrom(num){
+//     if(num % 10 == 0){
+//         return num ==0
+//     }
+//     let res =0;
+//     while( res < num){
+//         res = res * 10 + num % 10
+//         num /=10
+//     }
+//     console.log(res == num || res/10 == num)
+//     return res == num || res/10 == num
+// }
+// isPalindrom(123)
+
+// Q? You are given the heads of two sorted linked lists list1 and list2.
+
+// Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+function mergeTwoLists(list1, list2){
+    if (list1 === null){
+        return list2
     }
-    let res =0;
-    while( res < num){
-        res = res * 10 + num % 10
-        num /=10
+    if (list2 == null){
+        return list1
     }
-    console.log(res == num || res/10 == num)
-    return res == num || res/10 == num
+    if( list1.val < list2.val){
+        list1.next = mergeTwoLists(list1.next, list2)
+        return list1
+    }
+    else{
+        list2.next = mergeTwoLists(list1, list2.next)
+        return list2
+    }
 }
-isPalindrom(123)
+
+console.log(mergeTwoLists([], [0]))
