@@ -847,4 +847,23 @@ function mostDigits(nums){
     return maxDigits
 }
 
-mostDigits([123, 2323,3242,34341])
+// mostDigits([123, 2323,3242,34341])
+
+function radixSort(nums){
+    let maxDigitCount=  mostDigits(nums);
+    for(let k=0; k< maxDigitCount;k++)
+        {
+    let digitBuckets = Array.from ({length:10}, ()=>[])
+    for (let i=0;i < nums.length;i++){
+        let digit =getDigit(nums[i], k)
+            digitBuckets[digit].push(nums[i])
+        }   
+        // console.log(digitBuckets)
+        nums = [].concat(...digitBuckets)
+        // console.log(nums)
+    }
+    console.log(nums)
+    return nums
+}
+
+radixSort([23,345, 5467,12, 2345])
