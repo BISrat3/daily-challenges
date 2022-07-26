@@ -1,5 +1,6 @@
 // Challenge 1
 
+const { merge } = require("jquery");
 const { Query } = require("mongoose")
 
 // Given an integer n, return a string array answer (1-indexed) where:
@@ -696,22 +697,52 @@ const { Query } = require("mongoose")
 
 // Q? You are given the heads of two sorted linked lists list1 and list2.
 
-// Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-function mergeTwoLists(list1, list2){
-    if (list1 === null){
-        return list2
+// Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.???
+// function mergeTwoLists(list1, list2){
+//     if (list1 === null){
+//         return list2
+//     }
+//     if (list2 == null){
+//         return list1
+//     }
+//     if( list1.val < list2.val){
+//         list1.next = mergeTwoLists(list1.next, list2)
+//         return list1
+//     }
+//     else{
+//         list2.next = mergeTwoLists(list1, list2.next)
+//         return list2
+//     }
+// }
+
+// console.log(mergeTwoLists([], [0]))
+
+
+function mergeSolution (arr1, arr2){
+    let results =[];
+    let i=0;
+    let j=0;
+    while(i<arr1.length && j< arr2.length){
+        if (arr2[j]> arr1[i]){
+            results.push(arr1[i])
+            i++
+        }
+        else{
+            results.push(arr2[j])
+            j++
+        }
     }
-    if (list2 == null){
-        return list1
+    while(i< arr1.length){
+        results.push(arr1[i])
+        i++
     }
-    if( list1.val < list2.val){
-        list1.next = mergeTwoLists(list1.next, list2)
-        return list1
+    while(j< arr2.length){
+        results.push(arr2[j])
+        j++
     }
-    else{
-        list2.next = mergeTwoLists(list1, list2.next)
-        return list2
-    }
+    console.log(results)
+    return results;
+
 }
 
-console.log(mergeTwoLists([], [0]))
+mergeSolution([1,10,50], [2,14,99,100])
