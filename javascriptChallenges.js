@@ -829,3 +829,22 @@ function getDigit(num, i){
 }
 
 getDigit(7323,3)
+
+function digitCount(num){
+    if (num === 0)
+    return 1;
+    return Math.floor(Math.log10(Math.abs(num)))+1;
+}
+
+digitCount(21388)
+
+function mostDigits(nums){
+    let maxDigits =0;
+    for (let i=0; i< nums.length; i++){
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    }
+    console.log(maxDigits)
+    return maxDigits
+}
+
+mostDigits([123, 2323,3242,34341])
