@@ -789,37 +789,43 @@ const { Query } = require("mongoose")
 
 // mergeSort([10,24,76,73])
 
-function pivot (arr, start=0, end=arr.length+1){
-   function swap( array, i , j){
-    let temp = array[i];
-    array[i]= array[j];
-    array[j] =temp;
-   }
-    let pivot = arr[start];
-    let swapIdx = start;
-    for (let i = start+1; i< arr.length;i++){
-        if(pivot > arr[i]){
-            swapIdx ++;  
-            swap (arr, swapIdx, i)
-        }
-    }
-    swap(arr, start, swapIdx)
-    console.log(arr)
-    return swapIdx;
+// function pivot (arr, start=0, end=arr.length+1){
+//    function swap( array, i , j){
+//     let temp = array[i];
+//     array[i]= array[j];
+//     array[j] =temp;
+//    }
+//     let pivot = arr[start];
+//     let swapIdx = start;
+//     for (let i = start+1; i< arr.length;i++){
+//         if(pivot > arr[i]){
+//             swapIdx ++;  
+//             swap (arr, swapIdx, i)
+//         }
+//     }
+//     swap(arr, start, swapIdx)
+//     console.log(arr)
+//     return swapIdx;
+// }
+
+// // pivot ([9, 8, 2, 1, 5,7,6,3])
+
+// function quickSort(arr, left=0, right = arr.length-1){
+//     if (left < right){
+//         let pivotIndex = pivot( arr, left, right)
+//          // left
+//         quickSort (arr, left, pivotIndex-1);
+//         // right
+//         quickSort(arr, pivotIndex+1, right);
+//     }
+//     console.log(arr)
+//     return arr
+// }
+ 
+// quickSort([4,6,9,1,2,5,7,3,8])
+
+function getDigit(num, i){
+    return Math.floor( Math.abs(num)/ Math.pow(10,i)) % 10
 }
 
-// pivot ([9, 8, 2, 1, 5,7,6,3])
-
-function quickSort(arr, left=0, right = arr.length-1){
-    if (left < right){
-        let pivotIndex = pivot( arr, left, right)
-         // left
-        quickSort (arr, left, pivotIndex-1);
-        // right
-        quickSort(arr, pivotIndex+1, right);
-    }
-    console.log(arr)
-    return arr
-}
-
-quickSort([4,6,9,1,2,5,7,3,8])
+getDigit(7323,3)
