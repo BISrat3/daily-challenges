@@ -870,7 +870,7 @@ const { Query } = require("mongoose")
 
 
 class Student {
-    constructor (firstname, lastname, year){
+    constructor (firstname, lastname, year, tardies){
         this.firstname = firstname;
         this.lastname  = lastname;
         this.grade = year;
@@ -895,6 +895,9 @@ class Student {
         let sum = this.scores.reduce(function(a,b){return a+b});
         return sum/this.scores.length
     }
+    static enrollStudent(){
+        return "Enrolling Students"
+    }
 }
 
 
@@ -902,5 +905,7 @@ let firstStudent = new Student ('Dan', "sol",2);
 let secondStudent = new Student ('Sam', "Teddy",4);
 
 
-console.log(firstStudent.firstname)
-console.log(secondStudent)
+// console.log(firstStudent.firstname)
+// console.log(secondStudent)
+
+console.log(Student.enrollStudent())
