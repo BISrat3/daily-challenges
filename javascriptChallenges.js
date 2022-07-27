@@ -824,46 +824,83 @@ const { Query } = require("mongoose")
  
 // quickSort([4,6,9,1,2,5,7,3,8])
 
-function getDigit(num, i){
-    return Math.floor( Math.abs(num)/ Math.pow(10,i)) % 10
-}
+// function getDigit(num, i){
+//     return Math.floor( Math.abs(num)/ Math.pow(10,i)) % 10
+// }
 
-getDigit(7323,3)
+// getDigit(7323,3)
 
-function digitCount(num){
-    if (num === 0)
-    return 1;
-    return Math.floor(Math.log10(Math.abs(num)))+1;
-}
+// function digitCount(num){
+//     if (num === 0)
+//     return 1;
+//     return Math.floor(Math.log10(Math.abs(num)))+1;
+// }
 
-digitCount(21388)
+// digitCount(21388)
 
-function mostDigits(nums){
-    let maxDigits =0;
-    for (let i=0; i< nums.length; i++){
-        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+// function mostDigits(nums){
+//     let maxDigits =0;
+//     for (let i=0; i< nums.length; i++){
+//         maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+//     }
+//     console.log(maxDigits)
+//     return maxDigits
+// }
+
+// // mostDigits([123, 2323,3242,34341])
+
+// function radixSort(nums){
+//     let maxDigitCount=  mostDigits(nums);
+//     for(let k=0; k< maxDigitCount;k++)
+//         {
+//     let digitBuckets = Array.from ({length:10}, ()=>[])
+//     for (let i=0;i < nums.length;i++){
+//         let digit =getDigit(nums[i], k)
+//             digitBuckets[digit].push(nums[i])
+//         }   
+//         // console.log(digitBuckets)
+//         nums = [].concat(...digitBuckets)
+//         // console.log(nums)
+//     }
+//     console.log(nums)
+//     return nums
+// }
+
+// radixSort([23,345, 5467,12, 2345])
+
+
+class Student {
+    constructor (firstname, lastname, year){
+        this.firstname = firstname;
+        this.lastname  = lastname;
+        this.grade = year;
+        this.tardies = tardies;
+        this.scores = [];
     }
-    console.log(maxDigits)
-    return maxDigits
-}
-
-// mostDigits([123, 2323,3242,34341])
-
-function radixSort(nums){
-    let maxDigitCount=  mostDigits(nums);
-    for(let k=0; k< maxDigitCount;k++)
-        {
-    let digitBuckets = Array.from ({length:10}, ()=>[])
-    for (let i=0;i < nums.length;i++){
-        let digit =getDigit(nums[i], k)
-            digitBuckets[digit].push(nums[i])
-        }   
-        // console.log(digitBuckets)
-        nums = [].concat(...digitBuckets)
-        // console.log(nums)
+    fullName(){
+        return `Your full name is ${this.firstname} ${this.lastname}`
     }
-    console.log(nums)
-    return nums
+    markLate(){
+        this.tardies +=1;
+        if (this.tardies >=3){
+            return "You are expelled!!!"
+        }
+        return `${this.firstname} ${this.lastname} has been  late ${this.tardies} times`
+    }
+    addScore(score){
+        this.scores.push(score);
+        return this.scores
+    }
+    calculateAverage(){
+        let sum = this.scores.reduce(function(a,b){return a+b});
+        return sum/this.scores.length
+    }
 }
 
-radixSort([23,345, 5467,12, 2345])
+
+let firstStudent = new Student ('Dan', "sol",2);
+let secondStudent = new Student ('Sam', "Teddy",4);
+
+
+console.log(firstStudent.firstname)
+console.log(secondStudent)
