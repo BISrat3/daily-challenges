@@ -954,14 +954,53 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    // traverse(){
+    //     let current = this.head;
+    //     while(current){
+    //         console.log(current.val);
+    //         current = current.next;
+    //     }
+    // }
+
+    // poping pseudocode
+    // if there are no nodes in the list, return undefined
+    // loop through the list until you reach the tail 
+    // set the next property of the 2nd to last node to be null
+    // set the tail to be the 2nd to last node
+    // decrement the length of the list by 1
+    // return the value of the node removed
+
+
+    pop(){
+        if (! this.head || this.tail){
+            return undefined 
+        }
+        let current = this.head;
+        let newTail = current;
+        while(current.next){
+            newTail = current;
+            current = current.next;
+        }
+        // console.log(current.val)
+        // console.log(newTail.val)
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length --;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        return current;
+    }
 }
 
 let list = new SinglyLinkedList();
 list.push("Hello");
 list.push("there")
 list.push(20)
+// list.traverse()
+// console.log(list)
 console.log(list)
-
 // let first = new Node("Hello")
 // first.next = new Node("there")
 // first.next.next = new Node("How's");
