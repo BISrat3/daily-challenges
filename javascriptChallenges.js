@@ -1142,14 +1142,36 @@ class SinglyLinkedList{
         return false;
 
     }
+
+    // insert pseudocode
+    // If the index is the same as the length, push at the end of the list
+    // If the index is 0, unshift a new node to the start of the list 
+    // ohterwise, uisng the get method, access the node at the index -1
+    // Set the next property on that node to be the new node
+    // Set the next property on the new node to be the previous next
+    //  increment the length
+    // return true
+    insert(index, val){
+        if(index<0 || index > this.length) return false;
+        if(index === this.length) return this.push(val);
+        if(index === 0) return this.unshift(val)
+        let newNode = new LinkedList(val);
+        let prev = this.get(index-1);
+        let temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 let list = new SinglyLinkedList();
 
-list.push ('Hey');
-list.push('there');
-list.push("!");
-list.push('<3')
+list.push (2);
+list.push(3);
+list.push(4);
+list.push(7)
+list.push(8)
 
-console.log(list.set(3, "!!!"))
-console.log(list)
+console.log(list.insert(3, 5))
+console.log(list.get(5))
