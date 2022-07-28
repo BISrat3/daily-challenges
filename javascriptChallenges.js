@@ -928,6 +928,93 @@ const { Query } = require("mongoose")
 
 // console.log(Point.distance(p1,p2))
 
+// Singly Linked list
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.null = null;
+//     }
+// }
+// class SinglyLinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail= null;
+//         this.length = 0;
+//     }
+//     push(val){
+//         let newNode = new Node(val)
+//         if(!this.head){
+//             this.head = newNode;
+//             this.tail = this.head;
+//         }
+//         else{
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+//     // traverse(){
+//     //     let current = this.head;
+//     //     while(current){
+//     //         console.log(current.val);
+//     //         current = current.next;
+//     //     }
+//     // }
+
+//     // poping pseudocode
+//     // if there are no nodes in the list, return undefined
+//     // loop through the list until you reach the tail 
+//     // set the next property of the 2nd to last node to be null
+//     // set the tail to be the 2nd to last node
+//     // decrement the length of the list by 1
+//     // return the value of the node removed
+
+
+//     pop(){
+//         if (! this.head || this.tail){
+//             return undefined 
+//         }
+//         let current = this.head;
+//         let newTail = current;
+//         while(current.next){
+//             newTail = current;
+//             current = current.next;
+//         }
+//         // console.log(current.val)
+//         // console.log(newTail.val)
+//         this.tail = newTail;
+//         this.tail.next = null;
+//         this.length --;
+//         if(this.length === 0){
+//             this.head = null;
+//             this.tail = null;
+//         }
+//         return current;
+//     }
+// }
+
+// let list = new SinglyLinkedList();
+// list.push("Hello");
+// list.push("there")
+// list.push(20)
+// list.traverse()
+// console.log(list)
+// console.log(list)
+// let first = new Node("Hello")
+// first.next = new Node("there")
+// first.next.next = new Node("How's");
+// first.next.next.next = new Node("it");
+// first.next.next.next.next = new Node("going?")
+// console.log(first)
+
+// shifting linked list
+// If there are no nodes, return undefined
+// store the current head property in a variable
+// Set the head property to be the current head's next property
+// Decrement the length by 1
+//  Return the value of the node removed
+
 
 class Node{
     constructor(val){
@@ -942,68 +1029,34 @@ class SinglyLinkedList{
         this.length = 0;
     }
     push(val){
-        let newNode = new Node(val)
+                let newNode = new Node(val)
+                if(!this.head){
+                    this.head = newNode;
+                    this.tail = this.head;
+                }
+                else{
+                    this.tail.next = newNode;
+                    this.tail = newNode;
+                }
+                this.length++;
+                return this;
+            }
+    shift(){
         if(!this.head){
-            this.head = newNode;
-            this.tail = this.head;
+            return undefined
         }
-        else{
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        this.length++;
-        return this;
-    }
-    // traverse(){
-    //     let current = this.head;
-    //     while(current){
-    //         console.log(current.val);
-    //         current = current.next;
-    //     }
-    // }
-
-    // poping pseudocode
-    // if there are no nodes in the list, return undefined
-    // loop through the list until you reach the tail 
-    // set the next property of the 2nd to last node to be null
-    // set the tail to be the 2nd to last node
-    // decrement the length of the list by 1
-    // return the value of the node removed
-
-
-    pop(){
-        if (! this.head || this.tail){
-            return undefined 
-        }
-        let current = this.head;
-        let newTail = current;
-        while(current.next){
-            newTail = current;
-            current = current.next;
-        }
-        // console.log(current.val)
-        // console.log(newTail.val)
-        this.tail = newTail;
-        this.tail.next = null;
+            let newCurrent = this.head;
+            this.head = newCurrent.next
+            // console.log(newCurrent.val)
+            // console.log(newCurrent.val)
         this.length --;
-        if(this.length === 0){
-            this.head = null;
-            this.tail = null;
-        }
-        return current;
+        // console.log(newCurrent)
+        return newCurrent;
     }
 }
 
 let list = new SinglyLinkedList();
-list.push("Hello");
-list.push("there")
-list.push(20)
-// list.traverse()
-// console.log(list)
+list.push('no one');
+list.push('there');
+list.shift()
 console.log(list)
-// let first = new Node("Hello")
-// first.next = new Node("there")
-// first.next.next = new Node("How's");
-// first.next.next.next = new Node("it");
-// first.next.next.next.next = new Node("going?")
-// console.log(first)
