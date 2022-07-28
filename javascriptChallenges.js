@@ -1041,22 +1041,36 @@ class SinglyLinkedList{
                 this.length++;
                 return this;
             }
-    shift(){
+    // shift(){
+    //     if(!this.head){
+    //         return undefined
+    //     }
+    //         let newCurrent = this.head;
+    //         this.head = newCurrent.next
+    //         // console.log(newCurrent.val)
+    //         // console.log(newCurrent.val)
+    //     this.length --;
+    //     // console.log(newCurrent)
+    //     return newCurrent;
+    // }
+    unShift(val){
+        let newNodeUnshift = new Node(val);
         if(!this.head){
-            return undefined
+        this.head = this.newNodeUnshift;
+        this.tail = this.head
         }
-            let newCurrent = this.head;
-            this.head = newCurrent.next
-            // console.log(newCurrent.val)
-            // console.log(newCurrent.val)
-        this.length --;
-        // console.log(newCurrent)
-        return newCurrent;
+        else{
+            newNodeUnshift.next = this.head;
+            this.head = newNodeUnshift;
+        }
+        this.length ++;
+        return this;
     }
 }
 
 let list = new SinglyLinkedList();
 list.push('no one');
 list.push('there');
-list.shift()
+// list.shift()
+list.unShift("Hello")
 console.log(list)
