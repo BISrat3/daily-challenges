@@ -910,20 +910,61 @@ const { Query } = require("mongoose")
 
 // console.log(Student.enrollStudent())
 
-class Point{
-    constructor(x, y){
-        this.x = x;
-        this.y = y;
-    }
-    static distance (a, b){
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        return Math.hypot(dx, dy);
-    }
+// class Point{
+//     constructor(x, y){
+//         this.x = x;
+//         this.y = y;
+//     }
+//     static distance (a, b){
+//         const dx = a.x - b.x;
+//         const dy = a.y - b.y;
+//         return Math.hypot(dx, dy);
+//     }
 
+// }
+
+// const p1 = new Point(5,5);
+// const p2 = new Point(10,10)
+
+// console.log(Point.distance(p1,p2))
+
+
+class Node{
+    constructor(val){
+        this.val = val;
+        this.null = null;
+    }
+}
+class SinglyLinkedList{
+    constructor(){
+        this.head = null;
+        this.tail= null;
+        this.length = 0;
+    }
+    push(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+        }
+        else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
-const p1 = new Point(5,5);
-const p2 = new Point(10,10)
+let list = new SinglyLinkedList();
+list.push("Hello");
+list.push("there")
+list.push(20)
+console.log(list)
 
-console.log(Point.distance(p1,p2))
+// let first = new Node("Hello")
+// first.next = new Node("there")
+// first.next.next = new Node("How's");
+// first.next.next.next = new Node("it");
+// first.next.next.next.next = new Node("going?")
+// console.log(first)
