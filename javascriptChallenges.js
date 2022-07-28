@@ -1128,6 +1128,20 @@ class SinglyLinkedList{
         // console.log(current)
         return current;
     }
+
+    // use your get function to find the specific node
+    //  if the node is not found return false
+    // if node is found, set the value of that node to be the value passed to the function and return true; 
+
+    set (index, val){
+        let foundNode = this.get(index);
+        if(foundNode){
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -1137,4 +1151,5 @@ list.push('there');
 list.push("!");
 list.push('<3')
 
-console.log(list.get(4))
+console.log(list.set(3, "!!!"))
+console.log(list)
