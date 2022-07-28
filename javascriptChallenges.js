@@ -1016,31 +1016,31 @@ const { Query } = require("mongoose")
 //  Return the value of the node removed
 
 
-class Node{
-    constructor(val){
-        this.val = val;
-        this.null = null;
-    }
-}
-class SinglyLinkedList{
-    constructor(){
-        this.head = null;
-        this.tail= null;
-        this.length = 0;
-    }
-    push(val){
-                let newNode = new Node(val)
-                if(!this.head){
-                    this.head = newNode;
-                    this.tail = this.head;
-                }
-                else{
-                    this.tail.next = newNode;
-                    this.tail = newNode;
-                }
-                this.length++;
-                return this;
-            }
+// class Node{
+//     constructor(val){
+//         this.val = val;
+//         this.null = null;
+//     }
+// }
+// class SinglyLinkedList{
+//     constructor(){
+//         this.head = null;
+//         this.tail= null;
+//         this.length = 0;
+//     }
+//     push(val){
+//                 let newNode = new Node(val)
+//                 if(!this.head){
+//                     this.head = newNode;
+//                     this.tail = this.head;
+//                 }
+//                 else{
+//                     this.tail.next = newNode;
+//                     this.tail = newNode;
+//                 }
+//                 this.length++;
+//                 return this;
+//             }
     // shift(){
     //     if(!this.head){
     //         return undefined
@@ -1053,24 +1053,88 @@ class SinglyLinkedList{
     //     // console.log(newCurrent)
     //     return newCurrent;
     // }
-    unShift(val){
-        let newNodeUnshift = new Node(val);
-        if(!this.head){
-        this.head = this.newNodeUnshift;
-        this.tail = this.head
+//     unShift(val){
+//         let newNodeUnshift = new Node(val);
+//         if(!this.head){
+//         this.head = this.newNodeUnshift;
+//         this.tail = this.head
+//         }
+//         else{
+//             newNodeUnshift.next = this.head;
+//             this.head = newNodeUnshift;
+//         }
+//         this.length ++;
+//         return this;
+//     }
+// }
+
+// let list = new SinglyLinkedList();
+// list.push('no one');
+// list.push('there');
+// // list.shift()
+// list.unShift("Hello")
+// console.log(list)
+
+
+// class Linked{
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
+// }
+
+
+// get pseudocode 
+// this function should accept an index
+// If the index is lessthan zero or greater than or equal to the length of the list, return null
+// Loop through the list until you reach the index  and return the node ar that specific index
+
+class LinkedList{
+    constructor(val) {
+        this.val = val;
+        this.null = null;
+    }
+}
+
+class SinglyLinkedList{
+         constructor(){
+             this.head = null;
+             this.tail= null;
+             this.length = 0;
+         }
+         push(val){
+                     let newNode = new LinkedList(val)
+                     if(!this.head){
+                     this.head = newNode;
+                         this.tail = this.head;
+                     }
+                     else{
+                         this.tail.next = newNode;
+                         this.tail = newNode;
+                     }
+                     this.length++;
+                return this;
+      }
+    get (index){
+        if(index < 0 || index >= this.length)
+        return null;
+        let counter =0;
+        let current = this.head;
+        while(counter !== index){
+            current = current.next;
+            counter++
         }
-        else{
-            newNodeUnshift.next = this.head;
-            this.head = newNodeUnshift;
-        }
-        this.length ++;
-        return this;
+        // console.log(current)
+        return current;
     }
 }
 
 let list = new SinglyLinkedList();
-list.push('no one');
+
+list.push ('Hey');
 list.push('there');
-// list.shift()
-list.unShift("Hello")
-console.log(list)
+list.push("!");
+list.push('<3')
+
+console.log(list.get(4))
