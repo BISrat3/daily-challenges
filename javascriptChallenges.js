@@ -869,43 +869,61 @@ const { Query } = require("mongoose")
 // radixSort([23,345, 5467,12, 2345])
 
 
-class Student {
-    constructor (firstname, lastname, year, tardies){
-        this.firstname = firstname;
-        this.lastname  = lastname;
-        this.grade = year;
-        this.tardies = tardies;
-        this.scores = [];
+// class Student {
+//     constructor (firstname, lastname, year, tardies){
+//         this.firstname = firstname;
+//         this.lastname  = lastname;
+//         this.grade = year;
+//         this.tardies = tardies;
+//         this.scores = [];
+//     }
+//     fullName(){
+//         return `Your full name is ${this.firstname} ${this.lastname}`
+//     }
+//     markLate(){
+//         this.tardies +=1;
+//         if (this.tardies >=3){
+//             return "You are expelled!!!"
+//         }
+//         return `${this.firstname} ${this.lastname} has been  late ${this.tardies} times`
+//     }
+//     addScore(score){
+//         this.scores.push(score);
+//         return this.scores
+//     }
+//     calculateAverage(){
+//         let sum = this.scores.reduce(function(a,b){return a+b});
+//         return sum/this.scores.length
+//     }
+//     static enrollStudent(){
+//         return "Enrolling Students"
+//     }
+// }
+
+
+// let firstStudent = new Student ('Dan', "sol",2);
+// let secondStudent = new Student ('Sam', "Teddy",4);
+
+
+// // console.log(firstStudent.firstname)
+// // console.log(secondStudent)
+
+// console.log(Student.enrollStudent())
+
+class Point{
+    constructor(x, y){
+        this.x = x;
+        this.y = y;
     }
-    fullName(){
-        return `Your full name is ${this.firstname} ${this.lastname}`
+    static distance (a, b){
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.hypot(dx, dy);
     }
-    markLate(){
-        this.tardies +=1;
-        if (this.tardies >=3){
-            return "You are expelled!!!"
-        }
-        return `${this.firstname} ${this.lastname} has been  late ${this.tardies} times`
-    }
-    addScore(score){
-        this.scores.push(score);
-        return this.scores
-    }
-    calculateAverage(){
-        let sum = this.scores.reduce(function(a,b){return a+b});
-        return sum/this.scores.length
-    }
-    static enrollStudent(){
-        return "Enrolling Students"
-    }
+
 }
 
+const p1 = new Point(5,5);
+const p2 = new Point(10,10)
 
-let firstStudent = new Student ('Dan', "sol",2);
-let secondStudent = new Student ('Sam', "Teddy",4);
-
-
-// console.log(firstStudent.firstname)
-// console.log(secondStudent)
-
-console.log(Student.enrollStudent())
+console.log(Point.distance(p1,p2))
