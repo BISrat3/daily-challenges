@@ -1163,6 +1163,73 @@ class SinglyLinkedList{
         this.length++;
         return true;
     }
+    pop(){
+                if (! this.head || this.tail){
+                    return undefined 
+                }
+                let current = this.head;
+                let newTail = current;
+                while(current.next){
+                    newTail = current;
+                    current = current.next;
+                }
+                // console.log(current.val)
+                // console.log(newTail.val)
+                this.tail = newTail;
+                this.tail.next = null;
+                this.length --;
+                if(this.length === 0){
+                    this.head = null;
+                    this.tail = null;
+                }
+                return current;
+            }
+    // Remove pseudocode
+    //  if the index is less than zero or greater than the length, return undefined
+    // if the index is the same as the length -1, pop
+    // if the index is 0, shift
+    // Otherwise, using the get method, access the node at the index-1
+    // Set the next property on that node to be the next of the next node
+    // Decrement the length
+    // Return the value of the node removed
+    remove (index){
+        if(index<0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length-1) return this.pop();
+        let perviousNode = this.get(index -1);
+        let removed = perviousNode.next;
+        perviousNode.next = removed.next;
+        this.length--;
+        return removed;
+    }
+
+    // reverse pseudocode
+    // 
+
+    reverse(){
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let next;
+        let prev = null;
+        for ( let i=0; i<this.length;i++){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        console.log(this)
+        return this;
+    }
+    print (){
+        let arr = [];
+        let current = this.head;
+        while (current){
+            arr.push(current.val)
+            current = current.next;
+        }
+        console.log(arr)
+    }
 }
 
 let list = new SinglyLinkedList();
@@ -1173,5 +1240,8 @@ list.push(4);
 list.push(7)
 list.push(8)
 
-console.log(list.insert(3, 5))
-console.log(list.get(5))
+// console.log(list.remove(4))
+// console.log(list)
+
+console.log(list.print())
+console.log(list.reverse())
