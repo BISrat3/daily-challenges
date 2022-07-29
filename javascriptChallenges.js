@@ -1090,58 +1090,58 @@ const { Query } = require("mongoose")
 // If the index is lessthan zero or greater than or equal to the length of the list, return null
 // Loop through the list until you reach the index  and return the node ar that specific index
 
-class LinkedList{
-    constructor(val) {
-        this.val = val;
-        this.null = null;
-    }
-}
+// class LinkedList{
+//     constructor(val) {
+//         this.val = val;
+//         this.null = null;
+//     }
+// }
 
-class SinglyLinkedList{
-         constructor(){
-             this.head = null;
-             this.tail= null;
-             this.length = 0;
-         }
-         push(val){
-                     let newNode = new LinkedList(val)
-                     if(!this.head){
-                     this.head = newNode;
-                         this.tail = this.head;
-                     }
-                     else{
-                         this.tail.next = newNode;
-                         this.tail = newNode;
-                     }
-                     this.length++;
-                return this;
-      }
-    get (index){
-        if(index < 0 || index >= this.length)
-        return null;
-        let counter =0;
-        let current = this.head;
-        while(counter !== index){
-            current = current.next;
-            counter++
-        }
-        // console.log(current)
-        return current;
-    }
+// class SinglyLinkedList{
+//          constructor(){
+//              this.head = null;
+//              this.tail= null;
+//              this.length = 0;
+//          }
+//     //      push(val){
+    //                  let newNode = new LinkedList(val)
+    //                  if(!this.head){
+    //                  this.head = newNode;
+    //                      this.tail = this.head;
+    //                  }
+    //                  else{
+    //                      this.tail.next = newNode;
+    //                      this.tail = newNode;
+    //                  }
+    //                  this.length++;
+    //             return this;
+    //   }
+    // get (index){
+    //     if(index < 0 || index >= this.length)
+    //     return null;
+    //     let counter =0;
+    //     let current = this.head;
+    //     while(counter !== index){
+    //         current = current.next;
+    //         counter++
+    //     }
+    //     // console.log(current)
+    //     return current;
+    // }
 
     // use your get function to find the specific node
     //  if the node is not found return false
     // if node is found, set the value of that node to be the value passed to the function and return true; 
 
-    set (index, val){
-        let foundNode = this.get(index);
-        if(foundNode){
-            foundNode.val = val;
-            return true;
-        }
-        return false;
+    // set (index, val){
+    //     let foundNode = this.get(index);
+    //     if(foundNode){
+    //         foundNode.val = val;
+    //         return true;
+    //     }
+    //     return false;
 
-    }
+    // }
 
     // insert pseudocode
     // If the index is the same as the length, push at the end of the list
@@ -1150,98 +1150,149 @@ class SinglyLinkedList{
     // Set the next property on that node to be the new node
     // Set the next property on the new node to be the previous next
     //  increment the length
-    // return true
-    insert(index, val){
-        if(index<0 || index > this.length) return false;
-        if(index === this.length) return this.push(val);
-        if(index === 0) return this.unshift(val)
-        let newNode = new LinkedList(val);
-        let prev = this.get(index-1);
-        let temp = prev.next;
-        prev.next = newNode;
-        newNode.next = temp;
-        this.length++;
-        return true;
-    }
-    pop(){
-                if (! this.head || this.tail){
-                    return undefined 
-                }
-                let current = this.head;
-                let newTail = current;
-                while(current.next){
-                    newTail = current;
-                    current = current.next;
-                }
-                // console.log(current.val)
-                // console.log(newTail.val)
-                this.tail = newTail;
-                this.tail.next = null;
-                this.length --;
-                if(this.length === 0){
-                    this.head = null;
-                    this.tail = null;
-                }
-                return current;
-            }
-    // Remove pseudocode
-    //  if the index is less than zero or greater than the length, return undefined
-    // if the index is the same as the length -1, pop
-    // if the index is 0, shift
-    // Otherwise, using the get method, access the node at the index-1
-    // Set the next property on that node to be the next of the next node
-    // Decrement the length
-    // Return the value of the node removed
-    remove (index){
-        if(index<0 || index >= this.length) return undefined;
-        if(index === 0) return this.shift();
-        if(index === this.length-1) return this.pop();
-        let perviousNode = this.get(index -1);
-        let removed = perviousNode.next;
-        perviousNode.next = removed.next;
-        this.length--;
-        return removed;
-    }
+//     // return true
+//     insert(index, val){
+//         if(index<0 || index > this.length) return false;
+//         if(index === this.length) return this.push(val);
+//         if(index === 0) return this.unshift(val)
+//         let newNode = new LinkedList(val);
+//         let prev = this.get(index-1);
+//         let temp = prev.next;
+//         prev.next = newNode;
+//         newNode.next = temp;
+//         this.length++;
+//         return true;
+//     }
+//     pop(){
+//                 if (! this.head || this.tail){
+//                     return undefined 
+//                 }
+//                 let current = this.head;
+//                 let newTail = current;
+//                 while(current.next){
+//                     newTail = current;
+//                     current = current.next;
+//                 }
+//                 // console.log(current.val)
+//                 // console.log(newTail.val)
+//                 this.tail = newTail;
+//                 this.tail.next = null;
+//                 this.length --;
+//                 if(this.length === 0){
+//                     this.head = null;
+//                     this.tail = null;
+//                 }
+//                 return current;
+//             }
+//     // Remove pseudocode
+//     //  if the index is less than zero or greater than the length, return undefined
+//     // if the index is the same as the length -1, pop
+//     // if the index is 0, shift
+//     // Otherwise, using the get method, access the node at the index-1
+//     // Set the next property on that node to be the next of the next node
+//     // Decrement the length
+//     // Return the value of the node removed
+//     remove (index){
+//         if(index<0 || index >= this.length) return undefined;
+//         if(index === 0) return this.shift();
+//         if(index === this.length-1) return this.pop();
+//         let perviousNode = this.get(index -1);
+//         let removed = perviousNode.next;
+//         perviousNode.next = removed.next;
+//         this.length--;
+//         return removed;
+//     }
 
-    // reverse pseudocode
-    // 
+//     // reverse pseudocode
+//     // 
 
-    reverse(){
-        let node = this.head;
-        this.head = this.tail;
-        this.tail = node;
-        let next;
-        let prev = null;
-        for ( let i=0; i<this.length;i++){
-            next = node.next;
-            node.next = prev;
-            prev = node;
-            node = next;
-        }
-        console.log(this)
-        return this;
-    }
-    print (){
-        let arr = [];
-        let current = this.head;
-        while (current){
-            arr.push(current.val)
-            current = current.next;
-        }
-        console.log(arr)
+//     reverse(){
+//         let node = this.head;
+//         this.head = this.tail;
+//         this.tail = node;
+//         let next;
+//         let prev = null;
+//         for ( let i=0; i<this.length;i++){
+//             next = node.next;
+//             node.next = prev;
+//             prev = node;
+//             node = next;
+//         }
+//         console.log(this)
+//         return this;
+//     }
+//     print (){
+//         let arr = [];
+//         let current = this.head;
+//         while (current){
+//             arr.push(current.val)
+//             current = current.next;
+//         }
+//         console.log(arr)
+//     }
+// }
+
+// let list = new SinglyLinkedList();
+
+// list.push (2);
+// list.push(3);
+// list.push(4);
+// list.push(7)
+// list.push(8)
+
+// // console.log(list.remove(4))
+// // console.log(list)
+
+// console.log(list.print())
+// console.log(list.reverse())
+
+// Node
+// - val  and -next and -prev
+// Doubly linkedlist
+// - head , - tail, and -length
+
+
+class Node{
+    constructor(val){
+        this.val = val;
+        this.next = null;
+        this.prev= null
     }
 }
 
-let list = new SinglyLinkedList();
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    // push pseudocode
+    // create a new node with the value passed to the function
+    // if the head property is null set the head and the tail to be the newly created node
+    // if not,set the next property on the tail to be that node
+    // set the previous property on the newly created node to be the tail
+    // Set the tail to be the newly created node
+    // increament the length
+    // Return the Doubly Linked List
 
-list.push (2);
-list.push(3);
-list.push(4);
-list.push(7)
-list.push(8)
+    push(val){
+        let newNode = new Node(val)
+        if(this.length === 0){
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode
+        }
+        this.length++;
+        return this;
+    }
+}
 
-// console.log(list.remove(4))
-// console.log(list)
+let list = new DoublyLinkedList()
 
-console.log(list.print())
-console.log(list.reverse())
+list.push(12)
+
+console.log(list)
