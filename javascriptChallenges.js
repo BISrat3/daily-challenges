@@ -1289,10 +1289,41 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    // psuedocode 
+    // if there is no head, return undefined
+    // store the current tail in a variable to return later
+    // if the length is 1, set the head and tail to be null
+    // update the tail to be the previous node
+    // set the new tail's next to null
+    // decrement the length
+    // return the value removed
+
+    pop(){
+        if (!this.head){
+            return undefined;
+        }
+        let currentTail = this.tail;
+        if (this.length === 1){
+            this.head = null
+            this.tail = null;
+        }
+        else{
+            this.tail = currentTail.prev
+            this.tail.next = null
+            currentTail.prev =null
+            
+        }
+        this.length--;
+        return this.currentTail
+    }
 }
 
 let list = new DoublyLinkedList()
 
 list.push(12)
+list.push(13)
+list.push(15)
+list.pop(15)
 
 console.log(list)
