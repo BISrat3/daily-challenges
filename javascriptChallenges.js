@@ -1364,6 +1364,35 @@ class DoublyLinkedList {
         this.length++
         return this
     }
+    // Get Pseudocode 
+    // If the index is less than 0 or greater or equal to the length, return null
+    // If the index is less than or equal to half the length of the list - Loop through the list starting from the head and the loop towards the middle  - Return the node once it is found
+    // IF the index  is greater than half the length of the list - Loop through the list starting from the tail and loop towards the middle 
+    // Return the node once it is found 
+    get (index){
+        if(index < 0 || index>= this.length){
+            return null;
+        }
+        if (index <= this.length/2){
+            let count = 0;
+            let current = this.head;
+            console.log('Working from the beginning')
+            while (count != index){
+                current = current.next;
+                count++;
+            }
+        }else{
+            let count = this.length -1;
+            let current = this.tail;
+            console.log('Working from the end')
+            while (count != index){
+                current = current.prev;
+                count--;
+            }
+        }
+        
+        return current;
+    }
 }
 
 let list = new DoublyLinkedList()
@@ -1375,5 +1404,6 @@ list.push(15)
 // list.pop(15)
 
 // list.shift(12)
-list.unShift(11)
+// list.unShift(11)
+list.get(14)
 console.log(list)
