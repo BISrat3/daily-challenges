@@ -1317,13 +1317,41 @@ class DoublyLinkedList {
         this.length--;
         return this.currentTail
     }
+
+    // if length is 0, return undefined 
+    // Store the current head property in a variable (we'll call it old head)
+    // if the length is one - set the head to be a null - set the tail to be null
+    // update the head to be the next of the old head
+    // Set the head's prev property to null
+    // Set the old head's next to null
+    // Decrement the length 
+    // Return old head
+    shift(){
+        if(this.length === 0)
+        return undefined;
+        let oldHead= this.head
+        if (this.length === 1)
+        {
+            this.head = null;
+            this.tail = null;
+        } else{
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null
+        }
+        this.length--;
+        return oldHead;
+    }
 }
 
 let list = new DoublyLinkedList()
 
 list.push(12)
 list.push(13)
+list.push(14)
 list.push(15)
-list.pop(15)
+// list.pop(15)
+
+list.shift(12)
 
 console.log(list)
