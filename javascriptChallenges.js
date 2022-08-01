@@ -1373,14 +1373,15 @@ class DoublyLinkedList {
         if(index < 0 || index>= this.length){
             return null;
         }
+        let current = this.head;
         if (index <= this.length/2){
             let count = 0;
-            let current = this.head;
             console.log('Working from the beginning')
             while (count != index){
                 current = current.next;
                 count++;
             }
+            return current
         }else{
             let count = this.length -1;
             let current = this.tail;
@@ -1393,6 +1394,14 @@ class DoublyLinkedList {
         
         return current;
     }
+    set(index, val){
+        let setResult = this.get(index);
+        if(setResult){
+           setResult.val = val;  
+            return true;
+        }
+        return false;
+    }
 }
 
 let list = new DoublyLinkedList()
@@ -1401,9 +1410,11 @@ list.push(12)
 list.push(13)
 list.push(14)
 list.push(15)
+list.push("Same")
 // list.pop(15)
 
 // list.shift(12)
 // list.unShift(11)
-list.get(14)
+// list.get(14)
+console.log(list.set(4, 34))
 console.log(list)
