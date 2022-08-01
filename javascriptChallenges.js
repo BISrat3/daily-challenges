@@ -1402,6 +1402,35 @@ class DoublyLinkedList {
         }
         return false;
     }
+
+    // Insert Pseudocode
+    // if the index is less than zero or greater than or equal to the length return false
+    // if the index is 0, unshift 
+    // if the index is the same as the length, push 
+    // Use the get method to access the index-1
+    // Set the next and prev properties on the correct nodes to link everything together 
+    // incerement the length 
+    //  Return True
+    insert(index, val){
+        if(index < 0 ||index>=this.length){
+            return false;
+        }
+        if (index === 0){
+            return this.unShift(val)
+        }
+        if (index === this.length){
+            return this.push(val)
+        }
+        let newNode = new Node(val);
+        let beforeNode= this.get(index-1);
+        let afterNode = beforeNode.next;
+        beforeNode.next = newNode;
+        newNode.prev = beforeNode;
+        newNode.next = afterNode;
+        afterNode.prev= newNode;
+        this.length++;
+        return true;
+    }
 }
 
 let list = new DoublyLinkedList()
@@ -1416,5 +1445,6 @@ list.push("Same")
 // list.shift(12)
 // list.unShift(11)
 // list.get(14)
-console.log(list.set(4, 34))
+// console.log(list.set(4, 34))
+console.log(list.insert(0, 18))
 console.log(list)
