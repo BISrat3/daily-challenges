@@ -1480,11 +1480,62 @@ const { Query } = require("mongoose")
 
 // stack
 // recursion_factorial
-function factorial (x){
-    if (x===0) 
-    return 1;
-    console.log(x)
-    return x * factorial(x-1);
+// function factorial (x){
+//     if (x===0) 
+//     return 1;
+//     console.log(x)
+//     return x * factorial(x-1);
+// }
+// // LIFO last in first thing removed
+// factorial(3)
+
+// pushing pseudocode 
+// the function should accept value
+// create a new node with that value
+// if there are no nodes in the stack, set the first and last property to be the newly created node
+// if there is atleast one node, create a variable that stores the current first property on the stack
+// Reset the first property to be the newly created node
+// Set the next property no the node to be the previously created variable
+// Increment the size of the stack by 1
+class Node{
+    constructor (value){
+        this.value = value;
+        this.next = null
+    }
+}
+class Stack {
+    constructor(){
+        this.first = null;
+        this.last =  null;
+        this.size = 0;
+    }
+    push(val){
+        let newNode = new Node(val)
+        if(!this.first)
+        {
+            this.first = newNode;
+            this.last = newNode;
+        } else{
+            let temp = this.first;
+            this.first = newNode;
+            this.first.next = temp;
+        }
+        console.log(this.size)
+        return ++this.size;
+    }
+    pop(){
+        if(!this.first )
+        return null;
+        if(this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.size --;
+        return temp.value;
+    }
 }
 
-factorial(3)
+let list= new Stack()
+
+list.push(2)
+list.push(3)
