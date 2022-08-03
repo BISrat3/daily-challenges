@@ -1526,11 +1526,13 @@ class Stack {
     pop(){
         if(!this.first )
         return null;
+        let temp = this.first;
         if(this.first === this.last){
             this.last = null;
         }
         this.first = this.first.next;
-        this.size --;
+        this.size--;
+        console.log(temp.value)
         return temp.value;
     }
 }
@@ -1539,3 +1541,4 @@ let list= new Stack()
 
 list.push(2)
 list.push(3)
+list.pop(2)
