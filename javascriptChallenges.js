@@ -1497,48 +1497,101 @@ const { Query } = require("mongoose")
 // Reset the first property to be the newly created node
 // Set the next property no the node to be the previously created variable
 // Increment the size of the stack by 1
+// class Node{
+//     constructor (value){
+//         this.value = value;
+//         this.next = null
+//     }
+// }
+// class Stack {
+//     constructor(){
+//         this.first = null;
+//         this.last =  null;
+//         this.size = 0;
+//     }
+//     push(val){
+//         let newNode = new Node(val)
+//         if(!this.first)
+//         {
+//             this.first = newNode;
+//             this.last = newNode;
+//         } else{
+//             let temp = this.first;
+//             this.first = newNode;
+//             this.first.next = temp;
+//         }
+//         console.log(this.size)
+//         return ++this.size;
+//     }
+//     pop(){
+//         if(!this.first )
+//         return null;
+//         let temp = this.first;
+//         if(this.first === this.last){
+//             this.last = null;
+//         }
+//         this.first = this.first.next;
+//         this.size--;
+//         console.log(temp.value)
+//         return temp.value;
+//     }
+// }
+
+// let list= new Stack()
+
+// list.push(2)
+// list.push(3)
+// list.pop(2)
+
+
 class Node{
-    constructor (value){
+    constructor(value){
         this.value = value;
-        this.next = null
+        this.next = null;
     }
 }
-class Stack {
+class Queue{
     constructor(){
         this.first = null;
-        this.last =  null;
+        this.last = null;
         this.size = 0;
     }
-    push(val){
+    // enqueue pseudocode
+    // this function accepts some value
+    // create a new node using that value passed to the function 
+    // If there are no nodes in the queue, set this node to be the first and last property of the queue
+    // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
+    enqueue(val){
         let newNode = new Node(val)
-        if(!this.first)
-        {
-            this.first = newNode;
-            this.last = newNode;
-        } else{
-            let temp = this.first;
-            this.first = newNode;
-            this.first.next = temp;
+        if(!this.first){
+            this.first = newNode
+            this.last = newNode
+        } 
+        else{
+            this.last.next = newNode;
+            this.last = newNode
         }
-        console.log(this.size)
         return ++this.size;
     }
-    pop(){
-        if(!this.first )
-        return null;
-        let temp = this.first;
-        if(this.first === this.last){
+    // dequeue
+    // this function accepts some value
+    // create a new node using that value passed to the function 
+    // If there are no nodes in the queue, set this node to be the first and last property of the queue
+    // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
+    
+    dequeue(){
+         if(!this.first) return null;
+         let temp = this.first;
+         if(this.first === this.last){
             this.last = null;
-        }
-        this.first = this.first.next;
-        this.size--;
-        console.log(temp.value)
-        return temp.value;
+         }
+         this.first = this.first.next;
+         this.size--;
+         return temp.value;
     }
 }
 
-let list= new Stack()
-
-list.push(2)
-list.push(3)
-list.pop(2)
+let q =new Queue()
+q.enqueue("hello")
+q.dequeue()
+console.log(q)
