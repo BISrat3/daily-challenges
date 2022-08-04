@@ -1544,54 +1544,77 @@ const { Query } = require("mongoose")
 // list.pop(2)
 
 
-class Node{
+// class Node{
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+// class Queue{
+//     constructor(){
+//         this.first = null;
+//         this.last = null;
+//         this.size = 0;
+//     }
+//     // enqueue pseudocode
+//     // this function accepts some value
+//     // create a new node using that value passed to the function 
+//     // If there are no nodes in the queue, set this node to be the first and last property of the queue
+//     // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
+//     enqueue(val){
+//         let newNode = new Node(val)
+//         if(!this.first){
+//             this.first = newNode
+//             this.last = newNode
+//         } 
+//         else{
+//             this.last.next = newNode;
+//             this.last = newNode
+//         }
+//         return ++this.size;
+//     }
+//     // dequeue
+//     // this function accepts some value
+//     // create a new node using that value passed to the function 
+//     // If there are no nodes in the queue, set this node to be the first and last property of the queue
+//     // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
+    
+//     dequeue(){
+//          if(!this.first) return null;
+//          let temp = this.first;
+//          if(this.first === this.last){
+//             this.last = null;
+//          }
+//          this.first = this.first.next;
+//          this.size--;
+//          return temp.value;
+//     }
+// }
+
+// let q =new Queue()
+// q.enqueue("hello")
+// q.dequeue()
+// console.log(q)
+
+// Binary Search Tree Class
+class Node {
     constructor(value){
         this.value = value;
-        this.next = null;
-    }
-}
-class Queue{
-    constructor(){
-        this.first = null;
-        this.last = null;
-        this.size = 0;
-    }
-    // enqueue pseudocode
-    // this function accepts some value
-    // create a new node using that value passed to the function 
-    // If there are no nodes in the queue, set this node to be the first and last property of the queue
-    // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
-    enqueue(val){
-        let newNode = new Node(val)
-        if(!this.first){
-            this.first = newNode
-            this.last = newNode
-        } 
-        else{
-            this.last.next = newNode;
-            this.last = newNode
-        }
-        return ++this.size;
-    }
-    // dequeue
-    // this function accepts some value
-    // create a new node using that value passed to the function 
-    // If there are no nodes in the queue, set this node to be the first and last property of the queue
-    // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
-    
-    dequeue(){
-         if(!this.first) return null;
-         let temp = this.first;
-         if(this.first === this.last){
-            this.last = null;
-         }
-         this.first = this.first.next;
-         this.size--;
-         return temp.value;
+        this.left = null;
+        this.right = null;
     }
 }
 
-let q =new Queue()
-q.enqueue("hello")
-q.dequeue()
-console.log(q)
+class BinarySearchTree{
+    constructor(){
+        this.root = null;
+    }
+}
+
+let tree = new BinarySearchTree()
+tree.root = new Node(10);
+tree.root.right = new Node(15);
+tree.root.left = new Node(8);
+tree.root.left.right = new Node(9)
+
+console.log(tree)
