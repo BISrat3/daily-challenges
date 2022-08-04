@@ -1,5 +1,6 @@
 // Challenge 1
 
+const e = require("express");
 const { merge } = require("jquery");
 const { Query } = require("mongoose")
 
@@ -1651,6 +1652,23 @@ class BinarySearchTree{
             }
         }
     }
+    find(value){
+        if(this.root === null) return false;
+        let  current = this.root, found = false;
+        while(current  && !found){
+            if(value < current.value){
+                current = current.left;
+            }
+            else if (value > current.value){
+                current = current.right;
+            }
+            else{
+                found = true;
+            }
+        }
+        if(!found) return undefined;
+        return current;
+    }
 }
 
 let tree = new BinarySearchTree()
@@ -1659,11 +1677,12 @@ let tree = new BinarySearchTree()
 // tree.root.left = new Node(8);
 // tree.root.left.right = new Node(9)
 
-// tree.insert(10)
-// // tree.insert(5)
-// // tree.insert(13)
-// // tree.insert(11)
-// tree.insert(2)
-// tree.insert(16)
-// tree.insert(7)
+tree.insert(10)
+tree.insert(5)
+tree.insert(13)
+tree.insert(11)
+tree.insert(2)
+tree.insert(16)
+tree.insert(7)
+console.log(tree.find(20))
 console.log(tree)
