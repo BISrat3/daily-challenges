@@ -1598,18 +1598,18 @@ const { Query } = require("mongoose")
 // console.log(q)
 
 // Binary Search Tree Class
-class Node {
-    constructor(value){
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
-}
+// class Node {
+//     constructor(value){
+//         this.value = value;
+//         this.left = null;
+//         this.right = null;
+//     }
+// }
 
-class BinarySearchTree{
-    constructor(){
-        this.root = null;
-    }
+// class BinarySearchTree{
+//     constructor(){
+//         this.root = null;
+//     }
     // create new node
     // starting at the root
     // check if there is a root. if not- the root now becomes that new node
@@ -1621,68 +1621,155 @@ class BinarySearchTree{
     // if it is lees-  check to see if there is a node to the left
     // - if there is, move to that node and repeat these steps
     // - if there is not, add that node as the left property
-    insert(value){
-        let newNode = new Node(value);
-        if(this.root === null){
-            this.root = newNode;
-            return this;
-        }
-        else {
-            let current = this.root;
-            while(true){
-                if (value === current.value) return undefined;
-                if (value < current.value){
-                    if (current.left === null){
-                        current.left = newNode;
-                        return this;
-                    }
-                    else{
-                        current = current.left;
-                    }
-                }
-                else if(value > current.value){
-                    if (current.right === null){
-                        current.right = newNode;
-                        return this;
-                    }
-                    else{
-                        current = current.right
-                    }
-                }
-            }
-        }
-    }
-    find(value){
-        if(this.root === null) return false;
-        let  current = this.root, found = false;
-        while(current  && !found){
-            if(value < current.value){
-                current = current.left;
-            }
-            else if (value > current.value){
-                current = current.right;
-            }
-            else{
-                found = true;
-            }
-        }
-        if(!found) return undefined;
-        return current;
+//     insert(value){
+//         let newNode = new Node(value);
+//         if(this.root === null){
+//             this.root = newNode;
+//             return this;
+//         }
+//         else {
+//             let current = this.root;
+//             while(true){
+//                 if (value === current.value) return undefined;
+//                 if (value < current.value){
+//                     if (current.left === null){
+//                         current.left = newNode;
+//                         return this;
+//                     }
+//                     else{
+//                         current = current.left;
+//                     }
+//                 }
+//                 else if(value > current.value){
+//                     if (current.right === null){
+//                         current.right = newNode;
+//                         return this;
+//                     }
+//                     else{
+//                         current = current.right
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// //     find(value){
+//         if(this.root === null) return false;
+//         let  current = this.root, found = false;
+//         while(current  && !found){
+//             if(value < current.value){
+//                 current = current.left;
+//             }
+//             else if (value > current.value){
+//                 current = current.right;
+//             }
+//             else{
+//                 found = true;
+//             }
+//         }
+//         if(!found) return undefined;
+//         return current;
+//     }
+// }
+
+// let tree = new BinarySearchTree()
+// // tree.root = new Node(10);
+// // tree.root.right = new Node(15);
+// // tree.root.left = new Node(8);
+// // tree.root.left.right = new Node(9)
+
+// tree.insert(10)
+// tree.insert(5)
+// tree.insert(13)
+// tree.insert(11)
+// tree.insert(2)
+// tree.insert(16)
+// tree.insert(7)
+// console.log(tree.find(20))
+// console.log(tree)
+
+
+// BFS Pseudocode 
+// create a queue (this can be an array) and a variable to store the values of nodes visited 
+// Place the root node in the queue
+// Loop as long as there is anything in the queue
+// - Dequeue a node from the queue and oush the value of the node into the variable that stores the nodes 
+// If there is a left property on the node dequeued - add it to the queue
+// If there is a right property on the node dequeued -add it to the queue
+// Return the varuable that stores the values
+class Node{
+    constructor(value){
+        this.value = value;
+        this.left = null;
+        this.right = null;
     }
 }
+class BreadthFirstSearch{
+    constructor(){
+        this.root = null;
+    }
+    insert(value){
+                let newNode = new Node(value);
+                if(this.root === null){
+                    this.root = newNode;
+                    return this;
+                }
+                else {
+                    let current = this.root;
+                    while(true){
+                        if (value === current.value) return undefined;
+                        if (value < current.value){
+                            if (current.left === null){
+                                current.left = newNode;
+                                return this;
+                            }
+                            else{
+                                current = current.left;
+                            }
+                        }
+                        else if(value > current.value){
+                            if (current.right === null){
+                                current.right = newNode;
+                                return this;
+                            }
+                            else{
+                                current = current.right
+                            }
+                        }
+                    }
+                }
+            }
+    BFS(){
+        let node = this.root, 
+            data = [],
+            queue = [];
+        queue.push(node);
+        while (queue.length){
+            node = queue.shift();
+            data.push(node.value);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+        return data;
+    }
+    // DFS preorder
+    // create a varaible to store the values of nodes visited 
+    // Store the root of the BEST in a variable called current
+    // Write a helper function which accepts a node
+    // - Push the value of the node to the variable that stores the values
+    // - IF the node has a left property,call the helper function with the left property on the node
+    // -If the node has a right property, call the helper function with the right property on the node
+    // invoke the helper function with the current variable
+    // Return the array of values
 
-let tree = new BinarySearchTree()
-// tree.root = new Node(10);
-// tree.root.right = new Node(15);
-// tree.root.left = new Node(8);
-// tree.root.left.right = new Node(9)
+    
+}
 
-tree.insert(10)
-tree.insert(5)
-tree.insert(13)
-tree.insert(11)
-tree.insert(2)
-tree.insert(16)
-tree.insert(7)
-console.log(tree.find(20))
-console.log(tree)
+let tree = new BreadthFirstSearch();
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
+tree.insert(20);
+// console.log(tree.)
+console.log(tree.BFS())
