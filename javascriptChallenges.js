@@ -1844,86 +1844,177 @@ const { Query } = require("mongoose")
 // - Swap the vlaue of the values element at the parentIndex with the value of the element proprty at the child index
 // - Set the index to be the parentIndex, and start over!
 
-class MaxBinaryHeap{
+// class MaxBinaryHeap{
+//     constructor(){
+//         this.values= [41,39,33,18,27,12];
+//     }
+//     insert(element){
+//         this.values.push(element);
+//         this.bubbleUp();
+//     }  
+//     bubbleUp(){
+//         let index = this.values.length-1;
+//         const element = this.values[index]
+//         while(index>0){
+//             let parentIndex = Math.floor((index-1)/2)
+//             console.log(parentIndex)
+//             let parent = this.values[parentIndex];
+//             // if(element > parent){
+//             //     this.values[parentIndex]= element;
+//             //     this.values[index] = parent;
+//             //     index = parentIndex;}
+//             if(element <= parent) break
+//                 this.values[parentIndex]= element;
+//                 this.values[index] = parent;
+//                 index = parentIndex;
+//         }
+//     } 
+//     // / Remove Pseudocode(also called extractMax)
+//     // Swap the first value in the values property with the last one
+// // Pop from the values property, so you can return the value at the end
+// // Have the new root "Sink down" to the correct spot
+// // - Your parent index starts at 0(the root)
+// //  Find the index of the left child:2 * index+1 (make sure its not out of bounds)
+// // - Find the index of the right child: 2 * index +2 (make sure its not out of bounds)
+// // - IF the left or right child is greater than the element -- swap. if both left and right children are larger, swao with the largest child 
+// // The child index you swapped to now becomes the new parent index.
+// // Keep looping and wapping until neither child is larger than the element.
+// //  Return the old root.
+//     extractMax(){
+//         // Edge case come back to this
+//         const max = this.values[0];
+//         const end = this.values.pop();
+//         if(this.values.length >0){
+//             this.values[0] = end;
+//             // trickle down
+//             this.sinkDown();
+//         }
+//         return max;
+//     }
+//     sinkDown(){
+//         let idx = 0;
+//         const length = this.values.length;
+//         const element = this.values[0];
+//         while(true){
+//             let leftChildIdx = 2 * idx +1;
+//             let rightChildIdx = 2 * idx +2;
+//             let leftChild, rightChild;
+//             let swap = null;
+//             if(leftChildIdx < length){
+//                 leftChild = this.values[leftChildIdx]
+//                 if(leftChild> element){
+//                     swap = leftChildIdx;
+//                 }
+//             }
+//             if(rightChildIdx < length){
+//                 rightChild = this.values[rightChildIdx]
+//                 if((swap === null && rightChild>  element)|| 
+//                 (swap !== null && rightChild>  leftChild)){
+//                     swap = rightChildIdx;
+//                 }
+//             }
+//             if (swap === null) break;
+//             this.values[idx] = this.values[swap]
+//             this.values[swap] = element;
+//             idx = swap;
+//         }
+//     }
+
+// }
+// let heap = new MaxBinaryHeap();
+// heap.insert(55)
+// heap.insert(44)
+// heap.insert(47)
+// // console.log(heap)
+// console.log(heap.values)
+
+// Priority Queue
+// Write a min binary heap - lower number means highr priority 
+// Each Node has a val and a priority. Use the priority to build the heap.
+// Enqueue method accepts a value and priority, makes  a new node and puts it in the right spot based off of its priority
+// Dequeue method removes root element, returns it, and rearranges heap using priority
+
+class PriorityQueue{
     constructor(){
-        this.values= [41,39,33,18,27,12];
+        this.values =[]
     }
-    insert(element){
-        this.values.push(element);
-        this.bubbleUp();
-    }  
-    bubbleUp(){
-        let index = this.values.length-1;
-        const element = this.values[index]
-        while(index>0){
-            let parentIndex = Math.floor((index-1)/2)
-            console.log(parentIndex)
-            let parent = this.values[parentIndex];
-            // if(element > parent){
-            //     this.values[parentIndex]= element;
-            //     this.values[index] = parent;
-            //     index = parentIndex;}
-            if(element <= parent) break
-                this.values[parentIndex]= element;
-                this.values[index] = parent;
-                index = parentIndex;
-        }
-    } 
-    // / Remove Pseudocode(also called extractMax)
-    // Swap the first value in the values property with the last one
-// Pop from the values property, so you can return the value at the end
-// Have the new root "Sink down" to the correct spot
-// - Your parent index starts at 0(the root)
-//  Find the index of the left child:2 * index+1 (make sure its not out of bounds)
-// - Find the index of the right child: 2 * index +2 (make sure its not out of bounds)
-// - IF the left or right child is greater than the element -- swap. if both left and right children are larger, swao with the largest child 
-// The child index you swapped to now becomes the new parent index.
-// Keep looping and wapping until neither child is larger than the element.
-//  Return the old root.
-    extractMax(){
-        // Edge case come back to this
-        const max = this.values[0];
-        const end = this.values.pop();
-        if(this.values.length >0){
-            this.values[0] = end;
-            // trickle down
-            this.sinkDown();
-        }
-        return max;
-    }
-    sinkDown(){
-        let idx = 0;
-        const length = this.values.length;
-        const element = this.values[0];
-        while(true){
-            let leftChildIdx = 2 * idx +1;
-            let rightChildIdx = 2 * idx +2;
-            let leftChild, rightChild;
-            let swap = null;
-            if(leftChildIdx < length){
-                leftChild = this.values[leftChildIdx]
-                if(leftChild> element){
-                    swap = leftChildIdx;
+    enqueue(val, priority){
+        let newNode = new Node(val, priority)
+                this.values.push(newNode);
+                this.bubbleUp();
+            }  
+            bubbleUp(){
+                let index = this.values.length-1;
+                const element = this.values[index]
+                while(index>0){
+                    let parentIndex = Math.floor((index-1)/2)
+                    console.log(parentIndex)
+                    let parent = this.values[parentIndex];
+                    // if(element > parent){
+                    //     this.values[parentIndex]= element;
+                    //     this.values[index] = parent;
+                    //     index = parentIndex;}
+                    if(element.priority >= parent.priority) break
+                        this.values[parentIndex]= element;
+                        this.values[index] = parent;
+                        index = parentIndex;
                 }
-            }
-            if(rightChildIdx < length){
-                rightChild = this.values[rightChildIdx]
-                if((swap === null && rightChild>  element)|| 
-                (swap !== null && rightChild>  leftChild)){
-                    swap = rightChildIdx;
-                }
-            }
-            if (swap === null) break;
-            this.values[idx] = this.values[swap]
-            this.values[swap] = element;
-            idx = swap;
-        }
-    }
+            } 
+            dequeue(){
+                        // Edge case come back to this
+                        const min = this.values[0];
+                        const end = this.values.pop();
+                        if(this.values.length >0){
+                            this.values[0] = end;
+                            // trickle down
+                            this.sinkDown();
+                        }
+                        return min;
+                    }
+                    sinkDown(){
+                        let idx = 0;
+                        const length = this.values.length;
+                        const element = this.values[0];
+                        while(true){
+                            let leftChildIdx = 2 * idx +1;
+                            let rightChildIdx = 2 * idx +2;
+                            let leftChild, rightChild;
+                            let swap = null;
+                            if(leftChildIdx < length){
+                                leftChild = this.values[leftChildIdx]
+                                if(leftChild.priority< element.priority){
+                                    swap = leftChildIdx;
+                                }
+                            }
+                            if(rightChildIdx < length){
+                                rightChild = this.values[rightChildIdx]
+                                if((swap === null && rightChild.priority<  element.priority)|| 
+                                (swap !== null && rightChild.priority<  leftChild.priority)){
+                                    swap = rightChildIdx;
+                                }
+                            }
+                            if (swap === null) break;
+                            this.values[idx] = this.values[swap]
+                            this.values[swap] = element;
+                            idx = swap;
+                        }
+                    }
 
 }
-let heap = new MaxBinaryHeap();
-heap.insert(55)
-heap.insert(44)
-heap.insert(47)
-// console.log(heap)
-console.log(heap.values)
+
+class Node{
+    constructor(val, priority){
+        this.val = val;
+        this.priority = priority
+    }
+}
+
+let ER = new PriorityQueue();
+ER.enqueue("common cold", 5)
+ER.enqueue("gubshot wound", 1)
+ER.enqueue("high fever",4)
+ER.enqueue("hglass in foot",3)
+ER.enqueue("broken arm",2)
+ 
+console.log(ER)
+console.log(ER.dequeue(2)) 
