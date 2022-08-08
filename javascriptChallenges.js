@@ -2095,6 +2095,19 @@ class HashTable{
         }
         return undefined
     }
+    values(){
+        let valuesArr = [];
+        for(let i=0; i<this.keyMap.length;i++){
+            if(this.keyMap[i]){
+                for(let j=0; j<this.keyMap[i].length;j++){
+                    if(!valuesArr.includes(this.keyMap[i][j][1])){
+                    valuesArr.push(this.keyMap[i][j][1])
+                    }
+                }
+            }
+        }
+        return valuesArr;
+    }
 }
 let ht= new HashTable();
 ht.set("Hello world", "goodbye!")
@@ -2102,7 +2115,10 @@ ht.set("French", "fries")
 ht.set("hey", "everyone")
 ht.set("salmon", "#FA8072")
 ht.set("Yellow", "##FFFF00")
+ht.set("Violet", "##FFFF00")
 // console.log(ht)
 ht.set("ARE WE DONE", "YES")
+
 console.log(ht.get("Yellow"))
+console.log(ht.values())
 console.log(ht.get("ARE WE DONE"))
