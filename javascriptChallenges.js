@@ -2129,11 +2129,11 @@ const { Query } = require("mongoose")
 
 class Graph{
     constructor(){
-        this.adjancencyList = {};
+        this.adjacencyList = {};
     }
     addVertex(vertex){
-        if(!this.adjancencyList[vertex]) 
-        this.adjancencyList[vertex] =[];
+        if(!this.adjacencyList[vertex]) 
+        this.adjacencyList[vertex] =[];
     }
     // Adding an Edge 
     // - This function should accept two vertices, we can call them vertex1 and vertex2
@@ -2141,12 +2141,24 @@ class Graph{
     // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array 
     // Don't worry about handling errors/invalid vertices
     addEdge(v1,v2){
-         this.adjancencyList[v1].push(v2);
-         this.adjancencyList[v2].push(v1);
+         this.adjacencyList[v1].push(v2);
+         this.adjacencyList[v2].push(v1);
     }
     removeEdge(v1,v2){
-        this.adjancencyList[v1] = this.adjancencyList[v1].filter( v=> v!==v2)
-        this.adjancencyList[v2] = this.adjancencyList[v2].filter( v=> v!==v1)
+        this.adjacencyList[v1] = this.adjacencyList[v1].filter( v=> v!==v2)
+        this.adjacencyList[v2] = this.adjacencyList[v2].filter( v=> v!==v1)
+   }
+//    removing a vertex
+// the function should accept a vertex to remove
+// the function should loop as long as there are any other vertices in the adjacency list for that vertex
+// inside of the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
+// delete the key in the adjacency list for that vertex
+   removeVertex(vertex){
+        while(this.adjacencyList[vertex].length){
+            const adjacentVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacentVertex)
+        }
+        delete this.adjacencyList[vertex]
    }
 }
 let g = new Graph()
@@ -2156,5 +2168,6 @@ g.addVertex("Aspen")
 
 g.addEdge("Tokyo", "Dallas")
 g.addEdge("Aspen", "Dallas")
-g.removeEdge("Aspen", "Dallas")
+// g.removeEdge("Aspen", "Dallas")
+g.removeVertex("Aspen")
 console.log(g)
