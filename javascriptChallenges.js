@@ -2186,7 +2186,7 @@ class Graph{
                 }
             })
         })(start)
-        console.log(result)
+        // console.log(result)
         return result;
    }
 //    Depth first traversal - Iterative
@@ -2220,6 +2220,37 @@ class Graph{
         }
         return result;
    }
+//    Breadth first
+// - This function should accept a starting vertex
+// - Create a queue (you can use an array) and place the starting vertex in it.
+// - Create an array to store the nodes visited
+// - Create an object to store nodes visited 
+// - Mark the starting vertex as visited 
+// - Loop as long as there is anything in the queue
+// - Remove the first vertex from the queue and push it into the array that stores nodes visited 
+// - Loop over each vertex in the adjacency list for the vertex you are visiting.
+// - if it is not inside the object that stores nodes visited, mark it as visted and enqueue that vertex
+// return the array of vsiited nodes
+   breadthFirst(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+        visited[start] = true;
+        while(queue.length){
+            // console.log(queue)
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+            this.adjacencyList[currentVertex].forEach(neighbor =>{
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    queue.push(neighbor)
+                }
+            })
+        }
+        return result;
+   }
+
 }
 let g = new Graph()
 // g.addVertex("Tokyo")
@@ -2247,6 +2278,15 @@ g.addVertex("D")
 g.addVertex("E")
 g.addVertex("F")
 
-// g.depthFirstRecursive("A")
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
+g.depthFirstRecursive("A")
 g.depthFirstIterative("A")
-console.log(g)
+// console.log(g.depthFirstRecursive("A"))
+// console.log(g.depthFirstIterative("A"))
+console.log(g.breadthFirst("A"))
