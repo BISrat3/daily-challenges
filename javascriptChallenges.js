@@ -2160,14 +2160,54 @@ class Graph{
         }
         delete this.adjacencyList[vertex]
    }
+   depthFirstRecursive(start){
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+
+        (function dfs(vertex){
+            if(!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjacencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    return dfs(neighbor)
+                }
+            })
+        })(start)
+        console.log(result)
+        return result;
+   }
 }
 let g = new Graph()
-g.addVertex("Tokyo")
-g.addVertex("Dallas")
-g.addVertex("Aspen")
+// g.addVertex("Tokyo")
+// g.addVertex("Dallas")
+// g.addVertex("Aspen")
 
-g.addEdge("Tokyo", "Dallas")
-g.addEdge("Aspen", "Dallas")
+// g.addEdge("Tokyo", "Dallas")
+// g.addEdge("Aspen", "Dallas")
 // g.removeEdge("Aspen", "Dallas")
-g.removeVertex("Aspen")
+// g.removeVertex("Aspen")
+// console.log(g)
+
+// Depth first traversal
+// The function should accept a starting node
+// Create a list to store the end result, to be returned at the very end
+// Create an object to store visited vertices
+// Create a helper function which accepts a vertex
+// - The helper function should return early if the vertex is empty 
+// - The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
+// - Loop over all of the values in the adjacencyList for that vertex
+// - If any of those values have not been visited, recursivley invoke the helper function with that vertex.
+// Invoke the helper function with the starting vertex
+// Return the result array
+
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+g.depthFirstRecursive("A")
 console.log(g)
