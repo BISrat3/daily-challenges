@@ -2160,6 +2160,17 @@ class Graph{
         }
         delete this.adjacencyList[vertex]
    }
+   // Depth first traversal- recursive 
+// The function should accept a starting node
+// Create a list to store the end result, to be returned at the very end
+// Create an object to store visited vertices
+// Create a helper function which accepts a vertex
+// - The helper function should return early if the vertex is empty 
+// - The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
+// - Loop over all of the values in the adjacencyList for that vertex
+// - If any of those values have not been visited, recursivley invoke the helper function with that vertex.
+// Invoke the helper function with the starting vertex
+// Return the result array
    depthFirstRecursive(start){
         const result = [];
         const visited = {};
@@ -2178,6 +2189,37 @@ class Graph{
         console.log(result)
         return result;
    }
+//    Depth first traversal - Iterative
+// The function should accept a starting node
+// Create a stack to help use keep track of vertices (use a list/array)
+// Create a list to store the end result, to be returned at the very end
+// Create an object to store vistited vertices
+// Add the starting vertex to the stack, and mark it visited
+// While the stack has something in it:
+// - Pop the next from the stack
+// - If that vertex hasn't been visited yet: - Mark it as visited
+// ---- Add it to the result list
+// --- Push all of its neighbors into the stack. 
+//  Return the result array
+   depthFirstIterative(start){
+        const stack = [start]
+        const result =[];
+        const visited = {};
+        visited[start] =true;
+        let currentVertex;
+        while(stack.length){
+            console.log(stack)
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    stack.push(neighbor)
+                }
+            })
+        }
+        return result;
+   }
 }
 let g = new Graph()
 // g.addVertex("Tokyo")
@@ -2190,17 +2232,13 @@ let g = new Graph()
 // g.removeVertex("Aspen")
 // console.log(g)
 
-// Depth first traversal
-// The function should accept a starting node
-// Create a list to store the end result, to be returned at the very end
-// Create an object to store visited vertices
-// Create a helper function which accepts a vertex
-// - The helper function should return early if the vertex is empty 
-// - The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
-// - Loop over all of the values in the adjacencyList for that vertex
-// - If any of those values have not been visited, recursivley invoke the helper function with that vertex.
-// Invoke the helper function with the starting vertex
-// Return the result array
+//         A
+//       /    \
+//      B      C
+//      |      |
+//      D -----E
+//       \    /
+//         F
 
 g.addVertex("A")
 g.addVertex("B")
@@ -2209,5 +2247,6 @@ g.addVertex("D")
 g.addVertex("E")
 g.addVertex("F")
 
-g.depthFirstRecursive("A")
+// g.depthFirstRecursive("A")
+g.depthFirstIterative("A")
 console.log(g)
