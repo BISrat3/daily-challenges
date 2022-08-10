@@ -33,17 +33,17 @@ const { Query } = require("mongoose")
 
 // // console.log("hello")
 
-// const nums =[3,2,4]
-// const target = 6
-// var twoSum = function(nums, target) {
-//     for (let i=0; i< nums.length; i++){
-//         for(let j = i+1;j< nums.length; j++ ){
-//             if(nums[i] + nums [j] === target ){
-//             console.log([i, j])
-//              }
-//         }
-//     }
-// };
+const nums =[3,2,4]
+const target = 6
+var twoSum = function(nums, target) {
+    for (let i=0; i< nums.length; i++){
+        for(let j = i+1;j< nums.length; j++ ){
+            if(nums[i] + nums [j] === target ){
+            console.log([i, j])
+             }
+        }
+    }
+};
 
 // twoSum(nums, target)
 
@@ -2291,25 +2291,58 @@ const { Query } = require("mongoose")
 // console.log(g.depthFirstIterative("A"))
 // console.log(g.breadthFirst("A"))
 
-class WeightedGraph{
+// class WeightedGraph{
+//     constructor(){
+//         this.adjacencyList ={};
+//     }
+//     addVertex(vertex){
+//         if(!this.adjacencyList[vertex])
+//         this.adjacencyList[vertex] = [];
+//     }
+//     addEdge(vertex1, vertex2, weight){
+//         this.adjacencyList[vertex1].push({node:vertex2, weight});
+//         this.adjacencyList[vertex2].push({node:vertex1, weight});
+//     }
+// }
+
+// let graph = new WeightedGraph();
+// graph.addVertex("A")
+// graph.addVertex("B")
+// graph.addVertex("C")
+// graph.addEdge("A","B",10)
+// graph.addEdge("A","C",13)
+// graph.addEdge("B","C",5)
+// console.log(graph.adjacencyList)
+
+//         //     A
+//         //   2/  \4
+//         //  C     B
+        //  | \ 2   \3
+        //  \   D -3--E
+        //  4\ |1   /
+        //     F  / 1
+
+class PriorityQueue{
     constructor(){
-        this.adjacencyList ={};
+        this.values =[];
     }
-    addVertex(vertex){
-        if(!this.adjacencyList[vertex])
-        this.adjacencyList[vertex] = [];
+    enqueue(val, priority){
+        this.values.push({val, priority});
+        this.sort();
     }
-    addEdge(vertex1, vertex2, weight){
-        this.adjacencyList[vertex1].push({node:vertex2, weight});
-        this.adjacencyList[vertex2].push({node:vertex1, weight});
+    dequeue(){
+        return this.values.shift();
+    }
+    sort(){
+        this.values.sort((a,b) => a.priority - b.priority)
     }
 }
+// this sorting method is O(N*log(N))
+let pq = new PriorityQueue();
+pq.enqueue("B", 3)
+pq.enqueue("C", 4)
+pq.enqueue("A", 2)
+pq.enqueue("D", 1)
 
-let graph = new WeightedGraph();
-graph.addVertex("A")
-graph.addVertex("B")
-graph.addVertex("C")
-graph.addEdge("A","B",10)
-graph.addEdge("A","C",13)
-graph.addEdge("B","C",5)
-console.log(graph.adjacencyList)
+pq.dequeue()
+console.log(pq.values)
