@@ -2127,39 +2127,39 @@ const { Query } = require("mongoose")
 // Write a method called addVertex, which accepts a name of a vertex
 // It should add a key to the adjacency list with the name of the vertex and set its value to be an empty array.
 
-class Graph{
-    constructor(){
-        this.adjacencyList = {};
-    }
-    addVertex(vertex){
-        if(!this.adjacencyList[vertex]) 
-        this.adjacencyList[vertex] =[];
-    }
-    // Adding an Edge 
-    // - This function should accept two vertices, we can call them vertex1 and vertex2
-    // The function should find in the adjacency list the key of vertex 1 and push vertex2 to the array
-    // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array 
-    // Don't worry about handling errors/invalid vertices
-    addEdge(v1,v2){
-         this.adjacencyList[v1].push(v2);
-         this.adjacencyList[v2].push(v1);
-    }
-    removeEdge(v1,v2){
-        this.adjacencyList[v1] = this.adjacencyList[v1].filter( v=> v!==v2)
-        this.adjacencyList[v2] = this.adjacencyList[v2].filter( v=> v!==v1)
-   }
+// class Graph{
+//     constructor(){
+//         this.adjacencyList = {};
+//     }
+//     addVertex(vertex){
+//         if(!this.adjacencyList[vertex]) 
+//         this.adjacencyList[vertex] =[];
+//     }
+//     // Adding an Edge 
+//     // - This function should accept two vertices, we can call them vertex1 and vertex2
+//     // The function should find in the adjacency list the key of vertex 1 and push vertex2 to the array
+//     // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array 
+//     // Don't worry about handling errors/invalid vertices
+//     addEdge(v1,v2){
+//          this.adjacencyList[v1].push(v2);
+//          this.adjacencyList[v2].push(v1);
+//     }
+//     removeEdge(v1,v2){
+//         this.adjacencyList[v1] = this.adjacencyList[v1].filter( v=> v!==v2)
+//         this.adjacencyList[v2] = this.adjacencyList[v2].filter( v=> v!==v1)
+//    }
 //    removing a vertex
 // the function should accept a vertex to remove
 // the function should loop as long as there are any other vertices in the adjacency list for that vertex
 // inside of the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
 // delete the key in the adjacency list for that vertex
-   removeVertex(vertex){
-        while(this.adjacencyList[vertex].length){
-            const adjacentVertex = this.adjacencyList[vertex].pop();
-            this.removeEdge(vertex, adjacentVertex)
-        }
-        delete this.adjacencyList[vertex]
-   }
+//    removeVertex(vertex){
+//         while(this.adjacencyList[vertex].length){
+//             const adjacentVertex = this.adjacencyList[vertex].pop();
+//             this.removeEdge(vertex, adjacentVertex)
+//         }
+//         delete this.adjacencyList[vertex]
+//    }
    // Depth first traversal- recursive 
 // The function should accept a starting node
 // Create a list to store the end result, to be returned at the very end
@@ -2171,24 +2171,24 @@ class Graph{
 // - If any of those values have not been visited, recursivley invoke the helper function with that vertex.
 // Invoke the helper function with the starting vertex
 // Return the result array
-   depthFirstRecursive(start){
-        const result = [];
-        const visited = {};
-        const adjacencyList = this.adjacencyList;
+//    depthFirstRecursive(start){
+//         const result = [];
+//         const visited = {};
+//         const adjacencyList = this.adjacencyList;
 
-        (function dfs(vertex){
-            if(!vertex) return null;
-            visited[vertex] = true;
-            result.push(vertex);
-            adjacencyList[vertex].forEach(neighbor => {
-                if(!visited[neighbor]){
-                    return dfs(neighbor)
-                }
-            })
-        })(start)
-        // console.log(result)
-        return result;
-   }
+//         (function dfs(vertex){
+//             if(!vertex) return null;
+//             visited[vertex] = true;
+//             result.push(vertex);
+//             adjacencyList[vertex].forEach(neighbor => {
+//                 if(!visited[neighbor]){
+//                     return dfs(neighbor)
+//                 }
+//             })
+//         })(start)
+//         // console.log(result)
+//         return result;
+//    }
 //    Depth first traversal - Iterative
 // The function should accept a starting node
 // Create a stack to help use keep track of vertices (use a list/array)
@@ -2201,25 +2201,25 @@ class Graph{
 // ---- Add it to the result list
 // --- Push all of its neighbors into the stack. 
 //  Return the result array
-   depthFirstIterative(start){
-        const stack = [start]
-        const result =[];
-        const visited = {};
-        visited[start] =true;
-        let currentVertex;
-        while(stack.length){
-            console.log(stack)
-            currentVertex = stack.pop();
-            result.push(currentVertex);
-            this.adjacencyList[currentVertex].forEach(neighbor => {
-                if(!visited[neighbor]){
-                    visited[neighbor] = true;
-                    stack.push(neighbor)
-                }
-            })
-        }
-        return result;
-   }
+//    depthFirstIterative(start){
+//         const stack = [start]
+//         const result =[];
+//         const visited = {};
+//         visited[start] =true;
+//         let currentVertex;
+//         while(stack.length){
+//             console.log(stack)
+//             currentVertex = stack.pop();
+//             result.push(currentVertex);
+//             this.adjacencyList[currentVertex].forEach(neighbor => {
+//                 if(!visited[neighbor]){
+//                     visited[neighbor] = true;
+//                     stack.push(neighbor)
+//                 }
+//             })
+//         }
+//         return result;
+//    }
 //    Breadth first
 // - This function should accept a starting vertex
 // - Create a queue (you can use an array) and place the starting vertex in it.
@@ -2231,28 +2231,28 @@ class Graph{
 // - Loop over each vertex in the adjacency list for the vertex you are visiting.
 // - if it is not inside the object that stores nodes visited, mark it as visted and enqueue that vertex
 // return the array of vsiited nodes
-   breadthFirst(start){
-        const queue = [start];
-        const result = [];
-        const visited = {};
-        let currentVertex;
-        visited[start] = true;
-        while(queue.length){
-            // console.log(queue)
-            currentVertex = queue.shift();
-            result.push(currentVertex);
-            this.adjacencyList[currentVertex].forEach(neighbor =>{
-                if(!visited[neighbor]){
-                    visited[neighbor] = true;
-                    queue.push(neighbor)
-                }
-            })
-        }
-        return result;
-   }
+//    breadthFirst(start){
+//         const queue = [start];
+//         const result = [];
+//         const visited = {};
+//         let currentVertex;
+//         visited[start] = true;
+//         while(queue.length){
+//             // console.log(queue)
+//             currentVertex = queue.shift();
+//             result.push(currentVertex);
+//             this.adjacencyList[currentVertex].forEach(neighbor =>{
+//                 if(!visited[neighbor]){
+//                     visited[neighbor] = true;
+//                     queue.push(neighbor)
+//                 }
+//             })
+//         }
+//         return result;
+//    }
 
-}
-let g = new Graph()
+// }
+// let g = new Graph()
 // g.addVertex("Tokyo")
 // g.addVertex("Dallas")
 // g.addVertex("Aspen")
@@ -2271,22 +2271,45 @@ let g = new Graph()
 //       \    /
 //         F
 
-g.addVertex("A")
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
+// g.addVertex("A")
+// g.addVertex("B")
+// g.addVertex("C")
+// g.addVertex("D")
+// g.addVertex("E")
+// g.addVertex("F")
 
-g.addEdge("A", "B")
-g.addEdge("A", "C")
-g.addEdge("B", "D")
-g.addEdge("C", "E")
-g.addEdge("D", "E")
-g.addEdge("D", "F")
-g.addEdge("E", "F")
-g.depthFirstRecursive("A")
-g.depthFirstIterative("A")
+// g.addEdge("A", "B")
+// g.addEdge("A", "C")
+// g.addEdge("B", "D")
+// g.addEdge("C", "E")
+// g.addEdge("D", "E")
+// g.addEdge("D", "F")
+// g.addEdge("E", "F")
+// g.depthFirstRecursive("A")
+// g.depthFirstIterative("A")
 // console.log(g.depthFirstRecursive("A"))
 // console.log(g.depthFirstIterative("A"))
-console.log(g.breadthFirst("A"))
+// console.log(g.breadthFirst("A"))
+
+class WeightedGraph{
+    constructor(){
+        this.adjacencyList ={};
+    }
+    addVertex(vertex){
+        if(!this.adjacencyList[vertex])
+        this.adjacencyList[vertex] = [];
+    }
+    addEdge(vertex1, vertex2, weight){
+        this.adjacencyList[vertex1].push({node:vertex2, weight});
+        this.adjacencyList[vertex2].push({node:vertex1, weight});
+    }
+}
+
+let graph = new WeightedGraph();
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addEdge("A","B",10)
+graph.addEdge("A","C",13)
+graph.addEdge("B","C",5)
+console.log(graph.adjacencyList)
