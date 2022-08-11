@@ -2,7 +2,7 @@
 
 const e = require("express");
 const { merge } = require("jquery");
-const { Query } = require("mongoose")
+const { Query } = require("mongoose");
 
 // Given an integer n, return a string array answer (1-indexed) where:
 
@@ -33,16 +33,16 @@ const { Query } = require("mongoose")
 
 // // console.log("hello")
 
-const nums =[3,2,4]
-const target = 6
-var twoSum = function(nums, target) {
-    for (let i=0; i< nums.length; i++){
-        for(let j = i+1;j< nums.length; j++ ){
-            if(nums[i] + nums [j] === target ){
-            console.log([i, j])
-             }
-        }
+const nums = [3, 2, 4];
+const target = 6;
+var twoSum = function (nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        console.log([i, j]);
+      }
     }
+  }
 };
 
 // twoSum(nums, target)
@@ -57,7 +57,6 @@ var twoSum = function(nums, target) {
 //     return sum;
 // }
 // Sum(3)
-
 
 //  O(n)
 
@@ -106,7 +105,7 @@ var twoSum = function(nums, target) {
 //     // loop over string, for each character
 //     for (let i=0; i<str.length; i++){
 //         let char= str[i].toLowerCase()
-//         // if the char is a number/ letter AND is a key object add one to count 
+//         // if the char is a number/ letter AND is a key object add one to count
 //         if(letter[char]>0){
 //             // if the char is a number/ letter AND not in an object add it to object and set value to 1
 //             letter[char]++;
@@ -141,7 +140,6 @@ var twoSum = function(nums, target) {
 
 // charCount('HEllo')
 
-
 // or using for of
 // function charCount (str){
 //     let obj={}
@@ -163,7 +161,6 @@ var twoSum = function(nums, target) {
 
 // charCount('HEllo')
 
-
 // function isAlphaNumeric(str){
 //     let code;
 //     for (let i=0, len= str.length; i< len; i++){
@@ -177,9 +174,9 @@ var twoSum = function(nums, target) {
 //     isAlphaNumeric(text)
 
 // // Q?
-// // Write a function called same, which accepts two arrays. The function  should return true if every cvalue in the Array has it's corresponding value squared in the second array. The frequency of values must be the same. 
+// // Write a function called same, which accepts two arrays. The function  should return true if every cvalue in the Array has it's corresponding value squared in the second array. The frequency of values must be the same.
 
-// // function same(arr1, arr2){ 
+// // function same(arr1, arr2){
 // // // array first equal to square of the second squared array return true
 // // // else return false
 // // if (arr1.length !== arr2.length){
@@ -197,8 +194,7 @@ var twoSum = function(nums, target) {
 // // }
 // // same([1,3,2], [4,9,1])
 
-
-// function same(arr1, arr2){ 
+// function same(arr1, arr2){
 //     // array first equal to square of the second squared array return true
 //     // else return false
 //     if (arr1.length !== arr2.length){
@@ -207,16 +203,16 @@ var twoSum = function(nums, target) {
 //     let frequencyCounter1= {}
 //     let frequencyCounter2 = {}
 //     for (let val of arr1){
-//         frequencyCounter1[val] = (frequencyCounter1[val] || 0) +1 
+//         frequencyCounter1[val] = (frequencyCounter1[val] || 0) +1
 //     }
 //     for (let val of arr2){
-//         frequencyCounter2[val] = (frequencyCounter2[val] || 0) +1 
+//         frequencyCounter2[val] = (frequencyCounter2[val] || 0) +1
 //     }
 //     console.log(frequencyCounter1)
 //     console.log(frequencyCounter2)
 //     for (let key in frequencyCounter1){
 //         if (! (key ** 2 in frequencyCounter2)){
-//             return false 
+//             return false
 //         }
 //         if (frequencyCounter2 [key ** 2] !== frequencyCounter1[key]){
 //             return false
@@ -245,7 +241,7 @@ var twoSum = function(nums, target) {
 // //         let letter = second[i];
 // //         //  can't find letter or letter is zero then it's not an anagram
 // //         if(!lookup[letter]){
-// //             return false 
+// //             return false
 // //         }
 // //         else {
 // //             lookup[letter] -=1
@@ -292,7 +288,7 @@ var twoSum = function(nums, target) {
 
 // sumZero([-4,-3,-2,-1,0,1,2,3])
 
-// countUnique Values 
+// countUnique Values
 // implement a function called countUniqueValues which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted
 
 // function countUniqueValue(arr){
@@ -308,7 +304,7 @@ var twoSum = function(nums, target) {
 // }
 // countUniqueValue([1,1,1,1,2,1])
 
-// Write a function called maxSubarraySum which accepts an array of integers and a numer called n. The function should calculate the maximum sum of n consecutive elements in the array. 
+// Write a function called maxSubarraySum which accepts an array of integers and a numer called n. The function should calculate the maximum sum of n consecutive elements in the array.
 
 // function maxSubarraySum(arr, num){
 //     if (num > arr.length){
@@ -367,7 +363,6 @@ var twoSum = function(nums, target) {
 // linear search Time Complexity O(N)
 // search([1,2,3,4],3)
 
-
 // Binary Search
 
 // function search(arr, value){
@@ -393,7 +388,7 @@ var twoSum = function(nums, target) {
 // // TIme comlexity - Log(N)- Binary Search
 // search([1,2,3,4,5], 3)
 
-// Recursion 
+// Recursion
 // function takeShower(){
 //     return "Showering!"
 // }
@@ -422,14 +417,14 @@ var twoSum = function(nums, target) {
 //         console.log("All is done")
 //         return
 //     }
-//     console.log(num) 
+//     console.log(num)
 //     num--;
 //     countDown(num)
 // }
 
 // countDown(5)
 
-// second recursive base recursively 
+// second recursive base recursively
 // function sumRange(num){
 //     if (num === 1)
 //     return 1;
@@ -438,7 +433,6 @@ var twoSum = function(nums, target) {
 // }
 
 // sumRange(3)
-
 
 // factorial check
 // function factorial (num){
@@ -458,8 +452,7 @@ var twoSum = function(nums, target) {
 // }
 // factorial(3)
 
-
-// Helper method recursion 
+// Helper method recursion
 // function collectOddValues(arr){
 //     let result = [];
 //     function helper(helperInput){
@@ -478,7 +471,7 @@ var twoSum = function(nums, target) {
 
 // collectOddValues([1,2,3,4,5,6,7,8,9])
 
-// // pure recursion 
+// // pure recursion
 // function collectOddValues(arr){
 //     let newArr = []
 //     if (arr.length === 0){
@@ -494,8 +487,7 @@ var twoSum = function(nums, target) {
 
 // collectOddValues([1,2,3,4,5])
 
-
-// linear search 
+// linear search
 // function checkArray(arr, val){
 
 //     for(let i=0; i<arr.length;i++){
@@ -505,7 +497,7 @@ var twoSum = function(nums, target) {
 //         }
 //     }
 //         return -1;
-    
+
 // }
 // checkArray([1,2,3,4], 3)
 
@@ -527,14 +519,13 @@ var twoSum = function(nums, target) {
 //     console.log (start, middle, end);
 //     console.log(middle)
 //     return middle;
-     
+
 // }
 // binarySearch([2,3,5,6,8,6], 8)
 
-
 // loop over the longer string
 // function naiveSearch (long, short){
-//     let count =0; 
+//     let count =0;
 //     for( let i= 0; i<long.length; i++){
 //         for (let j= 0; j<short.length;j++){
 //             console.log(long[i] ,short[j])
@@ -552,20 +543,18 @@ var twoSum = function(nums, target) {
 
 // naiveSearch("lorie loled", "lol")
 
-// comparator buit-in sorting 
+// comparator buit-in sorting
 // function numberCompare(num1, num2){
 //     return num1 - num2
 // }
 
 // [7,9,3,5].sort(numberCompare)
 
-
 // function compareByLength(str1, str2){
 //     return str2.length -str1.length
 // }
 
 // ["Colt", "Sort", "Data Structures", "Algorithms"].sort(compareByLength)
-
 
 // Bubble Sorting
 // function bubbleSort(arr1){
@@ -594,11 +583,11 @@ var twoSum = function(nums, target) {
 //         for (let j=0; j< i-1;j++){
 //             if(arr[j]> arr[j+1]){
 //                 let temp = arr[j]
-//                 arr[j]= arr[j+1] 
+//                 arr[j]= arr[j+1]
 //                 arr[j+1] = temp
 //                 noSwaps =false
 //             }
-//         } 
+//         }
 //         if(noSwaps)
 //         break;
 //     }
@@ -619,7 +608,7 @@ var twoSum = function(nums, target) {
 //             }
 //         }
 //         let temp= arr[i];
-//         arr[i] =arr[lowest] 
+//         arr[i] =arr[lowest]
 //         arr[lowest]= temp
 //     }
 //     console.log(arr)
@@ -680,7 +669,6 @@ var twoSum = function(nums, target) {
 // };
 
 // console.log(lengthOfLongestSubstring("abcabcbb"))
-
 
 // function isPalindrom(num){
 //     if(num % 10 == 0){
@@ -748,8 +736,7 @@ var twoSum = function(nums, target) {
 
 // mergeSolution([1,10,50], [2,14,99,100])
 
-
-// 
+//
 // function merge(arr1, arr2){
 //     let results =[];
 //     let i=0;
@@ -800,7 +787,7 @@ var twoSum = function(nums, target) {
 //     let swapIdx = start;
 //     for (let i = start+1; i< arr.length;i++){
 //         if(pivot > arr[i]){
-//             swapIdx ++;  
+//             swapIdx ++;
 //             swap (arr, swapIdx, i)
 //         }
 //     }
@@ -822,7 +809,7 @@ var twoSum = function(nums, target) {
 //     console.log(arr)
 //     return arr
 // }
- 
+
 // quickSort([4,6,9,1,2,5,7,3,8])
 
 // function getDigit(num, i){
@@ -858,7 +845,7 @@ var twoSum = function(nums, target) {
 //     for (let i=0;i < nums.length;i++){
 //         let digit =getDigit(nums[i], k)
 //             digitBuckets[digit].push(nums[i])
-//         }   
+//         }
 //         // console.log(digitBuckets)
 //         nums = [].concat(...digitBuckets)
 //         // console.log(nums)
@@ -868,7 +855,6 @@ var twoSum = function(nums, target) {
 // }
 
 // radixSort([23,345, 5467,12, 2345])
-
 
 // class Student {
 //     constructor (firstname, lastname, year, tardies){
@@ -901,10 +887,8 @@ var twoSum = function(nums, target) {
 //     }
 // }
 
-
 // let firstStudent = new Student ('Dan', "sol",2);
 // let secondStudent = new Student ('Sam', "Teddy",4);
-
 
 // // console.log(firstStudent.firstname)
 // // console.log(secondStudent)
@@ -965,16 +949,15 @@ var twoSum = function(nums, target) {
 
 //     // poping pseudocode
 //     // if there are no nodes in the list, return undefined
-//     // loop through the list until you reach the tail 
+//     // loop through the list until you reach the tail
 //     // set the next property of the 2nd to last node to be null
 //     // set the tail to be the 2nd to last node
 //     // decrement the length of the list by 1
 //     // return the value of the node removed
 
-
 //     pop(){
 //         if (! this.head || this.tail){
-//             return undefined 
+//             return undefined
 //         }
 //         let current = this.head;
 //         let newTail = current;
@@ -1016,7 +999,6 @@ var twoSum = function(nums, target) {
 // Decrement the length by 1
 //  Return the value of the node removed
 
-
 // class Node{
 //     constructor(val){
 //         this.val = val;
@@ -1042,18 +1024,18 @@ var twoSum = function(nums, target) {
 //                 this.length++;
 //                 return this;
 //             }
-    // shift(){
-    //     if(!this.head){
-    //         return undefined
-    //     }
-    //         let newCurrent = this.head;
-    //         this.head = newCurrent.next
-    //         // console.log(newCurrent.val)
-    //         // console.log(newCurrent.val)
-    //     this.length --;
-    //     // console.log(newCurrent)
-    //     return newCurrent;
-    // }
+// shift(){
+//     if(!this.head){
+//         return undefined
+//     }
+//         let newCurrent = this.head;
+//         this.head = newCurrent.next
+//         // console.log(newCurrent.val)
+//         // console.log(newCurrent.val)
+//     this.length --;
+//     // console.log(newCurrent)
+//     return newCurrent;
+// }
 //     unShift(val){
 //         let newNodeUnshift = new Node(val);
 //         if(!this.head){
@@ -1076,7 +1058,6 @@ var twoSum = function(nums, target) {
 // list.unShift("Hello")
 // console.log(list)
 
-
 // class Linked{
 //     constructor() {
 //         this.head = null;
@@ -1085,8 +1066,7 @@ var twoSum = function(nums, target) {
 //     }
 // }
 
-
-// get pseudocode 
+// get pseudocode
 // this function should accept an index
 // If the index is lessthan zero or greater than or equal to the length of the list, return null
 // Loop through the list until you reach the index  and return the node ar that specific index
@@ -1105,52 +1085,52 @@ var twoSum = function(nums, target) {
 //              this.length = 0;
 //          }
 //     //      push(val){
-    //                  let newNode = new LinkedList(val)
-    //                  if(!this.head){
-    //                  this.head = newNode;
-    //                      this.tail = this.head;
-    //                  }
-    //                  else{
-    //                      this.tail.next = newNode;
-    //                      this.tail = newNode;
-    //                  }
-    //                  this.length++;
-    //             return this;
-    //   }
-    // get (index){
-    //     if(index < 0 || index >= this.length)
-    //     return null;
-    //     let counter =0;
-    //     let current = this.head;
-    //     while(counter !== index){
-    //         current = current.next;
-    //         counter++
-    //     }
-    //     // console.log(current)
-    //     return current;
-    // }
+//                  let newNode = new LinkedList(val)
+//                  if(!this.head){
+//                  this.head = newNode;
+//                      this.tail = this.head;
+//                  }
+//                  else{
+//                      this.tail.next = newNode;
+//                      this.tail = newNode;
+//                  }
+//                  this.length++;
+//             return this;
+//   }
+// get (index){
+//     if(index < 0 || index >= this.length)
+//     return null;
+//     let counter =0;
+//     let current = this.head;
+//     while(counter !== index){
+//         current = current.next;
+//         counter++
+//     }
+//     // console.log(current)
+//     return current;
+// }
 
-    // use your get function to find the specific node
-    //  if the node is not found return false
-    // if node is found, set the value of that node to be the value passed to the function and return true; 
+// use your get function to find the specific node
+//  if the node is not found return false
+// if node is found, set the value of that node to be the value passed to the function and return true;
 
-    // set (index, val){
-    //     let foundNode = this.get(index);
-    //     if(foundNode){
-    //         foundNode.val = val;
-    //         return true;
-    //     }
-    //     return false;
+// set (index, val){
+//     let foundNode = this.get(index);
+//     if(foundNode){
+//         foundNode.val = val;
+//         return true;
+//     }
+//     return false;
 
-    // }
+// }
 
-    // insert pseudocode
-    // If the index is the same as the length, push at the end of the list
-    // If the index is 0, unshift a new node to the start of the list 
-    // ohterwise, uisng the get method, access the node at the index -1
-    // Set the next property on that node to be the new node
-    // Set the next property on the new node to be the previous next
-    //  increment the length
+// insert pseudocode
+// If the index is the same as the length, push at the end of the list
+// If the index is 0, unshift a new node to the start of the list
+// ohterwise, uisng the get method, access the node at the index -1
+// Set the next property on that node to be the new node
+// Set the next property on the new node to be the previous next
+//  increment the length
 //     // return true
 //     insert(index, val){
 //         if(index<0 || index > this.length) return false;
@@ -1166,7 +1146,7 @@ var twoSum = function(nums, target) {
 //     }
 //     pop(){
 //                 if (! this.head || this.tail){
-//                     return undefined 
+//                     return undefined
 //                 }
 //                 let current = this.head;
 //                 let newTail = current;
@@ -1205,7 +1185,7 @@ var twoSum = function(nums, target) {
 //     }
 
 //     // reverse pseudocode
-//     // 
+//     //
 
 //     reverse(){
 //         let node = this.head;
@@ -1252,7 +1232,6 @@ var twoSum = function(nums, target) {
 // Doubly linkedlist
 // - head , - tail, and -length
 
-
 // class Node{
 //     constructor(val){
 //         this.val = val;
@@ -1291,7 +1270,7 @@ var twoSum = function(nums, target) {
 //         return this;
 //     }
 
-//     // psuedocode 
+//     // psuedocode
 //     // if there is no head, return undefined
 //     // store the current tail in a variable to return later
 //     // if the length is 1, set the head and tail to be null
@@ -1313,19 +1292,19 @@ var twoSum = function(nums, target) {
 //             this.tail = currentTail.prev
 //             this.tail.next = null
 //             currentTail.prev =null
-            
+
 //         }
 //         this.length--;
 //         return this.currentTail
 //     }
 
-//     // if length is 0, return undefined 
+//     // if length is 0, return undefined
 //     // Store the current head property in a variable (we'll call it old head)
 //     // if the length is one - set the head to be a null - set the tail to be null
 //     // update the head to be the next of the old head
 //     // Set the head's prev property to null
 //     // Set the old head's next to null
-//     // Decrement the length 
+//     // Decrement the length
 //     // Return old head
 //     shift(){
 //         if(this.length === 0)
@@ -1344,13 +1323,13 @@ var twoSum = function(nums, target) {
 //         return oldHead;
 //     }
 //     // unshift pseudocode
-//     // create a new node with the value passed to the function 
+//     // create a new node with the value passed to the function
 //     // if the length is 0 - Set the head to be the new node - Set the tail to be the new node
 //     // otherwise - set the prev property on the head of the list to be the new node
-//     // Set the next property on the new node to be the head property 
+//     // Set the next property on the new node to be the head property
 //     // Update the head to be the new node
 //     // Increment the length
-//     // Return the list 
+//     // Return the list
 //     unShift(val){
 //         let newNode = new Node(val)
 //         if (this.length === 0){
@@ -1358,18 +1337,18 @@ var twoSum = function(nums, target) {
 //             this.tail = newNode
 //         }
 //         else{
-//             this.head.prev =newNode 
+//             this.head.prev =newNode
 //             newNode.next= this.head
 //             this.head = newNode
 //         }
 //         this.length++
 //         return this
 //     }
-//     // Get Pseudocode 
+//     // Get Pseudocode
 //     // If the index is less than 0 or greater or equal to the length, return null
 //     // If the index is less than or equal to half the length of the list - Loop through the list starting from the head and the loop towards the middle  - Return the node once it is found
-//     // IF the index  is greater than half the length of the list - Loop through the list starting from the tail and loop towards the middle 
-//     // Return the node once it is found 
+//     // IF the index  is greater than half the length of the list - Loop through the list starting from the tail and loop towards the middle
+//     // Return the node once it is found
 //     get (index){
 //         if(index < 0 || index>= this.length){
 //             return null;
@@ -1392,13 +1371,13 @@ var twoSum = function(nums, target) {
 //                 count--;
 //             }
 //         }
-        
+
 //         return current;
 //     }
 //     set(index, val){
 //         let setResult = this.get(index);
 //         if(setResult){
-//            setResult.val = val;  
+//            setResult.val = val;
 //             return true;
 //         }
 //         return false;
@@ -1406,11 +1385,11 @@ var twoSum = function(nums, target) {
 
 //     // Insert Pseudocode
 //     // if the index is less than zero or greater than or equal to the length return false
-//     // if the index is 0, unshift 
-//     // if the index is the same as the length, push 
+//     // if the index is 0, unshift
+//     // if the index is the same as the length, push
 //     // Use the get method to access the index-1
-//     // Set the next and prev properties on the correct nodes to link everything together 
-//     // incerement the length 
+//     // Set the next and prev properties on the correct nodes to link everything together
+//     // incerement the length
 //     //  Return True
 //     insert(index, val){
 //         if(index < 0 ||index>=this.length){
@@ -1432,13 +1411,13 @@ var twoSum = function(nums, target) {
 //         this.length++;
 //         return true;
 //     }
-//     // Remove pseudocode 
-//     // if the index is less than zero or greater than or equal to the length return undefined 
-//     // if the index is 0, shift 
+//     // Remove pseudocode
+//     // if the index is less than zero or greater than or equal to the length return undefined
+//     // if the index is 0, shift
 //     // if the index is the same as the lenght-1, pop
-//     // use the get method to retrieve the item to be removed 
+//     // use the get method to retrieve the item to be removed
 //     // update the next and prev properties to remove the found node from the list
-//     // Set next and prev to null on the found node 
+//     // Set next and prev to null on the found node
 //     // Decrement the length
 //     // Return the remove node
 //     remove(index){
@@ -1455,7 +1434,7 @@ var twoSum = function(nums, target) {
 //         removeNode.prev.next = removeNode.next;
 //         removeNode.nex.prev = removeNode.prev;
 //         removeNode.next = null;
-//         removeNode.prev = null; 
+//         removeNode.prev = null;
 //         this.length--;
 //         return removeNode;
 //     }
@@ -1478,11 +1457,10 @@ var twoSum = function(nums, target) {
 // console.log(list.remove(3))
 // console.log(list)
 
-
 // stack
 // recursion_factorial
 // function factorial (x){
-//     if (x===0) 
+//     if (x===0)
 //     return 1;
 //     console.log(x)
 //     return x * factorial(x-1);
@@ -1490,7 +1468,7 @@ var twoSum = function(nums, target) {
 // // LIFO last in first thing removed
 // factorial(3)
 
-// pushing pseudocode 
+// pushing pseudocode
 // the function should accept value
 // create a new node with that value
 // if there are no nodes in the stack, set the first and last property to be the newly created node
@@ -1544,7 +1522,6 @@ var twoSum = function(nums, target) {
 // list.push(3)
 // list.pop(2)
 
-
 // class Node{
 //     constructor(value){
 //         this.value = value;
@@ -1559,7 +1536,7 @@ var twoSum = function(nums, target) {
 //     }
 //     // enqueue pseudocode
 //     // this function accepts some value
-//     // create a new node using that value passed to the function 
+//     // create a new node using that value passed to the function
 //     // If there are no nodes in the queue, set this node to be the first and last property of the queue
 //     // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
 //     enqueue(val){
@@ -1567,7 +1544,7 @@ var twoSum = function(nums, target) {
 //         if(!this.first){
 //             this.first = newNode
 //             this.last = newNode
-//         } 
+//         }
 //         else{
 //             this.last.next = newNode;
 //             this.last = newNode
@@ -1576,10 +1553,10 @@ var twoSum = function(nums, target) {
 //     }
 //     // dequeue
 //     // this function accepts some value
-//     // create a new node using that value passed to the function 
+//     // create a new node using that value passed to the function
 //     // If there are no nodes in the queue, set this node to be the first and last property of the queue
 //     // Otherwise,se tthe next property on the current last to be that node, and then set the last property of the queue to be that node
-    
+
 //     dequeue(){
 //          if(!this.first) return null;
 //          let temp = this.first;
@@ -1610,17 +1587,17 @@ var twoSum = function(nums, target) {
 //     constructor(){
 //         this.root = null;
 //     }
-    // create new node
-    // starting at the root
-    // check if there is a root. if not- the root now becomes that new node
-    // if there is a root, check if the vlaue of the new node is greater than or less than the value of the root 
-    // if it is greater 
-    // check to see if there is a node to the right 
-    // - if there is move to that node and repeat these steps
-    // - if there is not, add that node as the right property
-    // if it is lees-  check to see if there is a node to the left
-    // - if there is, move to that node and repeat these steps
-    // - if there is not, add that node as the left property
+// create new node
+// starting at the root
+// check if there is a root. if not- the root now becomes that new node
+// if there is a root, check if the vlaue of the new node is greater than or less than the value of the root
+// if it is greater
+// check to see if there is a node to the right
+// - if there is move to that node and repeat these steps
+// - if there is not, add that node as the right property
+// if it is lees-  check to see if there is a node to the left
+// - if there is, move to that node and repeat these steps
+// - if there is not, add that node as the left property
 //     insert(value){
 //         let newNode = new Node(value);
 //         if(this.root === null){
@@ -1687,12 +1664,11 @@ var twoSum = function(nums, target) {
 // console.log(tree.find(20))
 // console.log(tree)
 
-
-// BFS Pseudocode 
-// create a queue (this can be an array) and a variable to store the values of nodes visited 
+// BFS Pseudocode
+// create a queue (this can be an array) and a variable to store the values of nodes visited
 // Place the root node in the queue
 // Loop as long as there is anything in the queue
-// - Dequeue a node from the queue and oush the value of the node into the variable that stores the nodes 
+// - Dequeue a node from the queue and oush the value of the node into the variable that stores the nodes
 // If there is a left property on the node dequeued - add it to the queue
 // If there is a right property on the node dequeued -add it to the queue
 // Return the varuable that stores the values
@@ -1739,7 +1715,7 @@ var twoSum = function(nums, target) {
 //                 }
 //             }
 //     BFS(){
-//         let node = this.root, 
+//         let node = this.root,
 //             data = [],
 //             queue = [];
 //         queue.push(node);
@@ -1752,7 +1728,7 @@ var twoSum = function(nums, target) {
 //         return data;
 //     }
 //     // DFS preorder
-//     // create a varaible to store the values of nodes visited 
+//     // create a varaible to store the values of nodes visited
 //     // Store the root of the BEST in a variable called current
 //     // Write a helper function which accepts a node
 //     // - Push the value of the node to the variable that stores the values
@@ -1777,10 +1753,10 @@ var twoSum = function(nums, target) {
 //         return data;
 //     }
 //     // DFS PostOrder
-//     // create a varaible to store the values of nodes visited 
+//     // create a varaible to store the values of nodes visited
 //     // Store the root of the BST in a variable called current
 //     // Write a helper function which accepts a node
-    
+
 //     // - IF the node has a left property,call the helper function with the left property on the node
 //     // -If the node has a right property, call the helper function with the right property on the node
 //     // - Push the value of the node to the variable that stores the values
@@ -1800,10 +1776,10 @@ var twoSum = function(nums, target) {
 //         return data;
 //     }
 //     // DFS InOrder
-//     // create a varaible to store the values of nodes visited 
+//     // create a varaible to store the values of nodes visited
 //     // Store the root of the BST in a variable called current
 //     // Write a helper function which accepts a node
-    
+
 //     // - IF the node has a left property,call the helper function with the left property on the node
 //     // - Push the value of the node to the variable that stores the values
 //     // -If the node has a right property, call the helper function with the right property on the node
@@ -1851,7 +1827,7 @@ var twoSum = function(nums, target) {
 //     insert(element){
 //         this.values.push(element);
 //         this.bubbleUp();
-//     }  
+//     }
 //     bubbleUp(){
 //         let index = this.values.length-1;
 //         const element = this.values[index]
@@ -1868,7 +1844,7 @@ var twoSum = function(nums, target) {
 //                 this.values[index] = parent;
 //                 index = parentIndex;
 //         }
-//     } 
+//     }
 //     // / Remove Pseudocode(also called extractMax)
 //     // Swap the first value in the values property with the last one
 // // Pop from the values property, so you can return the value at the end
@@ -1876,7 +1852,7 @@ var twoSum = function(nums, target) {
 // // - Your parent index starts at 0(the root)
 // //  Find the index of the left child:2 * index+1 (make sure its not out of bounds)
 // // - Find the index of the right child: 2 * index +2 (make sure its not out of bounds)
-// // - IF the left or right child is greater than the element -- swap. if both left and right children are larger, swao with the largest child 
+// // - IF the left or right child is greater than the element -- swap. if both left and right children are larger, swao with the largest child
 // // The child index you swapped to now becomes the new parent index.
 // // Keep looping and wapping until neither child is larger than the element.
 // //  Return the old root.
@@ -1908,7 +1884,7 @@ var twoSum = function(nums, target) {
 //             }
 //             if(rightChildIdx < length){
 //                 rightChild = this.values[rightChildIdx]
-//                 if((swap === null && rightChild>  element)|| 
+//                 if((swap === null && rightChild>  element)||
 //                 (swap !== null && rightChild>  leftChild)){
 //                     swap = rightChildIdx;
 //                 }
@@ -1929,7 +1905,7 @@ var twoSum = function(nums, target) {
 // console.log(heap.values)
 
 // Priority Queue
-// Write a min binary heap - lower number means highr priority 
+// Write a min binary heap - lower number means highr priority
 // Each Node has a val and a priority. Use the priority to build the heap.
 // Enqueue method accepts a value and priority, makes  a new node and puts it in the right spot based off of its priority
 // Dequeue method removes root element, returns it, and rearranges heap using priority
@@ -1942,7 +1918,7 @@ var twoSum = function(nums, target) {
 //         let newNode = new Node(val, priority)
 //                 this.values.push(newNode);
 //                 this.bubbleUp();
-//             }  
+//             }
 //             bubbleUp(){
 //                 let index = this.values.length-1;
 //                 const element = this.values[index]
@@ -1959,7 +1935,7 @@ var twoSum = function(nums, target) {
 //                         this.values[index] = parent;
 //                         index = parentIndex;
 //                 }
-//             } 
+//             }
 //             dequeue(){
 //                         // Edge case come back to this
 //                         const min = this.values[0];
@@ -1988,7 +1964,7 @@ var twoSum = function(nums, target) {
 //                             }
 //                             if(rightChildIdx < length){
 //                                 rightChild = this.values[rightChildIdx]
-//                                 if((swap === null && rightChild.priority<  element.priority)|| 
+//                                 if((swap === null && rightChild.priority<  element.priority)||
 //                                 (swap !== null && rightChild.priority<  leftChild.priority)){
 //                                     swap = rightChildIdx;
 //                                 }
@@ -2015,9 +1991,9 @@ var twoSum = function(nums, target) {
 // ER.enqueue("high fever",4)
 // ER.enqueue("hglass in foot",3)
 // ER.enqueue("broken arm",2)
- 
+
 // console.log(ER)
-// console.log(ER.dequeue(2)) 
+// console.log(ER.dequeue(2))
 
 // function hash(key, arrayLen){
 //     let total = 0;
@@ -2032,7 +2008,6 @@ var twoSum = function(nums, target) {
 // hash("pink", 10)
 // hash("orangered", 10)
 // hash("cyan", 3)
-
 
 // function hash(key, arrayLen){
 //     let total = 0;
@@ -2050,12 +2025,12 @@ var twoSum = function(nums, target) {
 // hash("cyan", 3)
 
 // Set
-//  1. Accepts a key  and a value 
+//  1. Accepts a key  and a value
 // 2. Hashes the key
-// 3. Stores the key-value pair in the hash table array via separate chaining 
+// 3. Stores the key-value pair in the hash table array via separate chaining
 
 // Get
-//  1. Accepts a key 
+//  1. Accepts a key
 // 2. Hashes the key
 // 3. Retrieves the key-value pair in the hash table
 // 4. If the key isn't found, returns undefined
@@ -2132,13 +2107,13 @@ var twoSum = function(nums, target) {
 //         this.adjacencyList = {};
 //     }
 //     addVertex(vertex){
-//         if(!this.adjacencyList[vertex]) 
+//         if(!this.adjacencyList[vertex])
 //         this.adjacencyList[vertex] =[];
 //     }
-//     // Adding an Edge 
+//     // Adding an Edge
 //     // - This function should accept two vertices, we can call them vertex1 and vertex2
 //     // The function should find in the adjacency list the key of vertex 1 and push vertex2 to the array
-//     // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array 
+//     // The function should find in the adjacency list the key of vertex2 and push vertex1 to the array
 //     // Don't worry about handling errors/invalid vertices
 //     addEdge(v1,v2){
 //          this.adjacencyList[v1].push(v2);
@@ -2160,12 +2135,12 @@ var twoSum = function(nums, target) {
 //         }
 //         delete this.adjacencyList[vertex]
 //    }
-   // Depth first traversal- recursive 
+// Depth first traversal- recursive
 // The function should accept a starting node
 // Create a list to store the end result, to be returned at the very end
 // Create an object to store visited vertices
 // Create a helper function which accepts a vertex
-// - The helper function should return early if the vertex is empty 
+// - The helper function should return early if the vertex is empty
 // - The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
 // - Loop over all of the values in the adjacencyList for that vertex
 // - If any of those values have not been visited, recursivley invoke the helper function with that vertex.
@@ -2199,7 +2174,7 @@ var twoSum = function(nums, target) {
 // - Pop the next from the stack
 // - If that vertex hasn't been visited yet: - Mark it as visited
 // ---- Add it to the result list
-// --- Push all of its neighbors into the stack. 
+// --- Push all of its neighbors into the stack.
 //  Return the result array
 //    depthFirstIterative(start){
 //         const stack = [start]
@@ -2224,10 +2199,10 @@ var twoSum = function(nums, target) {
 // - This function should accept a starting vertex
 // - Create a queue (you can use an array) and place the starting vertex in it.
 // - Create an array to store the nodes visited
-// - Create an object to store nodes visited 
-// - Mark the starting vertex as visited 
+// - Create an object to store nodes visited
+// - Mark the starting vertex as visited
 // - Loop as long as there is anything in the queue
-// - Remove the first vertex from the queue and push it into the array that stores nodes visited 
+// - Remove the first vertex from the queue and push it into the array that stores nodes visited
 // - Loop over each vertex in the adjacency list for the vertex you are visiting.
 // - if it is not inside the object that stores nodes visited, mark it as visted and enqueue that vertex
 // return the array of vsiited nodes
@@ -2314,35 +2289,59 @@ var twoSum = function(nums, target) {
 // graph.addEdge("B","C",5)
 // console.log(graph.adjacencyList)
 
+// class PriorityQueue{
+//     constructor(){
+//         this.values =[];
+//     }
+//     enqueue(val, priority){
+//         this.values.push({val, priority});
+//         this.sort();
+//     }
+//     dequeue(){
+//         return this.values.shift();
+//     }
+//     sort(){
+//         this.values.sort((a,b) => a.priority - b.priority)
+//     }
+// }
+// // this sorting method is O(N*log(N))
+// let pq = new PriorityQueue();
+// pq.enqueue("B", 3)
+// pq.enqueue("C", 4)
+// pq.enqueue("A", 2)
+// pq.enqueue("D", 1)
+
+// pq.dequeue()
+// console.log(pq.values)
 //         //     A
 //         //   2/  \4
 //         //  C     B
-        //  | \ 2   \3
-        //  \   D -3--E
-        //  4\ |1   /
-        //     F  / 1
+//  | \ 2   \3
+//  \   D -3--E
+//  4\ |1   /
+//     F  / 1
 
-class PriorityQueue{
-    constructor(){
-        this.values =[];
-    }
-    enqueue(val, priority){
-        this.values.push({val, priority});
-        this.sort();
-    }
-    dequeue(){
-        return this.values.shift();
-    }
-    sort(){
-        this.values.sort((a,b) => a.priority - b.priority)
-    }
+// Djikstra's algorithms
+// This function should accept a starting and ending vertex
+// Create an object (We'll call it distances) and set each key to be every vertex in the adjacency list with a value of infinity, except for the starting vertex which should have a value of 0.
+// After setting a value in the distances object, add each vertex with a priorty of Infinity to the prioroty queue, except the starting vertex, which should have a priority of 0 because that's where we begin.
+// Create another object called previous and set each key to be every vertex in the adjacency list with a value of null.
+// Start looping as long as there is anything in the priority queue
+// -- dequeue a vertex from the priority queue
+// -- If that vertex is the same as the ending vertex- we are done!.
+// -- Otherwise loop through each value in the adjacency list at that vertex
+// ----- Calculate the distance to that vertex from the starting vertex
+// ----- IF the distance is less than what is currently stored in our distances object
+// ----------- Update the distances object wiht new lower distance
+// ----------- Update the previous object to contain that vertex
+// ----------- Enqueue the vertex with the total distance from the start node
+
+
+
+function fib(n){
+    if(n<=2) return 1;
+    return fib(n-1) + fib(n-2);
 }
-// this sorting method is O(N*log(N))
-let pq = new PriorityQueue();
-pq.enqueue("B", 3)
-pq.enqueue("C", 4)
-pq.enqueue("A", 2)
-pq.enqueue("D", 1)
 
-pq.dequeue()
-console.log(pq.values)
+// fib(1)
+console.log(fib(7))
