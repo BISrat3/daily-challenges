@@ -2338,10 +2338,21 @@ var twoSum = function (nums, target) {
 
 
 
-function fib(n){
+// function fib(n){
+//     if(n<=2) return 1;
+//     return fib(n-1) + fib(n-2);
+// }
+
+// // fib(1)
+// console.log(fib(7))
+
+function fib(n, memo=[]){
+    if(memo[n] !== undefined) return memo[n];
     if(n<=2) return 1;
-    return fib(n-1) + fib(n-2);
+    let result = fib(n-1, memo) + fib(n-2, memo);
+    memo[n] = result;
+    console.log(memo)
+    return result;
 }
 
-// fib(1)
-console.log(fib(7))
+fib(4,)
