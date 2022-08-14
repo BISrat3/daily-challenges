@@ -2375,36 +2375,36 @@ var twoSum = function (nums, target) {
 // push
 
 // This function should take in a value and add a node to the end of the SinglyLinkedList. It should return the SinglyLinkedList.
-class Node{
-    constructor(val){
-        this.val = val
-        this.next = null;      
-    }
-}
+// class Node{
+//     constructor(val){
+//         this.val = val
+//         this.next = null;      
+//     }
+// }
 
-class SinglyLinkedList{
+// class SinglyLinkedList{
     
-    constructor(val){
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
+//     constructor(val){
+//         this.head = null;
+//         this.tail = null;
+//         this.length = 0;
+//     }
     
-    push(val){
-        // YOUR CODE GOES HERE
-        let newNode = new Node(val);
-        if(!this.head){
-            this.head = newNode;
-            this.tail = this.head;
-        }
-        else {
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        this.length++;
-        return this;
-    }
-}
+//     push(val){
+//         // YOUR CODE GOES HERE
+//         let newNode = new Node(val);
+//         if(!this.head){
+//             this.head = newNode;
+//             this.tail = this.head;
+//         }
+//         else {
+//             this.tail.next = newNode;
+//             this.tail = newNode;
+//         }
+//         this.length++;
+//         return this;
+//     }
+// }
 
-let singlyLinkedList = new SinglyLinkedList();
-singlyLinkedList.push(5);
+// let singlyLinkedList = new SinglyLinkedList();
+// singlyLinkedList.push(5);
