@@ -2345,14 +2345,66 @@ var twoSum = function (nums, target) {
 
 // // fib(1)
 // console.log(fib(7))
+// Top down memoization 
+// function fib(n, memo=[]){
+//     if(memo[n] !== undefined) return memo[n];
+//     if(n<=2) return 1;
+//     let result = fib(n-1, memo) + fib(n-2, memo);
+//     memo[n] = result;
+//     console.log(memo)
+//     return result;
+// }
 
-function fib(n, memo=[]){
-    if(memo[n] !== undefined) return memo[n];
-    if(n<=2) return 1;
-    let result = fib(n-1, memo) + fib(n-2, memo);
-    memo[n] = result;
-    console.log(memo)
-    return result;
+// fib(4,)
+
+// Tabulation 
+//  function fib_table(n){
+//     if(n<=2) return 1;
+//     let fibNums = [0,1,1];
+//     for(let i=3; i<=n; i++){
+//         fibNums[i] = fibNums[i-1]+ fibNums[i-2]
+//     }
+//     console.log(fibNums[n])
+//     return fibNums[n];
+//  }
+
+//  fib_table(6)
+// SLL - push Exercise
+// Implement the following on the SinglyLinkedList class:
+
+// push
+
+// This function should take in a value and add a node to the end of the SinglyLinkedList. It should return the SinglyLinkedList.
+class Node{
+    constructor(val){
+        this.val = val
+        this.next = null;      
+    }
 }
 
-fib(4,)
+class SinglyLinkedList{
+    
+    constructor(val){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    
+    push(val){
+        // YOUR CODE GOES HERE
+        let newNode = new Node(val);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+        }
+        else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+}
+
+let singlyLinkedList = new SinglyLinkedList();
+singlyLinkedList.push(5);
