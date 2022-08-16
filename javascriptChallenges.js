@@ -2408,3 +2408,32 @@ var twoSum = function (nums, target) {
 
 // let singlyLinkedList = new SinglyLinkedList();
 // singlyLinkedList.push(5);
+
+// const multiply =(num)=>{
+//   console.log(num * 2)
+// }
+// const multiply = num=>{
+//   console.log(num * 2)
+// }
+// multiply(2)
+
+class Human{
+  constructor(gender){
+    this.gender = 'male';
+  }
+  printGender(){
+    console.log(this.gender)
+  }
+}
+class Person extends Human {
+  constructor(){
+    super();
+    this.name ='Bisrat'
+  }
+  personName(){
+    console.log(this.name)
+  }
+}
+let persons = new Person();
+persons.personName();
+persons.printGender();
