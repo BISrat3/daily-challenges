@@ -2417,23 +2417,33 @@ var twoSum = function (nums, target) {
 // }
 // multiply(2)
 
-class Human{
-  constructor(gender){
-    this.gender = 'male';
-  }
-  printGender(){
-    console.log(this.gender)
-  }
+// class Human{
+//   constructor(gender){
+//     this.gender = 'male';
+//   }
+//   printGender(){
+//     console.log(this.gender)
+//   }
+// }
+// class Person extends Human {
+//   constructor(){
+//     super();
+//     this.name ='Bisrat'
+//   }
+//   personName(){
+//     console.log(this.name)
+//   }
+// }
+// let persons = new Person();
+// persons.personName();
+// persons.printGender();
+
+// spread operator test
+const person = {
+    name : 'Bisrat'
 }
-class Person extends Human {
-  constructor(){
-    super();
-    this.name ='Bisrat'
-  }
-  personName(){
-    console.log(this.name)
-  }
+const newPerson = {
+   ... person,
+  age:20
 }
-let persons = new Person();
-persons.personName();
-persons.printGender();
+console.log(newPerson)
