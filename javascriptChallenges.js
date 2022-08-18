@@ -2439,16 +2439,25 @@ var twoSum = function (nums, target) {
 // persons.printGender();
 
 // spread operator test
-const person = {
-    name : 'Bisrat'
-}
-const newPerson = {
-   ... person,
-  age:20
-}
-console.log(newPerson)
-function filter (...args){
-  return args.filter(el => el=== 1)
-}
-console.log(filter(1,2,3))
-console.log(filter(1753,232,123)
+// const person = {
+//     name : 'Bisrat'
+// }
+// const newPerson = {
+//    ... person,
+//   age:20
+// }
+// console.log(newPerson)
+// function filter (...args){
+//   return args.filter(el => el=== 1)
+// }
+// console.log(filter(1,2,3))
+// console.log(filter(1753,232,123))
+
+const numbers = [1,2,3,4]
+
+const doubleNumbers = numbers.map((number) => {
+  return number * 2; 
+})
+
+console.log(numbers)
+console.log(doubleNumbers)
