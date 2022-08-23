@@ -2453,11 +2453,10 @@ var twoSum = function (nums, target) {
 // console.log(filter(1,2,3))
 // console.log(filter(1753,232,123))
 
-const numbers = [1,2,3,4]
+// const numbers = [1,2,3,4]
 
-const doubleNumbers = numbers.map((number) => {
-  return number * 2; 
-})
-
-console.log(numbers)
-console.log(doubleNumbers)
+// const doubleNumbers = numbers.map((number) => {
+//   return number * 2; 
+// })
+// console.log(numbers)
+// console.log(doubleNumbers)
