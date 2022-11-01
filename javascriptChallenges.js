@@ -2460,3 +2460,28 @@ var twoSum = function (nums, target) {
 // })
 // console.log(numbers)
 // console.log(doubleNumbers)
+
+var addTwoNumbers = function() {
+  const l1= [2,4,3]
+  const l2 = [5,6,4]
+  
+  function getNum(list){
+      const numStr = list 
+      .reverse()
+      .join("")
+      return Number(numStr)
+  }
+  
+  function getList(num){
+      return num
+      .toString()
+      .split("")
+      .reverse()
+      .map(Number)
+  }
+  const sum = getNum(l1) + getNum(l2)
+  const output = getList (sum) 
+  console.log(output)
+};
+
+addTwoNumbers()
