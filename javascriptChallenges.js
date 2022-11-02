@@ -2461,27 +2461,90 @@ var twoSum = function (nums, target) {
 // console.log(numbers)
 // console.log(doubleNumbers)
 
-var addTwoNumbers = function() {
-  const l1= [2,4,3]
-  const l2 = [5,6,4]
+// var addTwoNumbers = function() {
+//   const l1= [2,4,3]
+//   const l2 = [5,6,4]
   
-  function getNum(list){
-      const numStr = list 
-      .reverse()
-      .join("")
-      return Number(numStr)
-  }
+//   function getNum(list){
+//       const numStr = list 
+//       .reverse()
+//       .join("")
+//       return Number(numStr)
+//   }
   
-  function getList(num){
-      return num
-      .toString()
-      .split("")
-      .reverse()
-      .map(Number)
-  }
-  const sum = getNum(l1) + getNum(l2)
-  const output = getList (sum) 
-  console.log(output)
-};
+//   function getList(num){
+//       return num
+//       .toString()
+//       .split("")
+//       .reverse()
+//       .map(Number)
+//   }
+//   const sum = getNum(l1) + getNum(l2)
+//   const output = getList (sum) 
+//   console.log(output)
+// };
 
-addTwoNumbers()
+// addTwoNumbers()
+
+// LongestCommon Prefix - Leetcode
+// accept array of string
+// check the array of strings
+// if the array of a string is common return the common 
+// if it is not return empty string
+
+// let string = ['flower', 'flow', 'flight']
+// function LongestCommonPrefix(string){
+//    const output= '';
+//    for (let i=0; i<string[0].length; i++){
+//       for (let j=1; j< string.length; j++){
+//        if(i >= string[j].length){
+//           return string[j];
+//         } 
+//         if(string[0][j] != string[i][j]){
+//           return string[0].substr(0, j)
+//         }
+//       }
+//     }
+//     return output;
+// }
+// console.log(LongestCommonPrefix(string))
+
+
+// let strs = ['car', 'dog', 'racecar']
+// var longestCommonPrefix = function(strs) {
+//   let str= "";
+//    for (let i=0; i<strs[0].length; i++){
+//       for (let j=1; j< strs.length; j++){
+//        if(i >= strs[j].length){
+//           return strs[j];
+//         } 
+//         if(strs[0][i] != strs[j][i]){
+//           return strs[0].substr(0, i)
+//         }
+//         // else{
+//         //   return output.join('')
+//         // }
+//       }
+//     }
+//     return str
+// };
+// console.log(longestCommonPrefix(strs))
+
+
+let strs = ['a']
+var longestCommonPrefix = function(strs) {
+  let str= "";
+   for (let i=0; i<strs[0].length; i++){
+      for (let j=1; j< strs.length; j++){
+       if(i >= strs[j].length){
+          return strs[j];
+        } 
+        if(strs[0][i] != strs[j][i]){
+          return strs[0].substr(0, i)
+        }
+      }
+    }
+    return str
+};
+console.log(longestCommonPrefix(strs))
+
