@@ -2530,10 +2530,15 @@ var twoSum = function (nums, target) {
 // };
 // console.log(longestCommonPrefix(strs))
 
-
-let strs = ['a']
+// let strs = ['car', 'dog', 'racecar']
+// let strs = ["flower", "flow", "flight" ]
+let strs = ["a"]
 var longestCommonPrefix = function(strs) {
   let str= "";
+
+  if (strs.length == 0){
+    return str
+  }
    for (let i=0; i<strs[0].length; i++){
       for (let j=1; j< strs.length; j++){
        if(i >= strs[j].length){
@@ -2544,7 +2549,7 @@ var longestCommonPrefix = function(strs) {
         }
       }
     }
-    return str
+    return strs[0]
 };
 console.log(longestCommonPrefix(strs))
 
