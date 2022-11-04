@@ -2532,24 +2532,60 @@ var twoSum = function (nums, target) {
 
 // let strs = ['car', 'dog', 'racecar']
 // let strs = ["flower", "flow", "flight" ]
-let strs = ["a"]
-var longestCommonPrefix = function(strs) {
-  let str= "";
+// let strs = ["a"]
+// var longestCommonPrefix = function(strs) {
+//   let str= "";
 
-  if (strs.length == 0){
-    return str
-  }
-   for (let i=0; i<strs[0].length; i++){
-      for (let j=1; j< strs.length; j++){
-       if(i >= strs[j].length){
-          return strs[j];
-        } 
-        if(strs[0][i] != strs[j][i]){
-          return strs[0].substr(0, i)
-        }
+//   if (strs.length == 0){
+//     return str
+//   }
+//    for (let i=0; i<strs[0].length; i++){
+//       for (let j=1; j< strs.length; j++){
+//        if(i >= strs[j].length){
+//           return strs[j];
+//         } 
+//         if(strs[0][i] != strs[j][i]){
+//           return strs[0].substr(0, i)
+//         }
+//       }
+//     }
+//     return strs[0]
+// };
+// console.log(longestCommonPrefix(strs))
+
+// a function accept symbol 
+// I - 1, V-5, X-10, L-50, C-100, D-500, M-1000
+// Roman numerals written from largest to smallest from left to right 
+
+function romanToInt(s) {
+  let result = 0;
+  const map = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  };
+ 
+  for (let i = 0; i < s.length; i++) {
+    let largestL = s[i];
+    let smallestR = s[i + 1];
+    let left = map[largestL];
+    let right = map[smallestR];
+    if (right) {
+      if (left >= right) {
+        result += left;
+      } else {
+        result += right - left;
+        i++;
       }
+    } else {
+      result += left;
     }
-    return strs[0]
+  }
+  return result;
 };
-console.log(longestCommonPrefix(strs))
 
+console.log(romanToInt("XXVII"));
