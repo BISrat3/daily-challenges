@@ -2557,35 +2557,56 @@ var twoSum = function (nums, target) {
 // I - 1, V-5, X-10, L-50, C-100, D-500, M-1000
 // Roman numerals written from largest to smallest from left to right 
 
-function romanToInt(s) {
-  let result = 0;
-  const map = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000
-  };
+// function romanToInt(s) {
+//   let result = 0;
+//   const map = {
+//     I: 1,
+//     V: 5,
+//     X: 10,
+//     L: 50,
+//     C: 100,
+//     D: 500,
+//     M: 1000
+//   };
  
-  for (let i = 0; i < s.length; i++) {
-    let largestL = s[i];
-    let smallestR = s[i + 1];
-    let left = map[largestL];
-    let right = map[smallestR];
-    if (right) {
-      if (left >= right) {
-        result += left;
-      } else {
-        result += right - left;
-        i++;
+//   for (let i = 0; i < s.length; i++) {
+//     let largestL = s[i];
+//     let smallestR = s[i + 1];
+//     let left = map[largestL];
+//     let right = map[smallestR];
+//     if (right) {
+//       if (left >= right) {
+//         result += left;
+//       } else {
+//         result += right - left;
+//         i++;
+//       }
+//     } else {
+//       result += left;
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(romanToInt("XXVII"));
+
+// Palindrome the word, phrase that reads the same backward as forward. e.g civic
+
+// longestPalindrome
+// accepting a string
+// check if each string is the as the next string 
+// if the string is same as the next input return it as an outpout
+
+function longestPalindromic(){
+  const s = 'babad';
+  let output =''
+  for(let i=0; i<s.length;i++){
+    for (let j=i+1; j<=s.length; j++){
+      if(s[i]===s[j]){
+        return output[i]
       }
-    } else {
-      result += left;
     }
   }
-  return result;
-};
-
-console.log(romanToInt("XXVII"));
+  // return output;
+}
+console.log(longestPalindromic())
