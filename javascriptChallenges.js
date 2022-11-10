@@ -2597,16 +2597,63 @@ var twoSum = function (nums, target) {
 // check if each string is the as the next string 
 // if the string is same as the next input return it as an outpout
 
-function longestPalindromic(){
-  const s = 'babad';
-  let output =''
-  for(let i=0; i<s.length;i++){
-    for (let j=i+1; j<=s.length; j++){
-      if(s[i]===s[j]){
-        return output[i]
-      }
-    }
+// function longestPalindromic(s){
+//   const s = 'babad';
+//   let output =''
+//   for(let i=0; i<s.length;i++){
+//     for (let j=i+1; j<=s.length; j++){
+//       if(s[i]===s[j]){
+//         return output[i]
+//       }
+//     }
+//   }
+//   // return output;
+// }
+// console.log(longestPalindromic(babad))
+
+
+
+// function multiplesIntegers(number, firstNumber, secondNumber){
+//   firstNumber = 4;
+//   secondNumber = 6; 
+//   let sum =0;
+//   for (let i=0 ; i<number;i++)
+//     if (i % firstNumber == 0 || i % secondNumber == 0)
+//       sum += i;
+//       console.log(sum)
+//   return sum
+// }
+
+// multiplesIntegers(826716)
+
+// function findSum(n, a, b)
+// {
+//     let sum = 0;
+//     for(let i = 0; i < n; i++)
+ 
+//         // If i is a multiple of a or b
+//         if (i % a == 0 || i % b == 0)
+//             sum += i;
+//     console.log(sum)
+//     return sum;
+// }
+
+// findSum(10, 3, 5)
+
+// If we list all numbers below 20 that are multiples of 4 or 6, we get: 4, 6, 8, 12, 16, 18. The sum of these numbers is 64 (4+6+8+12+16+18).  Note: If a number is a multiple of both 4 and 6 (ex: 12), only count it once in the sum (total).
+ 
+// Write a function which accepts an integer to calculate the multiples of 4 or 6 below the specified number and return the sum of those multiples.
+// Example:
+// Input: 20, Output: 64
+ 
+// Also, what is the total when 826,716 is passed in?
+
+function calculateSum( number){
+  let sum =0 ;
+  for (let i=0; i< number; i++)
+  if(i % 4 == 0 || i% 6 == 0)
+  sum += i;
+  console.log(sum)
+  return sum;
   }
-  // return output;
-}
-console.log(longestPalindromic())
+  calculateSum(826716)
