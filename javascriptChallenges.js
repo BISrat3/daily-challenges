@@ -2634,12 +2634,80 @@ var twoSum = function (nums, target) {
  
 // Also, what is the total when 826,716 is passed in?
 
-function calculateSum( number){
-  let sum =0 ;
-  for (let i=0; i< number; i++)
-  if(i % 4 == 0 || i% 6 == 0)
-  sum += i;
-  console.log(sum)
-  return sum;
+// function calculateSum( number){
+//   let sum =0 ;
+//   for (let i=0; i< number; i++)
+//   if(i % 4 == 0 || i% 6 == 0)
+//   sum += i;
+//   console.log(sum)
+//   return sum;
+//   }
+//   calculateSum(826716)
+
+
+// Write a SQL query that lists the first and last name of each employee for the companies located in Florida (State.Abbreviation is ‘FL’) and where either the employee is a Developer (Job.JobCode is ‘dev’) or their job code isn’t found in the Job table.  Order this query by last name, then first name.
+// Company
+// ·   CompanyID, int
+// ·   Name, varchar(50)
+// ·   StateID, int
+// ·   StreetAddress, varchar(max)
+ 
+// Employee
+// ·   EmployeeID, int
+// ·   CompanyID, int
+// ·   JobID, int
+// ·   FirstName, varchar(30)
+// ·   LastName, varchar(50)
+// ·   PhoneNumber, char(12)
+ 
+// State
+// ·   StateID, int
+// ·   Name, varchar(30)
+// ·   Abbreviation, char(2)
+ 
+// Job
+// ·   JobID, int
+// ·   JobCode, char(3)
+// ·   JobDesc, varchar(60)
+//  (1 point)
+
+// SELECT e.FirstName, e.LastName FROM Employee e, 
+// INNER JOIN Company c
+// ON e.CompanyID = c.CompanyID
+// JOIN Job j
+// ON e.JobID = j.JobID
+// WHERE ( 
+// SELECT S.Abbreviation 
+// FROM State s
+// JOIN State s
+// ON c.StateID = s.StateID
+// WHERE s.Abbreviation = "FL"
+// )
+// AND 
+// j.JobCode = 'dev' OR j.JobCode IS NULL
+// ORDER BY LastName, FirstName;
+
+function largestPalindrome(n){
+  let max = 0;
+  let start = Math.pow(10, n) -1;
+  let end = 1 + parseInt (start/10, 10)
+  for (let i= start; i >= end; i--){
+    for (let j = i ; j >= end; j--){
+      let product = i * j;
+      if (product < max)
+        break;
+      let num = product;
+      let reverse = 0;
+      while (num !=0){
+        reverse = reverse * 10 + num %10;
+        num = parseInt(num/10, 10)
+      }
+      if (product == reverse && product > max)
+      max = product
+    }
   }
-  calculateSum(826716)
+  console.log(max)
+  return max;
+}
+
+largestPalindrome(7)
