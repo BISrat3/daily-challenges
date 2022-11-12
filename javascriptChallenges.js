@@ -2686,7 +2686,6 @@ var twoSum = function (nums, target) {
 // AND 
 // j.JobCode = 'dev' OR j.JobCode IS NULL
 // ORDER BY LastName, FirstName;
-
 function largestPalindrome(n){
   let max = 0;
   let start = Math.pow(10, n) -1;
