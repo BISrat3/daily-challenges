@@ -2611,7 +2611,19 @@ var twoSum = function (nums, target) {
 // }
 // console.log(longestPalindromic(babad))
 
+function longpal(s){
+  s = babad
+  let r=s.split('').reverse().join(''); // reverse string
+  let p,l,m=[0,0]; // [pos,len] of best match
+  for(p=0;p<s.length;p++){   
+   for(l=s.length-p; l>m[1];l--)
+    // remember p and l only if it is a longer match 
+    if (r.indexOf(s.substr(p,l))>-1) m=[p,l];
+  } 
+  return s.substr(...m)
+}
 
+console.log(longpal(s))
 
 // function multiplesIntegers(number, firstNumber, secondNumber){
 //   firstNumber = 4;
@@ -2686,27 +2698,27 @@ var twoSum = function (nums, target) {
 // AND 
 // j.JobCode = 'dev' OR j.JobCode IS NULL
 // ORDER BY LastName, FirstName;
-function largestPalindrome(n){
-  let max = 0;
-  let start = Math.pow(10, n) -1;
-  let end = 1 + parseInt (start/10, 10)
-  for (let i= start; i >= end; i--){
-    for (let j = i ; j >= end; j--){
-      let product = i * j;
-      if (product < max)
-        break;
-      let num = product;
-      let reverse = 0;
-      while (num !=0){
-        reverse = reverse * 10 + num %10;
-        num = parseInt(num/10, 10)
-      }
-      if (product == reverse && product > max)
-      max = product
-    }
-  }
-  console.log(max)
-  return max;
-}
+// function largestPalindrome(n){
+//   let max = 0;
+//   let start = Math.pow(10, n) -1;
+//   let end = 1 + parseInt (start/10, 10)
+//   for (let i= start; i >= end; i--){
+//     for (let j = i ; j >= end; j--){
+//       let product = i * j;
+//       if (product < max)
+//         break;
+//       let num = product;
+//       let reverse = 0;
+//       while (num !=0){
+//         reverse = reverse * 10 + num %10;
+//         num = parseInt(num/10, 10)
+//       }
+//       if (product == reverse && product > max)
+//       max = product
+//     }
+//   }
+//   console.log(max)
+//   return max;
+// }
 
-largestPalindrome(7)
+// largestPalindrome(7)
