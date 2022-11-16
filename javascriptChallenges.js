@@ -2626,7 +2626,7 @@ var twoSum = function (nums, target) {
 // console.log(longpal(s))
 
 // function multiplesIntegers(number, firstNumber, secondNumber){
-//   firstNumber = 4;
+//   firstNfumber = 4;
 //   secondNumber = 6; 
 //   let sum =0;
 //   for (let i=0 ; i<number;i++)
@@ -2722,3 +2722,62 @@ var twoSum = function (nums, target) {
 // }
 
 // largestPalindrome(7)
+
+
+<div className='form-control'>
+  <label htmlFor= 'name' className={classes.email}>Email </label>
+  <input type='text' id="name" />
+</div>
+ 
+const [enteredEmail, setEnteredEmail] = useState('')
+const [enteredEmailTouched, setEnteredEmailTouched] = useState(false) 
+
+const enteredEmailIsValid = enteredEmail.trim() !== '';
+// const enteredEmailIsValid = enteredEmail.includes(@) or
+const emailInputIsValid = !enteredEmailIsValid && enteredEmailTouched;
+
+let formIsValid = false;
+
+if(enteredEmailIsValid && enteredEmailIsValid){
+  formIsValid = true
+}
+const emailInputChangeHandler = (event) =>{
+  setEnteredEmail(event.target.value)
+}
+
+const emailInputBlurHandler = event =>{
+  setEnteredEmailTouched(true)
+}
+
+const formSubmissionHandler = (event) => {
+  event.preventDefault();
+
+setEnteredEmailTouched(true)
+
+const regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)+?$/
+
+
+if(!enteredEmailIsValid === regx){
+  return
+}
+console.log(enteredEmail)
+setEnteredEmail('')
+setEnteredEmailTouched(false)
+
+const emailInputClasses = emailInputIsValid ? 'form-control invalid' : 'form-control'
+
+return (
+  <form onSubmit={formSubmissionHandler}>
+      <div className={emailInputClasses}>
+        <label htmlFor="Email">Email Address</label>
+        <input type='text' id='name' onChange={emailInputChangeHandler}
+        onBlur ={emailInputBlurHandler}
+        value ={enteredEmail} />
+        {emailInputIsValid && (<p className="error-text">Email address must correct </p>)}
+      </div>
+
+      <div className="form-actions">
+        <button>onSubmit</button>
+      </div>
+  </form>
+)
