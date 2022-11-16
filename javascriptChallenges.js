@@ -2611,19 +2611,19 @@ var twoSum = function (nums, target) {
 // }
 // console.log(longestPalindromic(babad))
 
-function longpal(s){
-  s = babad
-  let r=s.split('').reverse().join(''); // reverse string
-  let p,l,m=[0,0]; // [pos,len] of best match
-  for(p=0;p<s.length;p++){   
-   for(l=s.length-p; l>m[1];l--)
-    // remember p and l only if it is a longer match 
-    if (r.indexOf(s.substr(p,l))>-1) m=[p,l];
-  } 
-  return s.substr(...m)
-}
+// function longpal(s){
+//   s = babad
+//   let r=s.split('').reverse().join(''); // reverse string
+//   let p,l,m=[0,0]; // [pos,len] of best match
+//   for(p=0;p<s.length;p++){   
+//    for(l=s.length-p; l>m[1];l--)
+//     // remember p and l only if it is a longer match 
+//     if (r.indexOf(s.substr(p,l))>-1) m=[p,l];
+//   } 
+//   return s.substr(...m)
+// }
 
-console.log(longpal(s))
+// console.log(longpal(s))
 
 // function multiplesIntegers(number, firstNumber, secondNumber){
 //   firstNumber = 4;
