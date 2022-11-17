@@ -2724,7 +2724,7 @@ var twoSum = function (nums, target) {
 // largestPalindrome(7)
 
 
-<div className='form-control'>
+{/* <div className='form-control'>
   <label htmlFor= 'name' className={classes.email}>Email </label>
   <input type='text' id="name" />
 </div>
@@ -2780,4 +2780,30 @@ return (
         <button>onSubmit</button>
       </div>
   </form>
-)
+) */}
+
+
+var addTwoNumbers = function() {
+  const l1= [9,9,9,9,9,9,9]
+  const l2 = [9,9,9,9]
+  
+  function getNum(list){
+    const numStr = list 
+    .reverse()
+    .join("")
+    return Number(numStr)
+  }
+  
+  function getList(num){
+    return num
+    .toString()
+    .split("")
+    .reverse()
+    .map(Number)
+  }
+  const sum = getNum(l1) + getNum(l2)
+  const output = getList (sum) 
+  return output
+};
+
+console.log(addTwoNumbers())
