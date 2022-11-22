@@ -2784,8 +2784,8 @@ return (
 
 
 var addTwoNumbers = function() {
-  const l1= [9,9,9,9,9,9,9]
-  const l2 = [9,9,9,9]
+  let l1= [9,9,9,9,9,9,9]
+  let l2 = [9,9,9,9]
   
   function getNum(list){
     const numStr = list 
@@ -2802,8 +2802,8 @@ var addTwoNumbers = function() {
     .map(Number)
   }
   const sum = getNum(l1) + getNum(l2)
-  const output = getList (sum) 
-  return output
+  const getOutput = getList (sum) 
+  // console.log(getOutput())
 };
 
 console.log(addTwoNumbers())
