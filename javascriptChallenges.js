@@ -2831,3 +2831,30 @@ return (
 // if(y){
 //   console.log(y)
 // }
+
+// accepting a string 
+// check the string correctly closed by proper parenthesis 
+// map - the map object hold key-value pairs and rememebrs the original insertion order of the keys. 
+function isValid(s){
+  let map = {
+    ')': '(',
+    '}': '{',
+    ']':'[',
+  } 
+  let bracketArray = []
+  for (let i=0; i< s.length; i++){
+    if(s[i] === '(' || s[i]=== '{' || s[i] === '[' )
+    {
+      bracketArray.push(s[i])
+    }
+    else if (bracketArray[bracketArray.length -1] === map[s[i]]){
+      bracketArray.pop()
+    }
+    else {
+      return false
+    }
+  }
+  return bracketArray.length ? false : true
+}
+
+console.log(isValid('{[]}'))
