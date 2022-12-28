@@ -2835,26 +2835,85 @@ return (
 // accepting a string 
 // check the string correctly closed by proper parenthesis 
 // map - the map object hold key-value pairs and rememebrs the original insertion order of the keys. 
-function isValid(s){
-  let map = {
-    ')': '(',
-    '}': '{',
-    ']':'[',
-  } 
-  let bracketArray = []
-  for (let i=0; i< s.length; i++){
-    if(s[i] === '(' || s[i]=== '{' || s[i] === '[' )
-    {
-      bracketArray.push(s[i])
-    }
-    else if (bracketArray[bracketArray.length -1] === map[s[i]]){
-      bracketArray.pop()
-    }
-    else {
-      return false
-    }
-  }
-  return bracketArray.length ? false : true
-}
+// function isValid(s){
+//   let map = {
+//     ')': '(',
+//     '}': '{',
+//     ']':'[',
+//   } 
+//   let bracketArray = []
+//   for (let i=0; i< s.length; i++){
+//     if(s[i] === '(' || s[i]=== '{' || s[i] === '[' )
+//     {
+//       bracketArray.push(s[i])
+//     }
+//     else if (bracketArray[bracketArray.length -1] === map[s[i]]){
+//       bracketArray.pop()
+//     }
+//     else {
+//       return false
+//     }
+//   }
+//   return bracketArray.length ? false : true
+// }
 
-console.log(isValid('{[]}'))
+// console.log(isValid('{[]}'))
+
+// You are given the heads of two sorted linked lists list1 and list2.
+
+// Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+// Return the head of the merged linked list.
+
+// function mergeTwoLists(list1, list2 ){
+//   list1 = [1,2,4]
+//   list2 = [1,3,4]
+//   // create new sorted list 
+//   let sortedList = []
+//   for(let i=0; i <= list1.length; i++){
+//     for (let j=i; j<= list2.length; j++){
+//       if(list1[i] <= list2[j] || list2[j] > list1[i]){
+
+//         sortedList.push(i)
+//         sortedList.push(j)
+//         sortedList.splice(i)
+//         sortedList.splice(j)
+//       }
+//       // else if (list2[j] > list1[i]){
+//       //   sortedList.push(j)
+//       // }
+
+        
+//       //  sortedList.sort()
+//     }
+//   }
+//   return sortedList
+// }
+// console.log(mergeTwoLists())
+
+function mergeTwoLists (arr1, arr2){
+      let mergeList =[];
+      let i=0;
+      let j=0;
+      while(i<arr1.length && j< arr2.length){
+          if (arr2[j]> arr1[i]){
+            mergeList.push(arr1[i])
+              i++
+          }
+          else{
+            mergeList.push(arr2[j])
+              j++
+          }
+      }
+      while(i< arr1.length){
+        mergeList.push(arr1[i])
+          i++
+      }
+      while(j< arr2.length){
+        mergeList.push(arr2[j])
+          j++
+      }
+      return mergeList;
+  
+  }
+ console.log(mergeTwoLists ([1,2,4], [1,3,4]))
