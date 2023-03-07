@@ -2891,29 +2891,68 @@ return (
 // }
 // console.log(mergeTwoLists())
 
-function mergeTwoLists (arr1, arr2){
-      let mergeList =[];
-      let i=0;
-      let j=0;
-      while(i<arr1.length && j< arr2.length){
-          if (arr2[j]> arr1[i]){
-            mergeList.push(arr1[i])
-              i++
-          }
-          else{
-            mergeList.push(arr2[j])
-              j++
-          }
-      }
-      while(i< arr1.length){
-        mergeList.push(arr1[i])
-          i++
-      }
-      while(j< arr2.length){
-        mergeList.push(arr2[j])
-          j++
-      }
-      return mergeList;
+// function mergeTwoLists (arr1, arr2){
+//       let mergeList =[];
+//       let i=0;
+//       let j=0;
+//       while(i<arr1.length && j< arr2.length){
+//           if (arr2[j]> arr1[i]){
+//             mergeList.push(arr1[i])
+//               i++
+//           }
+//           else{
+//             mergeList.push(arr2[j])
+//               j++
+//           }
+//       }
+//       while(i< arr1.length){
+//         mergeList.push(arr1[i])
+//           i++
+//       }
+//       while(j< arr2.length){
+//         mergeList.push(arr2[j])
+//           j++
+//       }
+//       return mergeList;
   
-  }
- console.log(mergeTwoLists ([1,2,4], [1,3,4]))
+//   }
+//  console.log(mergeTwoLists ([1,2,4], [1,3,4]))
+
+// function calculate(arr, msg){
+//   arr[1] = 150;
+//   msg = "inside"
+//   console.log(arr[0] + arr[1])
+//   console.log (msg)
+
+// }
+ 
+// // const arr = [100]
+// let msg = "outside"
+ 
+// calculate(arr, msg)
+
+// console.log(arr[0] + arr[1])
+// console.log(msg)
+
+// var arr = ["first", "second", "third", "fourth"]
+// for (var i=0; i<3; ++i){
+//   setTimeout(()=>(
+//     console.log(arr[i])
+//   ), 2500)
+// }
+
+//create a function take a string as input and output the reverse string.
+//example:
+//input: 'abcd e'
+//ouput: 'e dcba'
+
+function foo(input) {
+  // implement the logic below
+   // accept a string 
+   // should reverse the string that we accept
+     return input.split("").reverse().join("")
+ }
+ 
+ // test case
+ console.log(foo('abcd e')); // should output 'e dcba' in the console
+ console.log(foo('233c de')); // should output 'ed c332' in the console
