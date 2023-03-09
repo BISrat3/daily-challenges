@@ -1,8 +1,8 @@
 // Challenge 1
 
-const e = require("express");
-const { merge } = require("jquery");
-const { Query } = require("mongoose");
+// const e = require("express");
+// const { merge } = require("jquery");
+// const { Query } = require("mongoose");
 
 // Given an integer n, return a string array answer (1-indexed) where:
 
@@ -2946,13 +2946,31 @@ return (
 //input: 'abcd e'
 //ouput: 'e dcba'
 
-function foo(input) {
-  // implement the logic below
-   // accept a string 
-   // should reverse the string that we accept
-     return input.split("").reverse().join("")
- }
+// function foo(input) {
+//   // implement the logic below
+//    // accept a string 
+//    // should reverse the string that we accept
+//      return input.split("").reverse().join("")
+//  }
  
- // test case
- console.log(foo('abcd e')); // should output 'e dcba' in the console
- console.log(foo('233c de')); // should output 'ed c332' in the console
+//  // test case
+//  console.log(foo('abcd e')); // should output 'e dcba' in the console
+//  console.log(foo('233c de')); // should output 'ed c332' in the console
+
+
+//  Remove elements 
+function removeElement(num, val){
+  num = [0,1,2,2,3,0,4,2]
+  val = 2;
+  let i = 0; 
+  let k = 0;
+  while( i < num.length){
+    if(num[i] != val){
+      num[k] = num[i]
+      k +=1
+    }
+    i++
+  }
+  return k
+}
+console.log(removeElement())
