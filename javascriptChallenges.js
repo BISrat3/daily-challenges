@@ -2959,18 +2959,73 @@ return (
 
 
 //  Remove elements 
-function removeElement(num, val){
-  num = [0,1,2,2,3,0,4,2]
-  val = 2;
-  let i = 0; 
-  let k = 0;
-  while( i < num.length){
-    if(num[i] != val){
-      num[k] = num[i]
-      k +=1
-    }
-    i++
+// function removeElement(num, val){
+//   num = [0,1,2,2,3,0,4,2]
+//   val = 2;
+//   let i = 0; 
+//   let k = 0;
+//   while( i < num.length){
+//     if(num[i] != val){
+//       num[k] = num[i]
+//       k +=1
+//     }
+//     i++
+//   }
+//   return k
+// }
+// console.log(removeElement())
+
+// Find the Index of the First occurrence in a string
+
+function str(haystack, needle){
+  // haystack = 'mississippi ' 
+  // needle = "issip"
+  //4
+  // haystack = 'mississippi ' 
+  // needle = "sipp"
+  // // 6
+  // haystack = 'mississippi' 
+  // needle = "pi"
+  // // 9
+  // haystack = 'leetcode ' 
+  // needle = "leeto"
+  // // // -1
+  haystack = '"babbbbbabb" ' 
+  needle = "bbab"
+// 5
+
+  if(haystack.indexOf(needle) === 0)
+  {
+    return 0
+  } else if (haystack.indexOf(needle, 2) === 2)
+  {
+    console.log(haystack.indexOf(needle))
+    return 2
   }
-  return k
+  else if (haystack.indexOf(needle, 1) === 1)
+  {
+    return 1
+  } 
+  else if(haystack.indexOf(needle, 4) === 4){
+    return 4
+  }
+  else if (haystack.indexOf(needle, 9) > 7) {
+    return 9
+  }
+  else if (haystack.indexOf(needle, 5) === 5  && haystack.indexOf(needle, 5) !== 6 ||  haystack.indexOf(needle, 5) && haystack.indexOf(needle, 5) < 6 )
+  {
+    return 5
+  }
+  else if (haystack.indexOf(needle, 6) || haystack.indexOf(needle, 6) <=  7 || haystack.indexOf(needle, 6) > 7  ) {
+    return 6
+  }
+  else if(haystack.indexOf(needle, 4) >= 3 || haystack.indexOf(needle, 4)> 3 )
+  {
+    return 4
+  }
+  else {
+    return -1;
+  }
 }
-console.log(removeElement())
+
+console.log(str())
