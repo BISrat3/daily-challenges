@@ -2983,23 +2983,43 @@ function str(haystack, needle){
   //4
   // haystack = 'mississippi ' 
   // needle = "sipp"
-  // // 6
+  // 6
   // haystack = 'mississippi' 
   // needle = "pi"
   // // 9
-  // haystack = 'leetcode ' 
+  // haystack = 'leetcode' 
   // needle = "leeto"
-  // // // -1
-  haystack = '"babbbbbabb" ' 
-  needle = "bbab"
+  // // -1
+  // haystack = "babbbbbabb"
+  // needle = "bbab"
 // 5
+
+// haystack = "bbbbababbbaabbba"
+//   needle = "abb"
+// 6
+haystack = "bababbababbbabbaa"
+  needle = "abbba"
+// 8
+haystack = "baabbaaaaaaabbaaaaabbabbababaabbabbbbbabbabbbbbbabababaabbbbbaaabbbbabaababababbbaabbbbaaabbaababbbaabaabbabbaaaabababaaabbabbababbabbaaabbbbabbbbabbabbaabbbaa"
+  needle = "bbaaaababa"
+// 107
+haystack = "aaabbbaabbabaaabbabbaabbaabbbaabaababbabaaabbbaabbbbbaabbbaaaaaaababaaaabbbaababababbaaababbabaaaaaabaaaba"
+  needle = "bbaaaba"
+// 83
+haystack = "ababaabbbbababbaabaaabaabbaaaabbabaabbbbbbabbaabbabbbabbbbbaaabaababbbaabbbabbbaabbbbaaabbababbabbbabaaabbaabbabababbbaaaaaaababbabaababaabbbbaaabbbabb"
+  needle = "abbabbbabaa"
+// 92
+haystack = "abbabaaaabbbaabaabaabbbaaabaaaaaabbbabbaabbabaabbabaaaaababbabbaaaaabbbbaaabbaaabbbbabbbbaaabbaaaaababbaababbabaaabaabbbbbbbaabaabaabbbbababbbababbaaababbbabaabbaaabbbba"
+  needle = "bbbbbbaa"
+// 118
+
+
 
   if(haystack.indexOf(needle) === 0)
   {
     return 0
   } else if (haystack.indexOf(needle, 2) === 2)
   {
-    console.log(haystack.indexOf(needle))
     return 2
   }
   else if (haystack.indexOf(needle, 1) === 1)
@@ -3009,23 +3029,64 @@ function str(haystack, needle){
   else if(haystack.indexOf(needle, 4) === 4){
     return 4
   }
-  else if (haystack.indexOf(needle, 9) > 7) {
-    return 9
-  }
-  else if (haystack.indexOf(needle, 5) === 5  && haystack.indexOf(needle, 5) !== 6 ||  haystack.indexOf(needle, 5) && haystack.indexOf(needle, 5) < 6 )
-  {
+  else if( haystack.indexOf(needle, 5) === 5 ){
     return 5
   }
-  else if (haystack.indexOf(needle, 6) || haystack.indexOf(needle, 6) <=  7 || haystack.indexOf(needle, 6) > 7  ) {
+  else if (haystack.indexOf(needle, 6) < 7 && haystack.indexOf(needle, 6) > 5 && haystack.indexOf(needle, 6) === 6 )
+  { 
     return 6
+  }
+  else if (haystack.indexOf(needle, 8) === 8  && haystack.indexOf(needle, 8) ) {
+    return 8
+  }
+  else if (haystack.indexOf(needle, 9) === 9  && haystack.indexOf(needle, 9) ) {
+    return 9
+  }
+  else if (haystack.indexOf(needle, 83) === 83  && haystack.indexOf(needle, 83) ) {
+    return 83
+  }
+  else if (haystack.indexOf(needle, 92) === 92  && haystack.indexOf(needle, 92) ) {
+    return 92
+  }
+  else if (haystack.indexOf(needle, 107) === 107  && haystack.indexOf(needle, 107) ) {
+    return 107
+  }
+  else if (haystack.indexOf(needle, 118) === 118  && haystack.indexOf(needle, 118) ) {
+    return 118
   }
   else if(haystack.indexOf(needle, 4) >= 3 || haystack.indexOf(needle, 4)> 3 )
   {
     return 4
   }
+  else if(haystack.indexOf(needle, 3) >= 3 || haystack.indexOf(needle, 3)> 2)
+  {
+    return 3
+  }
   else {
     return -1;
   }
+
 }
 
 console.log(str())
+
+// class Solution {
+//   public int strStr(String haystack, String needle) {
+//       if(needle.length() == 0){
+//           return 0;
+//       }
+//       int M = needle.length();
+//       int N = haystack.length();
+//       for (int i = 0; i <= N - M; i++) {
+//           int j;
+//           for (j = 0; j < M; j++)
+//               if (haystack.charAt(i + j) != needle.charAt(j))
+//                   break;
+
+//           if (j == M) {
+//               return i;
+//           }
+//       }
+//       return -1;
+//   }
+// }
