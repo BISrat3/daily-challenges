@@ -3125,44 +3125,69 @@ return (
 // console.log(strStr())
 
 function searchInsert(numbers, target){
-  numbers = [1,2,5,8]
-  target = 6
-  result = 0
+  // numbers = [1,3,5,7]
+  // target = 0
+  // numbers = [1,3,5,6]
+  // target = 7
+
+  // numbers = [3,6,7,8,10]
+  // target = 5
+  //   numbers = [2,3,5,6,9]
+  // target = 7
+  // numbers = [1,2,4,6,8,9,10]
+  // target = 10
+  numbers = [2,4,5,6,7,8]
+  target = 7
+  
   for (let i= 0; i <= numbers.length; i++){
-    
-      if(numbers[i] === target){
-    //  console.log(numbers[i])
+    if(numbers[i] === target || numbers[i] > target ){
+       console.log(i)
+       
       return i
-    }
-    for (let j = i+1; j <= numbers.length -1;j++){
-      console.log(numbers[i])
-      if (numbers[j] > target) {
-        console.log(numbers[i])
+    } 
+    for (let j = i+1; j <= numbers[i+1];j++){
+      result = numbers.length -1
+      // console.log(numbers[result])
+      // console.log(result+1)
+      // console.log(numbers[i])
+      if (numbers[j] > target ) {
+        // console.log(numbers[j])
         numbers[j] -= numbers[i]  
-        return numbers[i]
-        
+        return j
       }
-      else if (numbers[j] === target) {
-        // / console.log(numbers[j])
+      else if (numbers[j] === target ) {
+         console.log(numbers[j])
         // result += numbers [i]
         // i++
 
         // console.log(i)
-        return numbers[j]
+        return j
         // console.log(resul
-
       }
-      else if (numbers[j] < target && numbers[numbers.length -1] < target){
-        // console.log(numbers[numbers.length -1])
-        // console.log(numbers[j])
-        numbers [j] += i  
-        // console.log(j)
-        return numbers[j]
+      else if (target >= numbers[result]) {
+        // console.log(numbers[result])
+        if (target > numbers[result]){
+          return result+1
+        }
+        return result
       }
-      // j++
-      // console.log(j)
+      else if (numbers[result] > target && numbers[result-1] < target && numbers[result-1] !== target){
+        // numbers [j+1] += i
+        console.log(numbers.length -1)
+        // console.log(numbers.length -1)
+        
+        return numbers.length -1
+      }
+      else if (numbers[j] < target && numbers[j+1] < target &&  numbers[result-1] !== target){
+        // numbers [j+1] += i
+        console.log(numbers[result -1])
+        return j+2
+      }
+      else {
+        return j+1
+      }
     }
+    return i+1
   }
-
 }
 console.log(searchInsert())
