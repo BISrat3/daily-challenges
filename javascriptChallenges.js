@@ -3142,17 +3142,20 @@ function searchInsert(numbers, target){
   // target = 2
   numbers = [-3,-1, 3, 90]
   target = 0
-  
-  for (let i= 0; i <= numbers.length; i++){
+  for (let  i= 0; i <= numbers.length; i++){
     if(numbers[i] === target || numbers[i] > target ){
         console.log(i)
         return i
     } 
    let j= 0;
-    for ( j = i+1; j <= numbers[i+1];j++){
+   for ( j = i+1; j <= numbers[i+1];j++){
+      
       result = numbers.length -1
       // console.log(result+ numbers[i])
-      // console.log(numbers[i])
+      // console.log(numbers[j+1])
+      // if (numbers[j] < target && numbers[j+1] > target ){
+      //   return j+1
+      // }
       if (numbers[j] > target ) {
         // console.log(numbers[j])
         numbers[j] -= numbers[i]  
@@ -3170,23 +3173,23 @@ function searchInsert(numbers, target){
         console.log(j)
         return j
       }
+      else if(numbers[j] < target && numbers[j+1] > target ){
+        // console.log(numbers[j])
+        return j+1
+      }
       else if (target >= numbers[result]) {
         // console.log(numbers[result])
         if (target > numbers[result]){
-          console.log(result+1)
+          // console.log(result+1)
           return result+1
         }
         return result
       }
-      else if(numbers[j] <= target && numbers[j+1] > target ){
-        // console.log(numbers[j])
-        return j+1
-      }
+     
       else if (numbers[result] > target && numbers[result-1] < target && numbers[result-1] !== target){
         // numbers [j+1] += i
         // console.log(numbers.length -1)
         // console.log(numbers.length -1)
-        
         return numbers.length -1
       }
       else if (numbers[j] < target && numbers[j+1] < target && numbers[result-1] !== target){
@@ -3196,12 +3199,12 @@ function searchInsert(numbers, target){
         return j+2
       }
       // else {
-        //   return j+1
-        // }
-        j++
+      //     return j++
+      //   }
+        // j++
+        return j++
       }
-    return j+1
+      return i+1
   }
-  return i+1
 }
 console.log(searchInsert())
