@@ -3125,8 +3125,8 @@ return (
 // console.log(strStr())
 
 function searchInsert(numbers, target){
-  // numbers = [1,3,5,7]
-  // target = 0
+  numbers = [1,3,5,7]
+  target = 0
   // numbers = [1,3,5,6]
   // target = 7
   // numbers = [3,6,7,8,10]
@@ -3137,74 +3137,50 @@ function searchInsert(numbers, target){
   // target = 10
   // numbers = [2,4,5,6,7,8]
   // target = 7
-  numbers = [1]
-  target = 2
+  // numbers = [1]
+  // target = 2
 // numbers = [1]
 //   target = 1
   // numbers = [-3,-1, 3, 90]
   // target = 0
-// target = -5365
+
   let i;
   for ( i= 0; i <= numbers.length; i++){
     let j;
-    if(numbers[i] > target && numbers[i] >=0 || numbers[i] === target) {
+    if(numbers[i] > target && numbers[i] >=0 || numbers[i] === target ) {
       return i
     }
     for (j = i+1; j <= numbers[i+1];j++){
-      // console.log(j)
-      // console.log(numbers[i+1])
       result = numbers.length -1
-      // console.log(result+ numbers[i])
-      // console.log(numbers[j+1])
       if (numbers[j] > target ) {
-        // console.log(numbers[j])
         numbers[j] -= numbers[i]  
         return j
       }
-      // if(numbers[j] === target) {
-      //   // console.log(j)
-      //   return j
-      // }
-      if(numbers[j] < target && numbers[j+1] > target ){
-        // console.log(numbers[j])
-        return j+1
-      }
+      if(numbers[j] === target || numbers[j] > target ){
+         return j
+       }
       else if (target >= numbers[result]) {
-        // console.log(numbers[result])
-        if (target > numbers[result]){
-          // console.log(result+1)
+        if (target > numbers[result] || numbers[result] === 0){
           return result+1
         }
         return result
       }
-      else if(numbers[j] === target || numbers[j] > target ){
-        // console.log(i)
-        return j
-      }
       else if (numbers[result] > target && numbers[result-1] < target && numbers[result-1] !== target){
-        // numbers [j+1] += i
-        // console.log(numbers.length -1)
-        // console.log(numbers.length -1)
         return numbers.length -1
       }
       else if (numbers[j] < target && numbers[j+1] < target && numbers[result-1] !== target){
-        // // numbers [j+1] += i
-        // console.log(numbers[result -1])
-        // console.log(j+2)
         return j+2
       }
-      // else {
-      //     return i
-      //   }
-      //   j++
-      return j--
     }
-    // console.log(i)
-    // return i++
-  //  if (numbers[i] === 0) {
-  //     return i+1
-  //   }
-    return i
+    if(target === 0){
+      return j+1
+     }
+    if(numbers.length === 1){
+      return i+1
+    }
+    if (numbers[i] < 0 && target < 0){
+      return i
+    }
   }
   return i-1
 }
