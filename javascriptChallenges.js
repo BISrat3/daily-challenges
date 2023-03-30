@@ -1,5 +1,7 @@
 // Challenge 1
 
+const { trim } = require("jquery")
+
 // const e = require("express");
 // const { merge } = require("jquery");
 // const { Query } = require("mongoose");
@@ -3124,67 +3126,67 @@ return (
 
 // console.log(strStr())
 
-function searchInsert(numbers, target){
-  numbers = [1,3,5,7]
-  target = 0
-  // numbers = [1,3,5,6]
-  // target = 7
-  // numbers = [3,6,7,8,10]
-  // target = 5
-  // numbers = [2,3,5,6,9]
-  // target = 7
-  // numbers = [1,2,4,6,8,9,10]
-  // target = 10
-  // numbers = [2,4,5,6,7,8]
-  // target = 7
-  // numbers = [1]
-  // target = 2
-// numbers = [1]
-//   target = 1
-  // numbers = [-3,-1, 3, 90]
-  // target = 0
+// function searchInsert(numbers, target){
+//   numbers = [1,3,5,7]
+//   target = 0
+//   // numbers = [1,3,5,6]
+//   // target = 7
+//   // numbers = [3,6,7,8,10]
+//   // target = 5
+//   // numbers = [2,3,5,6,9]
+//   // target = 7
+//   // numbers = [1,2,4,6,8,9,10]
+//   // target = 10
+//   // numbers = [2,4,5,6,7,8]
+//   // target = 7
+//   // numbers = [1]
+//   // target = 2
+// // numbers = [1]
+// //   target = 1
+//   // numbers = [-3,-1, 3, 90]
+//   // target = 0
 
-  let i;
-  for ( i= 0; i <= numbers.length; i++){
-    let j;
-    if(numbers[i] > target && numbers[i] >=0 || numbers[i] === target ) {
-      return i
-    }
-    for (j = i+1; j <= numbers[i+1];j++){
-      result = numbers.length -1
-      if (numbers[j] > target ) {
-        numbers[j] -= numbers[i]  
-        return j
-      }
-      if(numbers[j] === target || numbers[j] > target ){
-         return j
-       }
-      else if (target >= numbers[result]) {
-        if (target > numbers[result] || numbers[result] === 0){
-          return result+1
-        }
-        return result
-      }
-      else if (numbers[result] > target && numbers[result-1] < target && numbers[result-1] !== target){
-        return numbers.length -1
-      }
-      else if (numbers[j] < target && numbers[j+1] < target && numbers[result-1] !== target){
-        return j+2
-      }
-    }
-    if(target === 0){
-      return j+1
-     }
-    if(numbers.length === 1){
-      return i+1
-    }
-    if (numbers[i] < 0 && target < 0){
-      return i
-    }
-  }
-  return i-1
-}
-console.log(searchInsert())
+//   let i;
+//   for ( i= 0; i <= numbers.length; i++){
+//     let j;
+//     if(numbers[i] > target && numbers[i] >=0 || numbers[i] === target ) {
+//       return i
+//     }
+//     for (j = i+1; j <= numbers[i+1];j++){
+//       result = numbers.length -1
+//       if (numbers[j] > target ) {
+//         numbers[j] -= numbers[i]  
+//         return j
+//       }
+//       if(numbers[j] === target || numbers[j] > target ){
+//          return j
+//        }
+//       else if (target >= numbers[result]) {
+//         if (target > numbers[result] || numbers[result] === 0){
+//           return result+1
+//         }
+//         return result
+//       }
+//       else if (numbers[result] > target && numbers[result-1] < target && numbers[result-1] !== target){
+//         return numbers.length -1
+//       }
+//       else if (numbers[j] < target && numbers[j+1] < target && numbers[result-1] !== target){
+//         return j+2
+//       }
+//     }
+//     if(target === 0){
+//       return j+1
+//      }
+//     if(numbers.length === 1){
+//       return i+1
+//     }
+//     if (numbers[i] < 0 && target < 0){
+//       return i
+//     }
+//   }
+//   return i-1
+// }
+// console.log(searchInsert())
 
 
 // // class Solution {
@@ -3202,3 +3204,35 @@ console.log(searchInsert())
 //     return start;
 // }
 // }
+
+function lengthOfLastWord (s){
+  // s= "Hello World"
+  s =   "fly me   to   the moon " 
+  // let words= 
+  s = s.trim()
+  let words = s.split(" ")
+  // console.log(s.at(-1))
+  // console.log(s.split(" "))
+  // return words;
+  let lastIndex = words.length -1
+  // console.log(lastIndex)
+  for (let i= 0; i<= words.length; i++){
+    // console.log(words[words.length-1])
+    // console.log(words[i])
+    if(i === lastIndex && i !== " "){
+      return words[i].length;
+    } 
+  }
+}
+console.log(lengthOfLastWord())
+
+// var lengthOfLastWord = function(s) {
+//   s= s.trim()
+//   let words = s.split(" ")
+//   let lastIndex = words.length -1;
+//   for (let i= 0; i<= words.length; i++){
+//     if(i === lastIndex){
+//   return words[i].length
+// } 
+// }
+};
