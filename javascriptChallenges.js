@@ -3205,34 +3205,70 @@ return (
 // }
 // }
 
-function lengthOfLastWord (s){
-  // s= "Hello World"
-  s =   "fly me   to   the moon " 
-  // let words= 
-  s = s.trim()
-  let words = s.split(" ")
-  // console.log(s.at(-1))
-  // console.log(s.split(" "))
-  // return words;
-  let lastIndex = words.length -1
-  // console.log(lastIndex)
-  for (let i= 0; i<= words.length; i++){
-    // console.log(words[words.length-1])
-    // console.log(words[i])
-    if(i === lastIndex && i !== " "){
-      return words[i].length;
-    } 
-  }
-}
-console.log(lengthOfLastWord())
+// function lengthOfLastWord (s){
+//   // s= "Hello World"
+//   s =   "fly me   to   the moon " 
+//   // let words= 
+//   s = s.trim()
+//   let words = s.split(" ")
+//   // console.log(s.at(-1))
+//   // console.log(s.split(" "))
+//   // return words;
+//   let lastIndex = words.length -1
+//   // console.log(lastIndex)
+//   for (let i= 0; i<= words.length; i++){
+//     // console.log(words[words.length-1])
+//     // console.log(words[i])
+//     if(i === lastIndex && i !== " "){
+//       return words[i].length;
+//     } 
+//   }
+// }
+// console.log(lengthOfLastWord())
 
 // var lengthOfLastWord = function(s) {
 //   s= s.trim()
-//   let words = s.split(" ")
-//   let lastIndex = words.length -1;
-//   for (let i= 0; i<= words.length; i++){
-//     if(i === lastIndex){
-//   return words[i].length
-// } 
-// }
-};
+// //   let words = s.split(" ")
+// //   let lastIndex = words.length -1;
+// //   for (let i= 0; i<= words.length; i++){
+// //     if(i === lastIndex){
+// //   return words[i].length
+// // } 
+// // }
+// };
+
+function plusOne(digits){
+  // digits = [1,2,3]
+  // digits = [4,3,2,1]
+  digits = [9]
+  let lastElement = digits[digits.length -1]
+  // console.log(lastElement)
+  let result = [];
+  for(let i = 0; i<= digits.length; i++){
+    // for(let j = i; j <= digits[i]; j++){
+      // console.log (j)
+      if (digits[i]  !== result[i] && digits[i] !== lastElement){
+        // console.log(digits[i].length)
+        // console.log(result.length)
+        result.push(digits[i])
+        // console.log(result)
+        
+    }  if (digits[i] === lastElement){
+      result.push(digits[i] + 1)
+      // result = result[j]+1
+      // console.log(result)
+      // return result
+    } if(result[i] >= 9){
+
+      
+      let res = result.toString()
+      
+      console.log(res)
+    }
+    // return res
+  }
+  // return res
+  // }
+  // return result
+}
+console.log(plusOne())
