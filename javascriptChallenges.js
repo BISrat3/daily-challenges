@@ -3258,17 +3258,18 @@ function plusOne(digits){
       // result = result[j]+1
       // console.log(result)
       // return result
-    } if(result[i] >= 9){
-
-      
-      let res = result.toString()
-      
-      console.log(res)
     }
-    // return res
+     if(result[i] >= 9){
+
+      // let res = String(result).split('')
+      let res = String(result).split('').map(str => Number(str))
+      // let res = result.toString()
+ 
+      return res
+    }
   }
+  return result
   // return res
   // }
-  // return result
 }
 console.log(plusOne())
