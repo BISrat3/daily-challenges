@@ -3240,7 +3240,8 @@ return (
 function plusOne(digits){
   // digits = [1,2,3]
   // digits = [4,3,2,1]
-  digits = [9]
+  // digits = [9]
+  digits = [9,9]
   let lastElement = digits[digits.length -1]
   // console.log(lastElement)
   let result = [];
@@ -3259,10 +3260,15 @@ function plusOne(digits){
       // console.log(result)
       // return result
     }
-     if(result[i] >= 9){
+     if(result[i] >= 9 ){
 
       // let res = String(result).split('')
       let res = String(result).split('').map(str => Number(str))
+      if(result[i] >= 9 && result[i+1] >= 9){
+        console.log(result[i])
+        let moreResult = res+1
+        return moreResult
+      }
       // let res = result.toString()
  
       return res
