@@ -1,6 +1,6 @@
 // Challenge 1
 
-const { trim } = require("jquery")
+const { trim } = require("jquery");
 
 // const e = require("express");
 // const { merge } = require("jquery");
@@ -2976,38 +2976,38 @@ return (
 // function str(haystack, needle) {
 //   haystack = "mississippi ";
 //   needle = "issip";
-  //   //4
-  //   // haystack = 'mississippi '
-  //   // needle = "sipp"
-  //   // 6
-  //   // haystack = 'mississippi'
-  //   // needle = "pi"
-  //   // // 9
-  //   // haystack = 'leetcode'
-  //   // needle = "leeto"
-  //   // // -1
-  //   // haystack = "babbbbbabb"
-  //   // needle = "bbab"
-  // // 5
+//   //4
+//   // haystack = 'mississippi '
+//   // needle = "sipp"
+//   // 6
+//   // haystack = 'mississippi'
+//   // needle = "pi"
+//   // // 9
+//   // haystack = 'leetcode'
+//   // needle = "leeto"
+//   // // -1
+//   // haystack = "babbbbbabb"
+//   // needle = "bbab"
+// // 5
 
-  // // haystack = "bbbbababbbaabbba"
-  // //   needle = "abb"
-  // // 6
-  // haystack = "bababbababbbabbaa"
-  //   needle = "abbba"
-  // // 8
-  // haystack = "baabbaaaaaaabbaaaaabbabbababaabbabbbbbabbabbbbbbabababaabbbbbaaabbbbabaababababbbaabbbbaaabbaababbbaabaabbabbaaaabababaaabbabbababbabbaaabbbbabbbbabbabbaabbbaa"
-  //   needle = "bbaaaababa"
-  // // 107
-  // haystack = "aaabbbaabbabaaabbabbaabbaabbbaabaababbabaaabbbaabbbbbaabbbaaaaaaababaaaabbbaababababbaaababbabaaaaaabaaaba"
-  //   needle = "bbaaaba"
-  // // 83
-  // haystack = "ababaabbbbababbaabaaabaabbaaaabbabaabbbbbbabbaabbabbbabbbbbaaabaababbbaabbbabbbaabbbbaaabbababbabbbabaaabbaabbabababbbaaaaaaababbabaababaabbbbaaabbbabb"
-  //   needle = "abbabbbabaa"
-  // // 92
-  // haystack = "abbabaaaabbbaabaabaabbbaaabaaaaaabbbabbaabbabaabbabaaaaababbabbaaaaabbbbaaabbaaabbbbabbbbaaabbaaaaababbaababbabaaabaabbbbbbbaabaabaabbbbababbbababbaaababbbabaabbaaabbbba"
-  //   needle = "bbbbbbaa"
-  // // 118
+// // haystack = "bbbbababbbaabbba"
+// //   needle = "abb"
+// // 6
+// haystack = "bababbababbbabbaa"
+//   needle = "abbba"
+// // 8
+// haystack = "baabbaaaaaaabbaaaaabbabbababaabbabbbbbabbabbbbbbabababaabbbbbaaabbbbabaababababbbaabbbbaaabbaababbbaabaabbabbaaaabababaaabbabbababbabbaaabbbbabbbbabbabbaabbbaa"
+//   needle = "bbaaaababa"
+// // 107
+// haystack = "aaabbbaabbabaaabbabbaabbaabbbaabaababbabaaabbbaabbbbbaabbbaaaaaaababaaaabbbaababababbaaababbabaaaaaabaaaba"
+//   needle = "bbaaaba"
+// // 83
+// haystack = "ababaabbbbababbaabaaabaabbaaaabbabaabbbbbbabbaabbabbbabbbbbaaabaababbbaabbbabbbaabbbbaaabbababbabbbabaaabbaabbabababbbaaaaaaababbabaababaabbbbaaabbbabb"
+//   needle = "abbabbbabaa"
+// // 92
+// haystack = "abbabaaaabbbaabaabaabbbaaabaaaaaabbbabbaabbabaabbabaaaaababbabbaaaaabbbbaaabbaaabbbbabbbbaaabbaaaaababbaababbabaaabaabbbbbbbaabaabaabbbbababbbababbaaababbbabaabbaaabbbba"
+//   needle = "bbbbbbaa"
+// // 118
 
 //   if (haystack.indexOf(needle) === 0) {
 //     return 0;
@@ -3155,7 +3155,7 @@ return (
 //     for (j = i+1; j <= numbers[i+1];j++){
 //       result = numbers.length -1
 //       if (numbers[j] > target ) {
-//         numbers[j] -= numbers[i]  
+//         numbers[j] -= numbers[i]
 //         return j
 //       }
 //       if(numbers[j] === target || numbers[j] > target ){
@@ -3188,7 +3188,6 @@ return (
 // }
 // console.log(searchInsert())
 
-
 // // class Solution {
 //   public int searchInsert(int[] nums, int target) {
 //     int start = 0;
@@ -3207,8 +3206,8 @@ return (
 
 // function lengthOfLastWord (s){
 //   // s= "Hello World"
-//   s =   "fly me   to   the moon " 
-//   // let words= 
+//   s =   "fly me   to   the moon "
+//   // let words=
 //   s = s.trim()
 //   let words = s.split(" ")
 //   // console.log(s.at(-1))
@@ -3221,7 +3220,7 @@ return (
 //     // console.log(words[i])
 //     if(i === lastIndex && i !== " "){
 //       return words[i].length;
-//     } 
+//     }
 //   }
 // }
 // console.log(lengthOfLastWord())
@@ -3233,49 +3232,57 @@ return (
 // //   for (let i= 0; i<= words.length; i++){
 // //     if(i === lastIndex){
 // //   return words[i].length
-// // } 
+// // }
 // // }
 // };
 
-function plusOne(digits){
+function plusOne(digits) {
   // digits = [1,2,3]
   // digits = [4,3,2,1]
-  // digits = [9]
-  digits = [9,9]
-  let lastElement = digits[digits.length -1]
+  digits = [9]
+  // digits = [9, 9];
+  let lastElement = digits[digits.length - 1];
   // console.log(lastElement)
   let result = [];
-  for(let i = 0; i<= digits.length; i++){
+  for (let i = 0; i <= digits.length; i++) {
     // for(let j = i; j <= digits[i]; j++){
-      // console.log (j)
-      if (digits[i]  !== result[i] && digits[i] !== lastElement){
-        // console.log(digits[i].length)
-        // console.log(result.length)
-        result.push(digits[i])
-        // console.log(result)
-        
-    }  if (digits[i] === lastElement){
-      result.push(digits[i] + 1)
+    // console.log (j)
+    if (digits[i] !== result[i] && digits[i] !== lastElement) {
+      // console.log(digits[i].length)
+      // console.log(result.length)
+      result.push(digits[i]);
+      // console.log(result)
+    }
+    if (digits[i] === lastElement) {
+      result.push(digits[i] + 1);
       // result = result[j]+1
       // console.log(result)
       // return result
     }
-     if(result[i] >= 9 ){
-
+    if (result[i] >= 9) {
       // let res = String(result).split('')
-      let res = String(result).split('').map(str => Number(str))
-      if(result[i] >= 9 && result[i+1] >= 9){
-        console.log(result[i])
-        let moreResult = res+1
-        return moreResult
+
+      // console.log(test)
+      // return moreResult
+      let res = String(result).split("").map((str) => Number(str));
+      //  console.log(res)
+      if (res[i+1] === 0) {
+        let test = res.push(0);
+        // let res = result.toString()
+        // test.push(...res)
+         test = String(test).split('').map(str => Number(str))
+        // console.log(test)
+        return res;
       }
-      // let res = result.toString()
- 
-      return res
+      // console.log(test)
+      // console.log(res)
+      //  let moreResult = res + result[i]
+      // console.log(test)
+      return res;
     }
   }
-  return result
+  return result;
   // return res
   // }
 }
-console.log(plusOne())
+console.log(plusOne());
