@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 
 function plusOne(digits) {
     // digits = [1,2,3]
@@ -15,17 +16,21 @@ function plusOne(digits) {
       if (digits[i] === lastElement) {
         result.push(digits[i] + 1)
       }
-      if (result[i] >=9 || result[i+1] >=9 ){
-        let largeInteger = String(result).split("").map((str) => Number(str));
-        largeInteger.push(0);
-        return largeInteger
-        
-      }
       if (result[i] >= 9) {
         let res = String(result).split("").map((str) => Number(str));
+        // res.pop(i)
         return res;
       }
-  }
+      if(res[i+1] === 0  && digits[i+1] === 9 ){
+        console.log(res[i+2])
+      }
+     
+      // if (result[j] >=9 && result[j+2] >=9 ){
+      //   let largeInteger = String(result).split("").map((str) => Number(str));
+      //   largeInteger.push(0);
+      //   return largeInteger
+      // }
+      }
   return result;
   }
   console.log(plusOne());
