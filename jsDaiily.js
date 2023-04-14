@@ -22,11 +22,6 @@ function plusOne(digits) {
       if(res[i+1] === 0  && digits[i+1] === 9 ){
         console.log(res[i+2])
       }
-      // if (result[j] >=9 && result[j+2] >=9 ){
-      //   let largeInteger = String(result).split("").map((str) => Number(str));
-      //   largeInteger.push(0);
-      //   return largeInteger
-      // }
       }
   return result;
   }
