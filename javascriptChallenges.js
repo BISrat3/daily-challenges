@@ -3296,3 +3296,38 @@ return (
 //   // }
 // }
 // console.log(plusOne());
+
+
+// function twoSum (nums, target) {
+//   for (let i=0; i<nums.length; i++){
+//       for(let j=i+1; j<nums.length;j++){
+//           if(nums[i]+ nums[j] === target){
+//             console.log([i, j])
+//               return [i,j]
+//           }
+//       }
+//   }
+// };
+// // console.log(twoSum([2,7,11,15], 9))
+// // console.log(twoSum([3,2,4], 6))
+// console.log(twoSum([3,3], 6))
+
+function addTwoNumbers(l1, l2){
+  for(let i=0; i<=l1.length;i++){
+      let l =[]
+          l=  l1[i] +l2[i]
+    console.log(l)
+    for (let j= 0; j<=l.length;j++){
+      if (l[j]>9){
+        console.log(l[j])
+        // l[j] = 0
+      }
+    }
+  }
+// console.log(l2)
+}
+
+console.log(addTwoNumbers([2,4,3],[5,6,4]))
+// console.log(addTwoNumbers([0],[0]))
+// console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
+
