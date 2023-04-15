@@ -1,6 +1,6 @@
 // Challenge 1
 
-const { trim } = require("jquery");
+// const { trim } = require("jquery");
 
 // const e = require("express");
 // const { merge } = require("jquery");
@@ -3312,22 +3312,44 @@ return (
 // // console.log(twoSum([3,2,4], 6))
 // console.log(twoSum([3,3], 6))
 
-function addTwoNumbers(l1, l2){
-  for(let i=0; i<=l1.length;i++){
-      let l =[]
-          l=  l1[i] +l2[i]
-    console.log(l)
-    for (let j= 0; j<=l.length;j++){
-      if (l[j]>9){
-        console.log(l[j])
-        // l[j] = 0
-      }
-    }
+function addTwoNumbers(){
+  let l1= [2,4,3]
+  let l2= [5,6,4]
+  let result =[]
+  for(let i=0; i <= l1.length;i++){
+    let res = l1[i] + l2[i]
+    result.push(res)
+    // console.log(result)
   }
-// console.log(l2)
-}
+  let test;
+  for (let j=0; j <= result.length;j++){
+    if(result [j] > 9){
 
-console.log(addTwoNumbers([2,4,3],[5,6,4]))
+      result [j] = 0 
+    }
+    result [] = result[j+1] +1
+    console.log(result[j])
+    // result[j+1] += 1;
+    // console.log(result[j+1])
+      // test= String(result).split('').map(str => Number(str))
+      // test.push()
+      // console.log(test)
+      // result[j] = 0
+      // result[j+1] += 1
+      // console.log(result)
+  }
+  // let j=0;
+  // while(result[j] > 9){
+  // if (result[j] > 9){
+  //   console.log[result[j]]
+  //   test= String(result).split('').map(str => Number(str))
+  //   console.log(test)
+  //   j++
+  // }  
+  // console.log(result)
+  // console.log(test)
+}
+addTwoNumbers()
 // console.log(addTwoNumbers([0],[0]))
 // console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
 
