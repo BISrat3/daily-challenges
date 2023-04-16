@@ -3318,38 +3318,18 @@ function addTwoNumbers(){
   let result =[]
   for(let i=0; i <= l1.length;i++){
     let res = l1[i] + l2[i]
-    res.valueOf
-    if(res > 9){
-      res = 0
-      result.push(res)
-      i++
-      console.log(result)
-    } 
     result.push(res)
-    // console.log(result)
+    if(result[i] > 9){
+      result[i] = 0
+      // result[i+1] += 1
+      // console.log(result)
+      // result.push(res)
+    } 
+    // else if(result[i]=== 0 ) {
+    //   res +=1
+    // }
   }
-  let test;
-  for (let j=0; j < result.length-1;j++){
-    // console.log(result.length-1)
-    if(result [j] > 9){
-
-      result [j] = 0 
-      // result.push([j])
-    }
-    // console.log(result)
-  }
-  // let lastResult = result[result.length - 1]
-  // console.log(lastResult)
-  // let j=0;
-  // while(result[j] > 9){
-  // if (result[j] > 9){
-  //   console.log[result[j]]
-  //   test= String(result).split('').map(str => Number(str))
-  //   console.log(test)
-  //   j++
-  // }  
-  // console.log(result)
-  // console.log(test)
+  console.log(result)
 }
 addTwoNumbers()
 // console.log(addTwoNumbers([0],[0]))
