@@ -3313,23 +3313,30 @@ return (
 // console.log(twoSum([3,3], 6))
 
 function addTwoNumbers(){
-  let l1= [2,4,3]
-  let l2= [5,6,4]
+  // let l1= [2,4,3]
+  // let l2= [5,6,4]
+  // let l1= [0]
+  // let l2= [0]
+  let l1= [9,9,9,9,9,9,9]
+  let l2= [9,9,9,9]
+
   let result =[]
-  for(let i=0; i <= l1.length;i++){
+  let i=0;
+  for(let i=0; i < l1.length;i++){
     let res = l1[i] + l2[i]
     result.push(res)
-    if(result[i] > 9){
-      result[i] = 0
-      // result[i+1] += 1
-      // console.log(result)
-      // result.push(res)
-    } 
-    // else if(result[i]=== 0 ) {
-    //   res +=1
-    // }
   }
-  console.log(result)
+  i++
+  if(result[i] > 9){
+    result[i] = 0
+    console.log(result[i])
+    result[i+1] +=1
+    // result[i+1] += 1
+    // console.log(result)
+    // result.push(res)
+  } 
+  let reverse = result.reverse()
+  console.log(reverse)
 }
 addTwoNumbers()
 // console.log(addTwoNumbers([0],[0]))
