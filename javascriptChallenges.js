@@ -3323,20 +3323,31 @@ function addTwoNumbers(){
   let result =[]
   let i=0;
   for(let i=0; i < l1.length;i++){
-    let res = l1[i] + l2[i]
-    result.push(res)
-  }
-  i++
-  if(result[i] > 9){
-    result[i] = 0
-    console.log(result[i])
-    result[i+1] +=1
-    // result[i+1] += 1
-    // console.log(result)
+    let res = []
+    res = l1[i] + l2[i]
+    if (res >9){
+      i++
+      // console.log(i)
+      // let test =[]
+      let test = String(res).split('').map(str => Number(str))
+      console.log(test)
+      console.log(test[i])
+      test.push()
+      // console.log(test)
+    }
     // result.push(res)
-  } 
-  let reverse = result.reverse()
-  console.log(reverse)
+  }
+  // i++
+  // if(result[i] > 9){
+  //   result[i] = 0
+  //   console.log(result[i])
+  //   result[i+1] +=1
+  //   // result[i+1] += 1
+  //   // console.log(result)
+  //   // result.push(res)
+  // } 
+  // let reverse = result.reverse()
+  // console.log(reverse)
 }
 addTwoNumbers()
 // console.log(addTwoNumbers([0],[0]))
