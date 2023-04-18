@@ -3319,21 +3319,25 @@ function addTwoNumbers(){
   // let l2= [0]
   let l1= [9,9,9,9,9,9,9]
   let l2= [9,9,9,9]
-
   let result =[]
   let i=0;
   for(let i=0; i < l1.length;i++){
     let res = []
     res = l1[i] + l2[i]
-    if (res >9){
-      i++
+    let checker = []
+    let test;
+    if (res > 9){
+      // i++
       // console.log(i)
       // let test =[]
-      let test = String(res).split('').map(str => Number(str))
+      test = String(res).split('').map(str => Number(str))
       console.log(test)
-      console.log(test[i])
-      test.push()
+      
+      // checker.push(test[1])
+      // console.log(test[i])
+      // result.push()
       // console.log(test)
+      checker.push(test[1])
     }
     // result.push(res)
   }
