@@ -3312,48 +3312,63 @@ return (
 // // console.log(twoSum([3,2,4], 6))
 // console.log(twoSum([3,3], 6))
 
-function addTwoNumbers(){
-  // let l1= [2,4,3]
-  // let l2= [5,6,4]
-  // let l1= [0]
-  // let l2= [0]
-  let l1= [9,9,9,9,9,9,9]
-  let l2= [9,9,9,9]
-  let result =[]
-  let i=0;
-  for(let i=0; i < l1.length;i++){
-    let res = []
-    res = l1[i] + l2[i]
-    let checker = []
-    let test;
-    if (res > 9){
-      // i++
-      // console.log(i)
-      // let test =[]
-      test = String(res).split('').map(str => Number(str))
-      console.log(test)
+// function addTwoNumbers(){
+//   // let l1= [2,4,3]
+//   // let l2= [5,6,4]
+//   // let l1= [0]
+//   // let l2= [0]
+//   let l1= [9,9,9,9,9,9,9]
+//   let l2= [9,9,9,9]
+//   let result =[]
+//   let i=0;
+//   for(let i=0; i < l1.length;i++){
+//     let res = []
+//     res = l1[i] + l2[i]
+//     let checker = []
+//     let test;
+//     if (res > 9){
+//       // i++
+//       // console.log(i)
+//       // let test =[]
+//       test = String(res).split('').map(str => Number(str))
+//       console.log(test)
       
-      // checker.push(test[1])
-      // console.log(test[i])
-      // result.push()
-      // console.log(test)
-      checker.push(test[1])
-    }
-    // result.push(res)
-  }
-  // i++
-  // if(result[i] > 9){
-  //   result[i] = 0
-  //   console.log(result[i])
-  //   result[i+1] +=1
-  //   // result[i+1] += 1
-  //   // console.log(result)
-  //   // result.push(res)
-  // } 
-  // let reverse = result.reverse()
-  // console.log(reverse)
-}
-addTwoNumbers()
-// console.log(addTwoNumbers([0],[0]))
-// console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
+//       // checker.push(test[1])
+//       // console.log(test[i])
+//       // result.push()
+//       // console.log(test)
+//       checker.push(test[1])
+//     }
+//     // result.push(res)
+//   }
+//   // i++
+//   // if(result[i] > 9){
+//   //   result[i] = 0
+//   //   console.log(result[i])
+//   //   result[i+1] +=1
+//   //   // result[i+1] += 1
+//   //   // console.log(result)
+//   //   // result.push(res)
+//   // } 
+//   // let reverse = result.reverse()
+//   // console.log(reverse)
+// }
+// addTwoNumbers()
+// // console.log(addTwoNumbers([0],[0]))
+// // console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
 
+
+// q-  merge Strings Alternately
+// give two strings word 1 and word 2
+function mergeStrings(){
+  let word1 = "abc"
+  let word2 ="pqrdd"
+  let result ='';
+  for(let i=0; i<=word1.length , i< word2.length;i++){
+    
+    // result.push(i)
+    console.log(result)
+  }
+}
+
+mergeStrings()
