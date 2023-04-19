@@ -3276,7 +3276,7 @@ return (
 //       console.log(res[i])
 //       return res;
 //     }
-    
+
 //       //  console.log(res)
 //       // if (res[i+1] === 0) {
 //       //   let test = res.push(0);
@@ -3296,7 +3296,6 @@ return (
 //   // }
 // }
 // console.log(plusOne());
-
 
 // function twoSum (nums, target) {
 //   for (let i=0; i<nums.length; i++){
@@ -3332,7 +3331,7 @@ return (
 //       // let test =[]
 //       test = String(res).split('').map(str => Number(str))
 //       console.log(test)
-      
+
 //       // checker.push(test[1])
 //       // console.log(test[i])
 //       // result.push()
@@ -3349,7 +3348,7 @@ return (
 //   //   // result[i+1] += 1
 //   //   // console.log(result)
 //   //   // result.push(res)
-//   // } 
+//   // }
 //   // let reverse = result.reverse()
 //   // console.log(reverse)
 // }
@@ -3357,18 +3356,29 @@ return (
 // // console.log(addTwoNumbers([0],[0]))
 // // console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
 
-
 // q-  merge Strings Alternately
 // give two strings word 1 and word 2
-function mergeStrings(){
-  let word1 = "abc"
-  let word2 ="pqrdd"
-  let result ='';
-  for(let i=0; i<=word1.length , i< word2.length;i++){
-    
-    // result.push(i)
-    console.log(result)
-  }
-}
+function mergeStrings() {
+  // let word1 = "abc";
+  // let word2 = "pqrdd";
+  // let word1 = "ab"
+  // let word2 = "pqrs"
+  let word1 = "abcd"
+  let word2 = "pq"
+  let result = [];
 
-mergeStrings()
+  // let res = result.toString()
+  for (let i = 0; i < word1.length || i < word2.length; i++) {
+    if(word1[i] === word1.charAt(i) || word1[i] >= word1.length && word1.length > word2.length){
+      result.push(word1[i])
+    }
+    if(word2[i] === word2.charAt(i)) {
+      result.push(word2[i])
+    }
+  }
+  result = result.join('')
+  return result.toString()
+}
+  
+  console.log(mergeStrings());
+ 
