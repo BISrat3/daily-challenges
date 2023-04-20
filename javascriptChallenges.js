@@ -3379,6 +3379,5 @@ function mergeStrings() {
   result = result.join('')
   return result.toString()
 }
-  
-  console.log(mergeStrings());
+console.log(mergeStrings());
  
