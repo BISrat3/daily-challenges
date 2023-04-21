@@ -672,19 +672,24 @@
 
 // console.log(lengthOfLongestSubstring("abcabcbb"))
 
-// function isPalindrom(num){
-//     if(num % 10 == 0){
-//         return num ==0
-//     }
-//     let res =0;
-//     while( res < num){
-//         res = res * 10 + num % 10
-//         num /=10
-//     }
-//     console.log(res == num || res/10 == num)
-//     return res == num || res/10 == num
-// }
-// isPalindrom(123)
+function isPalindrom(num){
+    if(num % 10 == 0){
+      // console.log(num)
+        return num ==0
+    }
+    let res =0;
+    while( res < num){
+        res = res * 10 + num % 10
+        console.log( res)
+        num /=10
+    }
+    console.log(res == num || res/10 == num)
+    return res == num || res/10 == num
+}
+isPalindrom(11)
+
+
+// pala
 
 // Q? You are given the heads of two sorted linked lists list1 and list2.
 
@@ -3358,26 +3363,26 @@ return (
 
 // q-  merge Strings Alternately
 // give two strings word 1 and word 2
-function mergeStrings() {
-  // let word1 = "abc";
-  // let word2 = "pqrdd";
-  // let word1 = "ab"
-  // let word2 = "pqrs"
-  let word1 = "abcd"
-  let word2 = "pq"
-  let result = [];
+// function mergeStrings() {
+//   // let word1 = "abc";
+//   // let word2 = "pqrdd";
+//   // let word1 = "ab"
+//   // let word2 = "pqrs"
+//   let word1 = "abcd"
+//   let word2 = "pq"
+//   let result = [];
 
-  // let res = result.toString()
-  for (let i = 0; i < word1.length || i < word2.length; i++) {
-    if(word1[i] === word1.charAt(i) || word1[i] >= word1.length && word1.length > word2.length){
-      result.push(word1[i])
-    }
-    if(word2[i] === word2.charAt(i)) {
-      result.push(word2[i])
-    }
-  }
-  result = result.join('')
-  return result.toString()
-}
-console.log(mergeStrings());
+//   // let res = result.toString()
+//   for (let i = 0; i < word1.length || i < word2.length; i++) {
+//     if(word1[i] === word1.charAt(i) || word1[i] >= word1.length && word1.length > word2.length){
+//       result.push(word1[i])
+//     }
+//     if(word2[i] === word2.charAt(i)) {
+//       result.push(word2[i])
+//     }
+//   }
+//   result = result.join('')
+//   return result.toString()
+// }
+// console.log(mergeStrings());
  
