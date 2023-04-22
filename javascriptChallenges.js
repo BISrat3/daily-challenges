@@ -672,24 +672,30 @@
 
 // console.log(lengthOfLongestSubstring("abcabcbb"))
 
-function isPalindrom(num){
-    if(num % 10 == 0){
-      // console.log(num)
-        return num ==0
-    }
-    let res =0;
-    while( res < num){
-        res = res * 10 + num % 10
-        console.log( res)
-        num /=10
-    }
-    console.log(res == num || res/10 == num)
-    return res == num || res/10 == num
+// function isPalindrom(num){
+//     if(num % 10 == 0){
+//       console.log(num)
+//         return num ==0
+//     }
+//     let res =0;
+//     while( res < num){
+//         res = res * 10 + num % 10
+//         console.log( res)
+//         num /=10
+//     }
+//     console.log(res == num || res/10 == num)
+//     return res == num || res/10 == num || res/11 ==num
+// }
+// isPalindrom(11)
+
+
+// palindrome 
+function isPalindrom(x){
+  if(x % 10){
+
+  }
 }
-isPalindrom(11)
-
-
-// pala
+isPalindrom()
 
 // Q? You are given the heads of two sorted linked lists list1 and list2.
 
