@@ -3393,25 +3393,40 @@ return (
 // console.log(mergeStrings());
 // Question Given an integer array nums sorted in non-decreasing order, ??remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
+// function removeDuplicate(){
+//   let nums = [1,1,2];
+  // let nums = [0,0,1,1,1,2,2,3,3,4];
+  // let k=[];
+
+  // console.log(nums)
+  // for(let i=0; i<= nums.length; i++){
+  //   if(nums[i] !== nums[i+1]){
+  //     // console.log(nums[i+1])
+  //     k.push(nums[i])
+  //     // console.log(k)
+  //   }  
+  // }
+
+//   return k
+//   // console.log(k)
+// }
+// console.log(removeDuplicate())
+
+
 function removeDuplicate(){
   let nums = [1,1,2];
   // let nums = [0,0,1,1,1,2,2,3,3,4];
-  let k=[];
-  // console.log(nums)
-  for(let i=0; i < nums.length; i++){
-    // console.log(nums[i])
-    if(nums[i] !== nums[i+1]){
-
+  let expectedNums=[];
+  let k= removeDuplicate(nums)
+  for(let i=0; i<= k; i++){
+    if(nums[i] !== expectedNums[i+1]){
       // console.log(nums[i+1])
       k.push(nums[i])
-      console.log(k)
-    }
-    // else if(k[i] === nums[i]){
-
-    // }
-    
+      // console.log(k)
+    }  
   }
-  console.log(k)
-  // return k.length
+
+  return k
+  // console.log(k)
 }
-removeDuplicate()
+console.log(removeDuplicate())
