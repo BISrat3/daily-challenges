@@ -3395,38 +3395,76 @@ return (
 
 // function removeDuplicate(){
 //   let nums = [1,1,2];
-  // let nums = [0,0,1,1,1,2,2,3,3,4];
-  // let k=[];
+//   // let nums = [0,0,1,1,1,2,2,3,3,4];
+//   let k=[];
 
-  // console.log(nums)
-  // for(let i=0; i<= nums.length; i++){
-  //   if(nums[i] !== nums[i+1]){
-  //     // console.log(nums[i+1])
-  //     k.push(nums[i])
-  //     // console.log(k)
-  //   }  
-  // }
-
+//   // console.log(nums)
+//   for(let i=0; i <= nums.length; i++){
+//     if(nums[i] !== nums[i+1]){
+//       // console.log(nums[i+1])
+//       k.push(nums[i])
+//     }  
+//     // console.log(k)
+//   }
 //   return k
+//   // console.log(k)
+
 //   // console.log(k)
 // }
 // console.log(removeDuplicate())
 
 
-function removeDuplicate(){
-  let nums = [1,1,2];
-  // let nums = [0,0,1,1,1,2,2,3,3,4];
-  let expectedNums=[];
-  let k= removeDuplicate(nums)
-  for(let i=0; i<= k; i++){
-    if(nums[i] !== expectedNums[i+1]){
-      // console.log(nums[i+1])
-      k.push(nums[i])
-      // console.log(k)
-    }  
-  }
+// function removeDuplicate(){
+//   let nums = [1,1,2];
+//   // let nums = [0,0,1,1,1,2,2,3,3,4];
+//   let expectedNums=[];
+//   let k = expectedNums.length
+//   for(let j=0; j<= nums.length;j++){
 
-  return k
-  // console.log(k)
+//     if(nums[j] !== nums[j+1]){
+//       expectedNums.push(nums[j])
+//       // console.log(expectedNums)
+//     }
+//     console.log(expectedNums.length)
+//   }
+//   // console.log(k)
+//   for(let i=0; i< k; i++){
+//     // let p = expectedNums.length;
+//     // console.log(nums[i])
+//   //   if(nums[i] !== nums[i+1]){
+//   //     expectedNums.push(nums[i])
+//   //     // console.log(expectedNums)
+//   //   // if(nums[i] !== nums[i+1])
+//   //   //   expectedNums.push(nums[i])
+//   //   //   // console.log(expectedNums[i])
+
+//   // }
+//   // console.log(expectedNums.length)
+//   // return expectedNums.length
+//   // console.log(k)
+//   }
+// // return expectedNums.length
+// }
+// console.log(removeDuplicate())
+
+// Merge Sorted Array
+function mergeSortedArray(){
+  let nums1= [1,2,3,0,0,0]
+  let m =0;
+  // let  nums2 = [2,5,6]
+  // let nums2 =[]
+  let nums2 = [1]
+  let n = 0
+  for(let i=0; i<=nums1.length || i <= nums2.length;i++){
+    if(nums1[i]>0){
+      m +=i
+    }
+    if(nums2[i]>0){
+      n +=i
+    }
+  }
+  console.log(m)
+  console.log(n)
+  
 }
-console.log(removeDuplicate())
+mergeSortedArray()
