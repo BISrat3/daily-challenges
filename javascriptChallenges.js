@@ -3450,21 +3450,42 @@ return (
 // Merge Sorted Array
 function mergeSortedArray(){
   let nums1= [1,2,3,0,0,0]
+  // let nums1= [1]
+  // let nums1= [0]
   let m =0;
-  // let  nums2 = [2,5,6]
+
+  let  nums2 = [2,5,6]
   // let nums2 =[]
-  let nums2 = [1]
+  // let nums2 = [1]
   let n = 0
-  for(let i=0; i<=nums1.length || i <= nums2.length;i++){
-    if(nums1[i]>0){
-      m +=i
+  let nums =0 
+  let merge= []
+  for(let i=0; i<=nums1.length || i <= nums2.length;i++){   
+    if(nums1[i] < nums2[i] || nums[i] === nums2[i]) {
+      // console.log(nums1)
+      nums1.unshift(nums2[i])
+      // console.log(nums2)
+    } 
+    if(nums1[i] > 0 ){
+      m += i
     }
-    if(nums2[i]>0){
+    if(nums1[0] === 0 || nums2[0] === 0) {
+      // return nums
+    }
+    if(nums2[i]>0 || nums1[0] === 0){
       n +=i
     }
   }
   console.log(m)
-  console.log(n)
+  nums1.length = m+n
+  console.log(nums1.length)
+  console.log(nums2)
+  // console.log(n)
   
+  // let num1.length = m+n
+  // merge.length = mergeLength
+  // merge.sort()
+  // console.log(merge)
+  // return merge
 }
 mergeSortedArray()
