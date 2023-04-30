@@ -3478,8 +3478,8 @@ function mergeSortedArray(){
   }
   console.log(m)
   nums1.length = m+n
-  console.log(nums1.length)
-  console.log(nums2)
+  // console.log(nums1.length)
+  // console.log(nums2)
   // console.log(n)
   
   // let num1.length = m+n
