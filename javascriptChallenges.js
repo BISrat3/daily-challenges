@@ -688,8 +688,7 @@
 // }
 // isPalindrom(11)
 
-
-// palindrome 
+// palindrome
 // function isPalindrom(x){
 //   if(x % 10){
 
@@ -3403,7 +3402,7 @@ return (
 //     if(nums[i] !== nums[i+1]){
 //       // console.log(nums[i+1])
 //       k.push(nums[i])
-//     }  
+//     }
 //     // console.log(k)
 //   }
 //   return k
@@ -3412,7 +3411,6 @@ return (
 //   // console.log(k)
 // }
 // console.log(removeDuplicate())
-
 
 // function removeDuplicate(){
 //   let nums = [1,1,2];
@@ -3448,48 +3446,55 @@ return (
 // console.log(removeDuplicate())
 
 // Merge Sorted Array
-function mergeSortedArray(){
-  let nums1= [1,2,3,0,0,0]
+function mergeSortedArray() {
+  let nums1 = [1, 2, 3, 0, 0, 0];
   // let nums1= [1]
   // let nums1= [0]
-  let m =0;
+  let m = 0;
 
-  let  nums2 = [2,5,6]
+  let nums2 = [2, 5, 6];
   // let nums2 =[]
   // let nums2 = [1]
-  let n = 0
-  let nums =0 
-  let merge= []
-  for(let i=0; i<=nums1.length || i <= nums2.length;i++){   
+  let n = 0;
+  let nums = 0;
+  let merge = [];
+  for (let i = 0; i <= nums1.length || i <= nums2.length; i++) {
     // if(nums1[i] === 0 || nums2[i] === 0){
     //   // console.log(nums1[j])
     //   nums1.splice(i)
-    // } 
-    if(nums1[i] > 0 ){
-      m += i
+    // }
+    if (nums1[i] > 0) {
+      m += i;
     }
-    if(nums2[i]>0 || nums1[0] === 0){
-      n +=i
+    if (nums2[i] > 0 || nums1[0] === 0) {
+      n += i;
     }
   }
-  
-  nums1.length = m+n
+
+  nums1.length = m + n;
   // console.log(n)
   // console.log(nums1.length)
   // console.log(m)
 
-  for(let j=0; j< nums1.length;j++){
-    if(nums2[j]){
+  for (let j = 0; j < nums1.length; j++) {
+    nums1.indexOf(0) !== -1 && nums1.splice(nums1.indexOf(0), 1)
+    if (nums2[j]) {
       // console.log(nums2[j])
-      nums1.push(nums2[j])
+      nums1.push(nums2[j]);
     }
-    if(nums1[j] === 0 || nums2[j] === 0){
-      // console.log(nums1[j])
-      nums1.splice()
-    }
-    // console.log(nums1)
+   
+    // if(nums1[j] === 0 || nums2[j] === 0){
+    //   // console.log(nums1[j])
+    //   nums1.splice()
+    // }
   }
-  console.log(nums1)
-  // return nums1
+  // console.log(nums1)
+  // console.log(nums1);
+  nums1.sort()
+  nums1.trim()
+  return nums1
 }
-mergeSortedArray()
+console.log(mergeSortedArray());
+
+// let num1 = nums1.filter(e => e !== 0)
+// num1.sort()
