@@ -3459,7 +3459,7 @@ function mergeSortedArray() {
     if (nums1[i] > 0) {
       m += i;
     }
-    if (nums2[i] > 0 || nums1[0] === 0) {
+    if(nums2[i] > 0 || nums1[0] === 0) {
       n += i;
     }
   }
