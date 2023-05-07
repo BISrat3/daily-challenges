@@ -3479,8 +3479,6 @@ function mergeSortedArray() {
       nums1.push(nums2[j]);
     }
   }
-  // console.log(nums1)
-  // console.log(nums1);
   // nums1.split(',')
   nums1.sort()
   nums1.splice(nums1.length)
