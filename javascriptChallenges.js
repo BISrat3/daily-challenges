@@ -3483,7 +3483,6 @@ function mergeSortedArray() {
   nums1.sort()
   nums1.splice(nums1.length)
   console.log(nums1.length)
-  // nums1.trim()
   return nums1
 }
 console.log(mergeSortedArray());
