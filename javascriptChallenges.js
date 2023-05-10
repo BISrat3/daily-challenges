@@ -3447,33 +3447,33 @@ return (
 
 // Merge Sorted Array
 function mergeSortedArray() {
-  // let nums1 = [1, 2, 3, 0, 0, 0];
-  let nums1= [1]
+  let nums1 = [1, 2, 3, 0, 0, 0];
+  // let nums1= [1]
   // let nums1= [0]
   let m = 0;
-  // let nums2 = [2, 5, 6];
-  let nums2 =[]
+  let nums2 = [2, 5, 6];
+  // let nums2 =[]
   // let nums2 = [1]
   let n = 0;
   for (let i = 0; i <= nums1.length || i <= nums2.length; i++) {
     if (nums1[i] > 0) {
       m += i;
+      // console.log(m)
     }
     if(nums2[i] > 0 || nums1[0] === 0) {
       n += i;
     }
   }
-  console.log(nums1.length)
+  // console.log(nums1.length)
   nums1.length = m + n;
   // console.log(n)
   // console.log(nums1.length)
   // console.log(m)
   for (let j = 0; j < nums1.length; j++) {
     nums1.indexOf(0) !== -1 && nums1.splice(nums1.indexOf(0), 1)
-    if(nums1[j]){
-
-      nums1.push(nums1[j]);
-    }
+    // if(nums1[j]){
+    //   nums1.push(nums1[j]);
+    // }
     if(nums2[j]) {
       // console.log(nums2[j])
       nums1.push(nums2[j]);
@@ -3481,9 +3481,10 @@ function mergeSortedArray() {
   }
   // nums1.split(',')
   nums1.sort()
-  nums1.splice(nums1.length)
-  console.log(nums1.length)
-  return nums1
+  // nums1.splice(nums1.length)
+  // console.log(nums1.length)
+  console.log(nums1)
+  // return nums1
 }
 console.log(mergeSortedArray());
 
