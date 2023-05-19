@@ -3495,7 +3495,7 @@ return (
 
 function removeDuplicates(){
 // let head =[1,1,2]
-// let head =[1,1,2,5,5]
+let head =[1,1,2,5,5]
 let output =[]
 for (let i=0; i<= head.length;i++){
   if(head[i] !=head[i+1]){
