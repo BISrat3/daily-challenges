@@ -3493,15 +3493,23 @@ return (
 
 // Remove duplicates from sorted list
 
-function removeDuplicates(){
-// let head =[1,1,2]
-let head =[1,1,2,5,5]
-let output =[]
-for (let i=0; i<= head.length;i++){
-  if(head[i] !=head[i+1]){
-    output.push(head[i])
-} 
+// function removeDuplicates(){
+// // let head =[1,1,2]
+// let head =[1,1,2,5,5]
+// let output =[]
+// for (let i=0; i<= head.length;i++){
+//   if(head[i] !=head[i+1]){
+//     output.push(head[i])
+// } 
+// }
+// console .log(output)
+// }
+// removeDuplicates()
+
+function climbStairs(){
+let n;
+for(let i=0; i<=n;i++){
+  
 }
-console .log(output)
 }
-removeDuplicates()
+climbStairs()
