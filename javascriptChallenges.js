@@ -3507,9 +3507,11 @@ return (
 // removeDuplicates()
 
 function climbStairs(){
-let n;
-for(let i=0; i<=n;i++){
-  
-}
+  let n =2;
+  for(let i=1; i<=n;i++){
+    
+    console.log(n.length-1)
+  }
+  return n.length-1
 }
 climbStairs()
