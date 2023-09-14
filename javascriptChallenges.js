@@ -3519,10 +3519,10 @@ return (
 // }
 // console.log(climbStairs())
 
-// let person;
-// person['name'] = "Alex";
-// person ["age"] = 12;
-// console.log(person)
+let person;
+person['name'] = "Alex";
+person ["age"] = 12;
+console.log(person)
 let value=4;
 
 let arr  = [1,2,3]
