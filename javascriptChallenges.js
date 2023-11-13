@@ -3506,25 +3506,25 @@ return (
 // }
 // removeDuplicates()
 
-// function climbStairs(){
-//   // let n =2;
-//   let n=3
-//   for(let i=1; i<=n;i++){
-//     if( i)
-//     if (i === n)
-//    return n
-//     // console.log(n.length-1)
-//   }
-//   // return n.length-1
-// }
-// console.log(climbStairs())
+function climbStairs(){
+  // let n =2;
+  let n=3
+  for(let i=1; i<=n;i++){
+    if( i)
+    if (i === n)
+   return n
+    // console.log(n.length-1)
+  }
+  // return n.length-1
+}
+console.log(climbStairs())
 
-let person;
-person['name'] = "Alex";
-person ["age"] = 12;
-console.log(person)
-let value=4;
+// let person;
+// person['name'] = "Alex";
+// person ["age"] = 12;
+// console.log(person)
+// let value=4;
 
-let arr  = [1,2,3]
-arr[arr.length] =value
-console.log (arr) 
+// let arr  = [1,2,3]
+// arr[arr.length] =value
+// console.log (arr) 
